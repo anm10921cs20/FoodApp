@@ -12,3 +12,14 @@ navClose.addEventListener('click', () => {
     navContainer.classList.remove('headerNav-active')
 })
 
+const year = new Date();
+var yeas = year.getFullYear()
+
+const yearData = document.getElementById('year');
+yearData.innerText=yeas;
+
+
+
+ 
+
+
