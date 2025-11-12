@@ -333,7 +333,6 @@
     .orders-img {
         position: absolute;
         top: 310px;
-        left: 8px;
     }
 
     .orders-img-cnt,
@@ -343,9 +342,9 @@
 
     .orders-img1 {
         position: absolute;
-        top: 460px;
-        left: 10px;
-        display: flex;       
+        top: 460px; 
+        display: flex;
+        justify-content: center;      
     }
 
     main {
@@ -369,8 +368,8 @@
 
     .food-list img,
     .instantshop-list img {
-        height: 96px;
-        width: 96px;
+        height: 86px;
+        width: 86px;
     }
 
     .instantshop-list {
