@@ -303,19 +303,37 @@
     left: 7px;
   }
   main {
-    height: 1000px;
+    height: 1500px;
   }
-  .food-container, .instantshop-container {
+  .food-container,
+  .instantshop-container {
     margin-left: 15px;
   }
-  .food-container-title, .instantshop-container-title {
+  .food-container-title,
+  .instantshop-container-title {
     font-size: 17px;
     font-weight: 900;
     padding: 0 10px;
   }
-  .food-list img, .instantshop-list img {
+  .food-list img,
+  .instantshop-list img {
     height: 96px;
     width: 96px;
+  }
+  .instantshop-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    height: 150px;
+  }
+  .instantshop-list::-webkit-scrollbar {
+    display: none;
+  }
+  .instantshop-list a {
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
