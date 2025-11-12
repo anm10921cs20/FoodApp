@@ -192,10 +192,13 @@
     }
 
     .getapp {
-        font-size: 1.1rem;
+       font-size: 1.1rem;
         border: 1px solid #fff;
-        padding: 10px 30px;
+        text-align: center;
         border-radius: 10px;
+        position: absolute;
+        width: 90%;
+        bottom: 20px;
     }
 
     .signin {
@@ -252,9 +255,9 @@
     }
 
     .headerNav {
-        position: absolute;
+        position: fixed;
         background-color: $primary-color;
-        height: 100vh;
+        height: 102vh;
         width: 100vw;
         z-index: 40000;
         margin-left: -1099px;
@@ -278,7 +281,25 @@
         font-size: 1.4rem;
         color: #fff;
     }
-
+    .nav-btn-close {
+        display: block;
+        text-align: end;
+        padding: 15px;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+    .nav-menu
+    {
+        padding: 20px 20px;
+    }
+    .nav-menu li
+    {
+        padding: 10px 0;
+    }
+    .signin
+    {
+        display: none;
+    }
     .mobile-data {
         display: block;
     }
@@ -596,8 +617,11 @@
     .getapp {
         font-size: 1.1rem;
         border: 1px solid #fff;
-        padding: 10px 30px;
+        text-align: center;
         border-radius: 10px;
+        position: absolute;
+        width: 90%;
+        bottom: 20px;
     }
 
     .signin {
@@ -654,7 +678,7 @@
     }
 
     .headerNav {
-        position: absolute;
+        position: fixed;
         background-color: $primary-color;
         height: 100vh;
         width: 100vw;
@@ -670,6 +694,22 @@
 
     .nav-btn-close {
         display: block;
+        text-align: end;
+        padding: 15px;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+    .nav-menu
+    {
+        padding: 20px 20px;
+    }
+    .nav-menu li
+    {
+        padding: 10px 0;
+    }
+    .signin
+    {
+        display: none;
     }
 
     .nav-btns {
@@ -1064,7 +1104,7 @@
     }
 
     .headerNav {
-        position: absolute;
+        position: fixed;
         background-color: $primary-color;
         height: 100vh;
         width: 70vw;
