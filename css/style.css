@@ -301,7 +301,8 @@
   .orders-img1 {
     position: absolute;
     top: 460px;
-    left: 2px;
+    left: 10px;
+    display: flex;
   }
   main {
     height: 1500px;
