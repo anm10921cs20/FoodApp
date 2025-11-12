@@ -326,7 +326,8 @@
     height: 1100px;
   }
   .food-container,
-  .instantshop-container, .dineout-container {
+  .instantshop-container,
+  .dineout-container {
     margin-left: 15px;
   }
   .food-container-title,
@@ -414,7 +415,8 @@
     padding: 0 10px;
     color: #6f7274;
   }
-  .fa-square-check, .table-booking {
+  .fa-square-check,
+  .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
@@ -673,7 +675,8 @@
     height: 1130px;
   }
   .food-container,
-  .instantshop-container, .dineout-container {
+  .instantshop-container,
+  .dineout-container {
     margin-left: 15px;
   }
   .food-container-title,
@@ -762,7 +765,8 @@
     padding: 0 10px;
     color: #6f7274;
   }
-  .fa-square-check, .table-booking {
+  .fa-square-check,
+  .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
@@ -1217,6 +1221,186 @@
     gap: 250px;
     background-color: #fff;
     border-radius: 12px;
+  }
+  .food-container-title,
+  .instantshop-container-title {
+    width: 80%;
+    margin: auto;
+    font-size: 23px;
+    font-weight: 700;
+  }
+  .food-list img,
+  .instantshop-list img {
+    width: 144px;
+    height: 180px;
+  }
+  .food-list {
+    width: 80%;
+    margin: auto;
+  }
+  .instantshop-list a {
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+  }
+  .instantshop-list {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    overflow-x: scroll;
+    gap: 20px;
+    scroll-behavior: smooth;
+  }
+  .instantshop-list::-webkit-scrollbar {
+    display: none;
+  }
+  .dineout-content {
+    display: flex;
+    overflow-x: auto;
+    height: 320px;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+    scroll-behavior: smooth;
+  }
+  .dineout-content::-webkit-scrollbar {
+    display: none;
+  }
+  .dineout-content-files {
+    width: 322px;
+    height: 320px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .dineout-content-img img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 318px;
+    height: 182px;
+    object-fit: cover;
+  }
+  .dineout-content-img {
+    background-color: rgba(0, 0, 0, 0.0470588235);
+  }
+  .company-topic {
+    position: absolute;
+    top: 47%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+  }
+  .company-rating {
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: 4px 4px 12px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+  }
+  .fa-star {
+    color: var(--bs-success);
+  }
+  .company-tit-topic {
+    font-size: 21px;
+    text-shadow: 4px 4px 12px #000;
+    font-weight: 900;
+  }
+  .contenttitle {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: #6f7274;
+  }
+  .fa-square-check,
+  .table-booking {
+    color: #6f7274;
+    margin-left: 10px;
+  }
+  .table-booking {
+    width: 37%;
+    font-size: 13px;
+    padding: 2px 2px;
+    border-radius: 4px;
+    background-color: #f0f0f5;
+  }
+  .offer-img img {
+    height: 20px;
+  }
+  .offers {
+    display: flex;
+    border: 1px solid #1ba672;
+    background-color: #1ba672;
+    width: 300px;
+    margin: auto;
+    color: #fff;
+    gap: 10px;
+    border-radius: 12px;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  footer {
+    background-color: #f0f0f5;
+    height: 100px;
+    width: 100%;
+  }
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-img {
+    padding: 10px 20px;
+  }
+  .footer-img img {
+    border-radius: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .footer-tit {
+    color: #ff9900;
+    font-weight: 1000;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  .footer-copu {
+    padding: 0px 20px;
+    color: #616469;
+  }
+  .company-tit {
+    font-size: 22px;
+    padding: 0px 20px;
+    font-weight: 700;
+  }
+  .footer-company {
+    display: none;
+  }
+  .company-list {
+    font-size: 18px;
+    padding: 10px 20px;
+    color: #6f7274;
+  }
+  .Scrollbar-bottom {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .arrow-left, .arrow-right {
+    background-color: #d9dadb;
+    width: 2%;
+    border-radius: 50%;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  .arrow-left:hover, .arrow-right:hover {
+    background-color: #ff9900;
+    color: #fff;
   }
 }
 

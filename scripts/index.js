@@ -19,6 +19,42 @@ const yearData = document.getElementById('year');
 yearData.innerText=yeas;
 
 
+// data scroll bar
+
+// first container
+
+const instantShop = document.getElementsByClassName('instantshop-list')[0];
+const leftSide = document.getElementsByClassName('arrow-left')[0]
+const rightSide = document.getElementsByClassName('arrow-right')[0]
+
+
+
+leftSide.addEventListener('click', () => {
+    instantShop.scrollLeft -= 300;
+})
+
+rightSide.addEventListener('click', () => {
+    instantShop.scrollLeft += 300;
+})
+
+
+// second container
+
+const DineoutShop = document.getElementsByClassName('dineout-content')[0];
+const leftSide1 = document.getElementsByClassName('arrow-left')[1]
+const rightSide2 = document.getElementsByClassName('arrow-right')[1]
+
+
+leftSide1.addEventListener('click', () => {
+    DineoutShop.scrollLeft -= 300;
+})
+
+rightSide2.addEventListener('click', () => {
+    DineoutShop.scrollLeft += 300;
+})
+
+
+
 
  
 
