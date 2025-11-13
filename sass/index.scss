@@ -132,6 +132,10 @@
 .mobile-data {
     display: none;
 }
+.Scrollbar-bottom
+{
+    display: none;
+}
 
 // sm mobiles
 @media only screen and (min-width:260px) and (max-width:399px) {
@@ -1683,7 +1687,8 @@
     {
         display: flex;
         gap: 10px;
-        justify-content: center;
+        justify-content: space-around;
+
     }
     .arrow-left,.arrow-right
     {

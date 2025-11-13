@@ -129,6 +129,10 @@
   display: none;
 }
 
+.Scrollbar-bottom {
+  display: none;
+}
+
 @media only screen and (min-width: 260px) and (max-width: 399px) {
   .headerContainer {
     width: 100%;
@@ -1388,7 +1392,7 @@
   .Scrollbar-bottom {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
   }
   .arrow-left, .arrow-right {
     background-color: #d9dadb;
