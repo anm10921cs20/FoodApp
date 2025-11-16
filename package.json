@@ -13,5 +13,10 @@
   "type": "commonjs",
   "devDependencies": {
     "sass": "^1.94.0"
+  },
+  "dependencies": {
+    "cord": "^1.0.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }

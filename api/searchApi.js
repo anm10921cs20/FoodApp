@@ -1,3 +1,15 @@
+import cors from "cors";
+import express from "express";
+
+const app = express();
+app.use(cors());
+
+app.use(cors({
+    origin: ["https://food-app-one-dun.vercel.app/"]
+}));
+
+
+
 // api call
 const Apiurl = "https://users1-16jy.onrender.com/";
 const fetchApi = async () => {
