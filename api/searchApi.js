@@ -106,7 +106,7 @@ function itemsClicked(event)
 
 
 // api/searchApi.js (assuming the typo is corrected)
-async function handler(req, res) {
+export default async function handler(req, res) {
   try {
     // Your API logic here
     // For example:
