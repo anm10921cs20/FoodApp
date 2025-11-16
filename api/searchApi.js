@@ -1,44 +1,39 @@
 // api call
 const Apiurl = "https://users1-16jy.onrender.com/";
 const fetchApi = async () => {
-    const loaderContent = document.getElementsByClassName('dots-container')[0];
-
-    loaderContent.classList.remove('loader-hidden')
+    const loaderContent = document.querySelector('.dots-container');
+    if (loaderContent) loaderContent.classList.remove('loader-hidden');
     try {
-        const responce = await fetch(`${Apiurl}popularinstamart`);
-        const data = await responce.json();
-        const mainData = document.getElementsByClassName('img-data')[0];
+        const response = await fetch(`${Apiurl}popularinstamart`);
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+        const data = await response.json();
+        const mainData = document.querySelectorAll('.img-data')[0];
+        if (!mainData) return;
         const div = document.createElement('div');
         div.classList.add('img-data-div');
         data.forEach((item) => {
             div.innerHTML += `
             <div class="img-data-item">
-            <a href="#">
-            <div class="img-container">
-            <img src="${item.img}" alt="instamartimg" class=""img-data-src width="100px" height="100px"/></a>
-            </div>
+              <a href="#">
+                <div class="img-container">
+                  <img src="${item.img}" alt="instamartimg" class="img-data-src" width="100" height="100" />
+                </div>
+              </a>
             </div>
             `;
         });
         mainData.appendChild(div);
 
+        const datas1 = div.querySelectorAll('.img-data-item');
 
-        const datas1 = document.getElementsByClassName('img-data-item');
-
-        for(var i = 0; i<datas1.length; i++)
-        {
-            var button = datas1[i];
-            button.addEventListener('click',itemsClicked)
+        for (let i = 0; i < datas1.length; i++) {
+            const button = datas1[i];
+            button.addEventListener('click', itemsClicked);
         }
-
-
-    }
-    catch (error) {
-        console.log(error.message)
-    }
-    finally
-    {
-        loaderContent.classList.add('loader-hidden')
+    } catch (error) {
+        console.error(error);
+    } finally {
+        if (loaderContent) loaderContent.classList.add('loader-hidden');
     }
 }
 fetchApi();
@@ -48,77 +43,48 @@ fetchApi();
 
 const fetchApi1 = async () => {
     try {
-        const responce = await fetch(`${Apiurl}popularcuisines`);
-        const data = await responce.json();
-        const mainData = document.getElementsByClassName('img-data')[1];
+        const response = await fetch(`${Apiurl}popularcuisines`);
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+        const data = await response.json();
+        const mainData = document.querySelectorAll('.img-data')[1];
+        if (!mainData) return;
         const div = document.createElement('div');
         div.classList.add('img-data-div');
         data.forEach((item) => {
             div.innerHTML += `
             <div class="img-data-item">
-            <a href="#">
-            <div class="img-container">
-            <img src="${item.img}" alt="instamartimg" class=""img-data-src width="110px" height="110px"/></a>
-            </div>
+              <a href="#">
+                <div class="img-container">
+                  <img src="${item.img}" alt="instamartimg" class="img-data-src" width="110" height="110" />
+                </div>
+              </a>
             </div>
             `;
         });
+
         mainData.appendChild(div);
 
+        const datas1 = div.querySelectorAll('.img-data-item');
 
-        const datas1 = document.getElementsByClassName('img-data-item');
-
-        for(var i = 0; i<datas1.length; i++)
-        {
-            var button = datas1[i];
-            button.addEventListener('click',itemsClicked)
+        for (let i = 0; i < datas1.length; i++) {
+            const button = datas1[i];
+            button.addEventListener('click', itemsClicked);
         }
 
-
+    } catch (error) {
+        console.error(error);
     }
-    catch (error) {
-        console.log(error.message)
-    }
-}
+};
 fetchApi1();
-
-
-
-
-
 
 
 // functions place
 
-
-function itemsClicked(event)
-{
-    var btn = event.target;
-   console.log(btn.parentElement);
-   
-   
-   
-    
-    
-    
-
+function itemsClicked(event) {
+    // prefer event.currentTarget because listener was attached on .img-data-item
+    const item = event.currentTarget || event.target.closest('.img-data-item');
+    if (!item) return;
+    const img = item.querySelector('img');
+    console.log('Clicked item:', item, 'image src:', img ? img.src : null);
+    // implement desired click behavior here
 }
-
-
-// api/searchApi.js (assuming the typo is corrected)
-export default async function handler(req, res) {
-  try {
-    // Your API logic here
-    // For example:
-    const query = req.query.q;
-    const results = await performSearch(query);
-
-    // If successful
-    res.status(200).json({ message: "Search successful", data: results });
-  } catch (error) {
-    console.error("API error:", error); // Log the detailed error
-    res.status(500).json({ message: "Internal Server Error", error: error.message });
-  }
-}
-async=> handler();
-
