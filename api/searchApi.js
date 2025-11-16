@@ -1,12 +1,4 @@
-import cors from "cors";
-import express from "express";
 
-const app = express();
-app.use(cors());
-
-app.use(cors({
-    origin: ["https://food-app-one-dun.vercel.app/"]
-}));
 
 
 
@@ -117,24 +109,3 @@ function itemsClicked(event)
     
 
 }
-
-
-async function getPopularCuisines() {
-  try {
-    const res = await fetch("https://usersapi-66kn.onrender.com/popularcuisines");
-    
-    // Check if response status is OK (200–299)
-    if (!res.ok) {
-      throw new Error("HTTP error! Status: " + res.status);
-    }
-
-    const data = await res.json();
-    console.log("API Data:", data);
-    
-    return data;
-  } catch (error) {
-    console.error("Fetch error:", error);
-  }
-}
-
-getPopularCuisines();
