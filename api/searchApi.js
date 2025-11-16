@@ -113,3 +113,11 @@ function itemsClicked(event)
     
 
 }
+export default function handler(req, res) {
+  res.status(200).json({
+    popularinstamart: [
+      { id: 1, name: "Vegetables", img: "https://..." },
+      { id: 2, name: "Cool Drinks", img: "https://..." }
+    ]
+  });
+}
