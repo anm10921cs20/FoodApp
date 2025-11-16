@@ -4,7 +4,9 @@
 
 // api call
 const Apiurl = "https://users1-16jy.onrender.com/";
-const fetchApi = async () => {
+async function fetchApi() {
+    
+} {
     const loaderContent = document.getElementsByClassName('dots-container')[0];
 
     loaderContent.classList.remove('loader-hidden')
@@ -50,7 +52,9 @@ fetchApi();
 
 // second call
 
-const fetchApi1 = async () => {
+async function fetchApi1() {
+    
+}{
     try {
         const responce = await fetch(`${Apiurl}popularcuisines`);
         const data = await responce.json();
