@@ -53,6 +53,29 @@ rightSide2.addEventListener('click', () => {
     DineoutShop.scrollLeft += 300;
 })
 
+// main cart redirect
+
+const mainPage = document.getElementsByClassName('cart-btn')[0];
+const cartPage = document.getElementsByClassName('cart-btn')[1];
+
+mainPage.addEventListener('click', () => {
+    window.location.replace('../index.html');
+})
+
+cartPage.addEventListener('click', () => {
+    window.location.replace('../src/cartmobile/cartmobile.html');
+})
+
+
+// loader animation
+
+const loader = document.querySelector('.dots-container');
+
+window.addEventListener('load', () => {
+    loader.classList.add('loader-hidden')
+})
+
+
 
 
 
