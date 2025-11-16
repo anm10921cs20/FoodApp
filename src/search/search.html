@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff9900" />
+    <title>Food Shop-Search</title>
+    <link rel="icon" type="text/png" href="../../images/logo/Food App.png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/search.css">
+
+
+
+    <!-- bootstrap File -->
+    <link rel="stylesheet" href="../../bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- nav bar container -->
+        <div class="nav-bar">
+            <div class="nav-menu">
+
+
+                <div class="nav-content">
+                    <ul class="nav-button">
+                        <div class="nav-img">
+                            <img src="../../images/logo/Red and White Cartoon Food Logo.png" height="50px" width="50px"
+                                alt="">
+                        </div>
+                        <div class="location" type="button" data-bs-toggle="offcanvas" data-bs-target="#location">
+                            <p class="locations-tit">Location Select</p> <i
+                                class="fas fa-chevron-down icon-changes"></i>
+                        </div>
+                        <a href="">
+                            <li><i class="fas fa-magnifying-glass"></i> Search</li>
+                        </a>
+                        <a href="">
+                            <li><i class="fa-solid fa-handshake"></i> Help</li>
+                        </a>
+                        <a href="">
+                            <li><i class="fas fa-user"></i> Sign in</li>
+                        </a>
+                        <div class="App-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart-container">
+                            <li><i class="fa-solid fa-cart-shopping"></i> Cart</li>
+                            <div class="cart-count">0</div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main data nav bar  -->
+    <div class="app-controler mobile-data">
+        <div class="app-controler-data">
+            <div class="cart-btn"><i class="fas fa-home control"></i>
+                <p class="cart-tit">HOME</p>
+            </div>
+            <div class="cart-btn select-color"><i class="fas fa-magnifying-glass control"></i>
+                <p class="cart-tit">SEARCH</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- search input -->
+    <div class="search-box-data">
+        <input type="text" placeholder="Search for food and hotel" id="search-input">
+        <i class="fas fa-magnifying-glass icon-color"></i>
+    </div>
+
+    <!-- off canvas cart -->
+    <div class="offcanvas-container">
+        <div class="offcanvas offcanvas-end" tabindex="-1" data-bs-backdrop="static" id="cart-container">
+            <div class="offcanvas-headers">
+                <div class="offcanvas-heading">
+                    <div class="cart-title-container">
+                        <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Cart</h1>
+                    </div>
+                    <div class="cart-close-btn-container">
+                        <button type="button" class=" close-off fas fa-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- off canvas  -->
+    <div class="offcanvas-container-location">
+        <div class="offcanvas offcanvas-start" tabindex="-1" data-bs-backdrop="static" id="location">
+            <div class="offcanvas-headers">
+                <div class="offcanvas-heading">
+                    <div class="cart-title-container">
+                        <h1 class="cart-title"><i class="fas fa-location"></i></h1>
+                    </div>
+                    <div class="cart-close-btn-container">
+                        <button type="button" class=" close-off fas fa-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas-body">
+                <div class="bodycontent">
+                    <p class="pincodeinputtext">Use Pincode to Check Delivery Info</p>
+                </div>
+                <div class="inputs">
+                    <input type="text" maxlength="6" placeholder=" Enter Pincode" class="pincodeinp"
+                        id="pincodeinp"><br>
+                    <div class="ipb">Submit</div>
+                    <div class="liveloc">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <p class="liveloc-p">Use My Current Location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- main container main data -->
+    <main><br>
+        <div class="main-container mobile-data">
+            <div class="main-data">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/eq4y45x0uk2ha5nighpv"
+                    width="398px" height="33px " alt="cartimg"><br><br>
+                <div class="img-data"></div>
+                <br><div class="clr-div"></div><br>
+                <h1 class="tit-cuisines">Popular Cuisines</h1>
+                <br>
+                 <div class="img-data"></div><br>
+                 <div class="clr-div length"></div>
+            </div>
+        </div>
+
+    </main>
+
+
+     <!-- loader -->
+
+    <section class="dots-container loader-hidden">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </section>
+
+
+
+
+</body>
+<!-- main Scripts -->
+<script src="../../scripts/search.js"></script>
+<!-- api fetch -->
+ <script src="../../api/serachApi.js"></script>
+<!-- bootStrap Scripts -->
+<script src="../../bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+
+</html>

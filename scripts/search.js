@@ -1,83 +1,54 @@
-// mobile nav bar
-
-const navOpen = document.querySelector('#barsOpen');
-const navClose = document.querySelector('#barsClose');
-const navContainer = document.getElementsByClassName('headerNav')[0];
 
 
-navOpen.addEventListener('click', () => {
-    navContainer.classList.add('headerNav-active')
-})
-navClose.addEventListener('click', () => {
-    navContainer.classList.remove('headerNav-active')
-})
+// redirect
 
-const year = new Date();
-var yeas = year.getFullYear()
+const homePage = document.getElementsByClassName('cart-btn')[0];
 
-const yearData = document.getElementById('year');
-yearData.innerText=yeas;
-
-
-// data scroll bar
-
-// first container
-
-const instantShop = document.getElementsByClassName('instantshop-list')[0];
-const leftSide = document.getElementsByClassName('arrow-left')[0]
-const rightSide = document.getElementsByClassName('arrow-right')[0]
-
-
-
-leftSide.addEventListener('click', () => {
-    instantShop.scrollLeft -= 300;
-})
-
-rightSide.addEventListener('click', () => {
-    instantShop.scrollLeft += 300;
+homePage.addEventListener('click', () => {
+    window.location.replace('../../index.html');
 })
 
 
-// second container
-
-const DineoutShop = document.getElementsByClassName('dineout-content')[0];
-const leftSide1 = document.getElementsByClassName('arrow-left')[1]
-const rightSide2 = document.getElementsByClassName('arrow-right')[1]
+// input control
+const searchInput = document.getElementById('search-input');
+searchInput.oninput = handleFocus;
 
 
-leftSide1.addEventListener('click', () => {
-    DineoutShop.scrollLeft -= 300;
-})
+function handleFocus() {
+    const searchInput = document.getElementById('search-input');
+    const icon = document.getElementsByClassName('icon-color')[0];
+    const mainData = document.getElementsByClassName('main-data')[0];
+    var searchvalue = searchInput.value;
+    if (searchvalue.length > 0) {
+        icon.classList.remove('fa-magnifying-glass');
+        icon.classList.add('fa-close');
+        mainData.style.display="none";
+    }
+    else {
+        icon.classList.remove('fa-close');
+        icon.classList.add('fa-magnifying-glass');
+        mainData.style.display="block";
+    }
 
-rightSide2.addEventListener('click', () => {
-    DineoutShop.scrollLeft += 300;
-})
+    icon.addEventListener('click', () => {
+        if (icon.classList.contains('fa-close')) {
+            searchInput.value = '';
+            icon.classList.remove('fa-close');
+            icon.classList.add('fa-magnifying-glass');
+             mainData.style.display="block";
+        }
+    })
 
-// main cart redirect
-
-const mainPage = document.getElementsByClassName('cart-btn')[0];
-const cartPage = document.getElementsByClassName('cart-btn')[1];
-const serachPage = document.getElementsByClassName('search')[0];
-
-mainPage.addEventListener('click', () => {
-    window.location.replace('../index.html');
-})
-
-cartPage.addEventListener('click', () => {
-    window.location.replace('../src/cartmobile/cartmobile.html');
-})
-
-serachPage.addEventListener('click', () => {
-    window.location.replace('../src/search/search.html');
-})
+}
 
 
-// loader animation
 
-const loader = document.querySelector('.dots-container');
+//main page
 
-window.addEventListener('load', () => {
-    loader.classList.add('loader-hidden')
+const navImg = document.getElementsByClassName('nav-img')[0];
+
+navImg.addEventListener('click', () => {
+    window.location.replace('../../index.html');
 })
 
 
@@ -117,7 +88,9 @@ async function apicall() {
 
     }
 
-  
+    const bootcontent = document.getElementById('location');
+    const instance = bootstrap.Offcanvas.getInstance(bootcontent);
+    instance.hide();
     if (!navigator.geolocation) {
         console.log('not support');
 
@@ -189,7 +162,9 @@ function locationpincode() {
 
 
 
-    
+    const bootcontent = document.getElementById('location');
+    const instance = bootstrap.Offcanvas.getInstance(bootcontent);
+    instance.hide();
 
     
 
@@ -201,20 +176,9 @@ document.getElementsByClassName('ipb')[0].addEventListener('click', locationpinc
 
 
 var datastores = document.getElementsByClassName('locations-tit')[0];
-console.log(datastores);
-
 const locationStore = JSON.parse(localStorage.getItem('location'));
 console.log(locationStore);
 
 datastores.innerText = locationStore.district + " " + locationStore.pincode;
-
-
-
-
-
-
-
-
- 
 
 
