@@ -104,3 +104,20 @@ function itemsClicked(event)
 
 }
 
+
+// api/searchApi.js (assuming the typo is corrected)
+async function handler(req, res) {
+  try {
+    // Your API logic here
+    // For example:
+    const query = req.query.q;
+    const results = await performSearch(query);
+
+    // If successful
+    res.status(200).json({ message: "Search successful", data: results });
+  } catch (error) {
+    console.error("API error:", error); // Log the detailed error
+    res.status(500).json({ message: "Internal Server Error", error: error.message });
+  }
+}
+
