@@ -272,7 +272,6 @@ input.addEventListener('input', function (e) {
     const matches = [];
 
     if (!term) {
-        console.log([]);
         const resultsEl = document.getElementsByClassName('results')[0];
         if (resultsEl) resultsEl.innerHTML = '';
         return;

@@ -13,6 +13,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database()
 
+document.title = `Food Shop - ${data}`;
+
 db.ref(`${data}Item`).get('value').then((snapshot) => {
     var datas = snapshot.val()
     datas.forEach((item) => {
@@ -41,3 +43,15 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
 })
 
 
+
+
+
+
+
+// loader animation
+
+const loader = document.querySelector('.dots-container');
+
+window.addEventListener('load', () => {
+    loader.classList.add('loader-hidden')
+})
