@@ -18,16 +18,20 @@ function handleFocus() {
     const searchInput = document.getElementById('search-input');
     const icon = document.getElementsByClassName('icon-color')[0];
     const mainData = document.getElementsByClassName('main-data')[0];
+    const searchData = document.getElementsByClassName('results')[0];
+
     var searchvalue = searchInput.value;
     if (searchvalue.length > 0) {
         icon.classList.remove('fa-magnifying-glass');
         icon.classList.add('fa-close');
         mainData.style.display="none";
+        searchData.style.display="block";
     }
     else {
         icon.classList.remove('fa-close');
         icon.classList.add('fa-magnifying-glass');
         mainData.style.display="block";
+          searchData.style.display="none";
     }
 
     icon.addEventListener('click', () => {
@@ -36,6 +40,7 @@ function handleFocus() {
             icon.classList.remove('fa-close');
             icon.classList.add('fa-magnifying-glass');
              mainData.style.display="block";
+               searchData.style.display="none";
         }
     })
 
