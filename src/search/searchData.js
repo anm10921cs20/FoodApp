@@ -37,13 +37,13 @@ db.ref("popularinstamart/").get('value').then((snapshot) => {
             <div class="img-data-item">
             <a href="#">
             <div class="img-container">
-            <img src="${item.img}" alt="instamartimg" class=""img-data-src width="100px" height="100px"/></a>
+            <img src="${item.img}" alt="${item.name}" class=""img-data-src width="100px" height="100px"/></a>
             </div>
             </div>
             `;
         mainData.appendChild(div);
 
-
+   
         const datas1 = document.getElementsByClassName('img-data-item');
 
         for (var i = 0; i < datas1.length; i++) {
@@ -79,7 +79,7 @@ db.ref("popularcuisines/").get('value').then((snapshot) => {
             <div class="img-data-item">
             <a href="#">
             <div class="img-container">
-            <img src="${item.img}" alt="instamartimg" class=""img-data-src width="100px" height="100px"/></a>
+            <img src="${item.img}" alt="${item.name}" class=""img-data-src width="100px" height="100px"/></a>
             </div>
             </div>
             `;
@@ -145,7 +145,16 @@ db.ref("popularcuisines/").get('value').then((snapshot) => {
 
 
 function itemsClicked(event) {
-    var btn = event.target;
-    console.log(btn.parentElement);
+    var names = event.target;
+    console.log(names.alt);
+    const input = document.getElementById('search-input');
+    input.onchange = input.value = names.alt;
+    localStorage.setItem('itemname',names.alt);
+    
+   
+
+     window.location.replace('./searchres.html');
+
+    
 
 }
