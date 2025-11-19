@@ -97,8 +97,8 @@ header {
         align-items: center;
         text-decoration: none;
         gap: 30px;
-        padding: 20px 0;
         color: #000;
+        padding: 10px 0;
     }
     .name-content
     {
@@ -121,6 +121,12 @@ header {
     {
         color: #8e6a6d;
         font-size: 13px;
+    }
+    .img-ctrl
+    {
+        height: 70px;
+        width: 70px;
+        border-radius: 12px;
     }
 
 }
@@ -297,7 +303,7 @@ header {
     .icon-color {
         color: rgba(87, 63, 63, 0.575);
     }
-     main {
+    main {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         height: auto;
         margin-top: 50px;
@@ -341,6 +347,7 @@ header {
         text-decoration: none;
         gap: 30px;
         color: #000;
+        padding: 10px 0;
     }
     .name-content
     {
@@ -363,6 +370,12 @@ header {
     {
         color: #8e6a6d;
         font-size: 13px;
+    }
+    .img-ctrl
+    {
+        height: 70px;
+        width: 70px;
+        border-radius: 12px;
     }
 
 }
@@ -539,7 +552,90 @@ header {
         gap: 10px;
         color: $primary-color;
     }
+        main {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        height: auto;
+        margin-top: 50px;
+    }
+    .main-container
+    {
+        width: 50%;
+        margin: auto;
+    }
+    .main-data
+    {
+        height: 80vh;
+    }
 
+    .main-data img {
+        padding: 0 10px;
+    }
+
+    .img-data-div {
+        display: flex;
+        overflow: scroll;
+    }
+
+    .img-data-div::-webkit-scrollbar {
+        display: none;
+    }
+    .clr-div
+    {
+        height: 10px;
+        background-color: #f5f6f8;
+    }
+    .tit-cuisines
+    {
+        padding:0 10px;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+    .length
+    {
+        height: 100px;
+    }
+    .list-content a
+    {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 30px;
+        color: #000;
+        padding: 10px 0;
+    }
+    .name-content
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        line-height: 2px;
+    }
+    .results
+    {
+        width: 100%;
+        padding: 2px 10px;
+    }
+    .pr-name
+    {
+        font-size: 15px;
+        font-weight: 800;
+
+    }
+    .pr-rel
+    {
+        color: #8e6a6d;
+        font-size: 13px;
+    }
+    .img-ctrl
+    {
+        height: 70px;
+        width: 70px;
+        border-radius: 12px;
+    }
+    li
+    {
+        list-style-type: none;
+    }
 
 }
 
@@ -718,7 +814,62 @@ header {
         gap: 10px;
         color: $primary-color;
     }
+       main {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        height: auto;
+        margin-top: 50px;
+    }
+    .main-container
+    {
+        width: 50%;
+        margin: auto;
+    }
+    .tit-cuisines
+    {
+        display: none;
+    }
+    .name-content
+    {
+        display: flex;
+        flex-direction: column;
+        line-height: 2px;
+    }
+    .pr-name
+    {
+        font-size: 15px;
+        font-weight: 800;
 
+    }
+    .pr-rel
+    {
+        color: #8e6a6d;
+        font-size: 13px;
+    }
+    .img-ctrl
+    {
+        height: 70px;
+        width: 70px;
+        border-radius: 12px;
+    }
+    .list-content   
+    {
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+    .list-anchor
+    {
+       display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 30px;
+        color: #000;
+        padding: 10px 0;
+    }
+    .results
+    {
+        width: 100%;
+    }
 
 
 

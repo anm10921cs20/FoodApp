@@ -15,29 +15,56 @@ const db = firebase.database()
 
 document.title = `Food Shop - ${data}`;
 
+const title = document.getElementsByClassName('title')[0];
+title.innerText = data;
+
 db.ref(`${data}Item`).get('value').then((snapshot) => {
     var datas = snapshot.val()
     datas.forEach((item) => {
         const div = document.createElement('div');
         div.className = "items";
-        div.innerHTML +=`<div class="details">
-        <p>${item.name}</p>
-        <p>${item.price}</p>
-        <button  type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">More Details</button>
-        
-        
-        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="food${item.id}">
-         <p>${item.name}</p>
-        <p>${item.price}</p>
-         <img src="${item.img}"  height="150px" width="150px" alt="${item.name}">
+        div.innerHTML += `<div class="items-cont"><div class="details">
+        <p class="item-tit">${item.name}</p>
+        <p class="item-price">Rs.${item.price}</p>
+        <button class="more-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">More Details <i class="fa-solid fa-chevron-right"></i></button>
         </div>
         
         
+        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="food${item.id}">
+       
+       
+         <div class="off-container">
+         <img src="${item.img}"  height="300px" width="100%" alt="${item.name}">
+        </div>
+        <div class="off-det">
+            <div class="off-det-cont">
+            <p class="item-tit">${item.name}</p>
+             <p class="item-price">Rs.${item.price}</p>
+             </div>
+            
+                <div class="add-btns">
+                 <button type="button" class="add-btn-text">ADD</button>
+                </div>
+              
+        </div>
+         <p class="item-details">${item.details}</p>
+         <button class="btn-closed fas fa-close" type="button" data-bs-dismiss="offcanvas" ></button>
+        
+        
+        </div>
+        
+        <div class="add-btn">
+        <button type="button" class="add-btn-text">ADD</button>
+        </div>
         
         <div class="img-det">
-        <img src="${item.img}"  height="150px" width="150px" alt="${item.name}">
-        </div>` 
-            document.body.appendChild(div);
+        <img src="${item.img}"  alt="${item.name}">
+        </div></div>`
+        document.getElementsByClassName('mahan')[0].appendChild(div);
+        const offCanvsContainer = document.getElementById(`food${item.id}`);
+        offCanvsContainer.style.height = "600px";
+        offCanvsContainer.style.borderTopLeftRadius="20px";
+        offCanvsContainer.style.borderTopRightRadius="20px";
 
     })
 })
@@ -54,4 +81,71 @@ const loader = document.querySelector('.dots-container');
 
 window.addEventListener('load', () => {
     loader.classList.add('loader-hidden')
+})
+
+
+// page backward
+
+const leftArrow = document.getElementsByClassName('arrow')[0];
+
+leftArrow.addEventListener('click', () => {
+    window.history.back()
+})
+
+
+// btn click
+
+const dishes = document.getElementsByClassName('dishes')[0];
+const dishes1 = document.getElementsByClassName('dishes')[1];
+const disheContainer = document.getElementsByClassName('mahan')[0];
+const cuisenceContainer = document.getElementsByClassName('cuisines')[0];
+
+
+
+dishes.addEventListener('click', () => {
+    dishes.classList.add('dishes-active')
+    dishes1.classList.remove('dishes-active')
+    disheContainer.style.display = "block";
+    cuisenceContainer.style.display = "none";
+
+})
+dishes1.addEventListener('click', () => {
+    dishes1.classList.add('dishes-active')
+    dishes.classList.remove('dishes-active')
+    disheContainer.style.display = "none";
+    cuisenceContainer.style.display = "block";
+
+})
+
+
+
+// cuisines
+
+
+db.ref(`${data}`).get('value').then((snapshot) => {
+    var datas = snapshot.val()
+    datas.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = "item";
+        div.innerHTML += `<div class="items-conts">
+        <div class="img-dets">
+        <img src="${item.img}" height="100px" width="100px"  alt="${item.name}">
+        </div><div class="detailss">
+        <p class="item-tits">${item.name}</p>
+        <button class="more-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">Click Details <i class="fa-solid fa-chevron-right"></i></button>
+        </div></div>
+        
+        
+        
+        
+      
+        
+        `
+        document.getElementsByClassName('cuisines')[0].appendChild(div);
+        const offCanvsContainer = document.getElementById(`food${item.id}`);
+        offCanvsContainer.style.height = "600px";
+        offCanvsContainer.style.borderTopLeftRadius="20px";
+        offCanvsContainer.style.borderTopRightRadius="20px";
+
+    })
 })

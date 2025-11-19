@@ -84,6 +84,7 @@ db.ref("popularcuisines/").get('value').then((snapshot) => {
             </div>
             `;
     });
+
     mainData.appendChild(div);
 
 
@@ -99,6 +100,9 @@ db.ref("popularcuisines/").get('value').then((snapshot) => {
     console.log(err.message);
 
 })
+
+
+
 
 
 

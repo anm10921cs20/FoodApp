@@ -291,7 +291,7 @@ input.addEventListener('input', function (e) {
     // optional: render results if an element with id="results" exists
     const resultsEl = document.getElementsByClassName('results')[0];
     if (resultsEl) {
-        resultsEl.innerHTML = matches.map(it => `<li class="list-content"><a href=""><div class="img-content"><img src="${it.img}" class="img-ctrl"></div> <div class="name-content"><p class="pr-name">${it.name}</p><p class="pr-rel">${it.rel}</p></div> </a> </li>`).join('');
+        resultsEl.innerHTML = matches.map(it => `<li class="list-content"><a class="list-anchor" href=""><div class="img-content"><img src="${it.img}" class="img-ctrl"></div> <div class="name-content"><p class="pr-name">${it.name}</p><p class="pr-rel">${it.rel}</p></div> </a> </li>`).join('');
 
     }
 });

@@ -19,19 +19,21 @@ function handleFocus() {
     const icon = document.getElementsByClassName('icon-color')[0];
     const mainData = document.getElementsByClassName('main-data')[0];
     const searchData = document.getElementsByClassName('results')[0];
+    var screenWidth = window.innerWidth;
+    
 
     var searchvalue = searchInput.value;
     if (searchvalue.length > 0) {
         icon.classList.remove('fa-magnifying-glass');
         icon.classList.add('fa-close');
-        mainData.style.display="none";
-        searchData.style.display="block";
+        mainData.style.display = "none";
+        searchData.style.display = "block";
     }
     else {
         icon.classList.remove('fa-close');
         icon.classList.add('fa-magnifying-glass');
-        mainData.style.display="block";
-          searchData.style.display="none";
+        mainData.style.display = "block";
+        searchData.style.display = "none";
     }
 
     icon.addEventListener('click', () => {
@@ -39,10 +41,17 @@ function handleFocus() {
             searchInput.value = '';
             icon.classList.remove('fa-close');
             icon.classList.add('fa-magnifying-glass');
-             mainData.style.display="block";
-               searchData.style.display="none";
+            mainData.style.display = "block";
+            searchData.style.display = "none";
+            if (screenWidth >= 1024 || screenWidth >=1440) {
+                mainData.style.display = "none";
+            }
         }
     })
+
+     if (screenWidth >= 1024 || screenWidth >=1440) {
+            mainData.style.display = "none";
+        }
 
 }
 
@@ -171,7 +180,7 @@ function locationpincode() {
     const instance = bootstrap.Offcanvas.getInstance(bootcontent);
     instance.hide();
 
-    
+
 
 
 
