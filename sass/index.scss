@@ -311,8 +311,26 @@
         background-color: #fff;
         border-radius: 12px;
         color: #6f7274;
+        position: relative;
     }
-
+       .text-span
+    {
+        width: 20ch;
+        overflow: hidden;
+        text-wrap: nowrap;
+        animation: run 4s steps(20) infinite alternate-reverse;
+    }
+    @keyframes run {
+        from{
+            width: 0ch;
+        }
+    }
+    .glass-work
+    {
+        position: absolute;
+        top: 14px;
+        right: 10px;
+    }
     .App-cart {
         display: none;
     }
@@ -741,6 +759,7 @@
         align-items: center;
         width: 380px;
         margin: auto;
+        
 
     }
 
@@ -750,11 +769,13 @@
         border: 1px solid #fff;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
         gap: 160px;
         background-color: #fff;
         border-radius: 12px;
         color: #6f7274;
+        position: relative;
+        padding: 0 12px;
     }
 
     .App-cart {
@@ -894,9 +915,10 @@
     .food-container,
     .instantshop-container,
     .dineout-container {
-        margin-left: 15px;
+        margin-left: 6px;
     }
-
+    
+    
     .food-container-title,
     .instantshop-container-title {
         font-size: 17px;
@@ -1090,6 +1112,74 @@
     {
         color: $primary-color;
     }
+    .text-span
+    {
+        width: 20ch;
+        overflow: hidden;
+        text-wrap: nowrap;
+        animation: run 4s steps(20) infinite alternate-reverse;
+    }
+    @keyframes run {
+        from{
+            width: 0ch;
+        }
+    }
+    .glass-work
+    {
+        position: absolute;
+        top: 14px;
+        right: 10px;
+    }
+    .locate-data
+    {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        position: absolute;
+        bottom: 100px;
+        width: 90%;
+        margin: auto;
+        height: 200px;
+        border-radius: 12px;
+    }
+    .pincodeinputtext
+    {
+        text-align: center;
+        padding: 3px;
+    }
+    .pincodeinp
+    {
+       width: 90%;
+    }
+    .inputs
+    {
+        padding: 0 40px;
+    }
+    .pincodeinp:focus
+    {
+        outline: none;
+    }
+    .liveloc
+    {
+        display: flex;
+        gap: 10px;
+        color: #fff;
+        justify-content: center;
+    }
+    .ipb
+    {
+        background-color: $primary-color;
+        width: 90%;
+        color: #fff;
+        margin-top: 20px;
+        text-align: center;
+
+    }
+    .title-data
+    {
+        position: absolute;
+        top: 0;
+        font-size: 20px;
+    }
     
 }
 
@@ -1224,6 +1314,25 @@
         gap: 200px;
         background-color: #fff;
         border-radius: 12px;
+        position: relative;
+    }
+       .text-span
+    {
+        width: 20ch;
+        overflow: hidden;
+        text-wrap: nowrap;
+        animation: run 4s steps(20) infinite alternate-reverse;
+    }
+    @keyframes run {
+        from{
+            width: 0ch;
+        }
+    }
+    .glass-work
+    {
+        position: absolute;
+        top: 14px;
+        right: 10px;
     }
 
     .App-cart {
@@ -1684,6 +1793,25 @@
         gap: 250px;
         background-color: #fff;
         border-radius: 12px;
+        position: relative;
+    }
+       .text-span
+    {
+        width: 20ch;
+        overflow: hidden;
+        text-wrap: nowrap;
+        animation: run 4s steps(20) infinite alternate-reverse;
+    }
+    @keyframes run {
+        from{
+            width: 0ch;
+        }
+    }
+    .glass-work
+    {
+        position: absolute;
+        top: 14px;
+        right: 10px;
     }
 
     .food-container-title,
@@ -2087,6 +2215,25 @@
         gap: 250px;
         background-color: #fff;
         border-radius: 12px;
+        position: relative;
+    }
+       .text-span
+    {
+        width: 20ch;
+        overflow: hidden;
+        text-wrap: nowrap;
+        animation: run 4s steps(20) infinite alternate-reverse;
+    }
+    @keyframes run {
+        from{
+            width: 0ch;
+        }
+    }
+    .glass-work
+    {
+        position: absolute;
+        top: 14px;
+        right: 10px;
     }
 
     .food-container-title,

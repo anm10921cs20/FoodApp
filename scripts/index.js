@@ -16,7 +16,7 @@ const year = new Date();
 var yeas = year.getFullYear()
 
 const yearData = document.getElementById('year');
-yearData.innerText=yeas;
+yearData.innerText = yeas;
 
 
 // data scroll bar
@@ -72,14 +72,6 @@ serachPage.addEventListener('click', () => {
 })
 
 
-// loader animation
-
-const loader = document.querySelector('.dots-container');
-
-window.addEventListener('load', () => {
-    loader.classList.add('loader-hidden')
-})
-
 
 
 // location
@@ -117,7 +109,7 @@ async function apicall() {
 
     }
 
-  
+
     if (!navigator.geolocation) {
         console.log('not support');
 
@@ -189,9 +181,9 @@ function locationpincode() {
 
 
 
-    
 
-    
+
+
 
 
 
@@ -214,7 +206,21 @@ datastores.innerText = locationStore.district + " " + locationStore.pincode;
 
 
 
+const imgFiles = document.querySelectorAll('.img-food');
 
- 
+imgFiles.forEach((item) => {
+    item.addEventListener('click', addClick)
+})
 
+
+
+function addClick(event) {
+    var names = event.target;
+    console.log(names.alt);
+    localStorage.setItem('itemname', names.alt);
+
+
+
+    window.location.href = './src/search/searchres.html';
+}
 
