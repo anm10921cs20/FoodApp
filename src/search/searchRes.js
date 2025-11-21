@@ -78,14 +78,6 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
              <button class="btn-closed text-dark fas fa-close" type="button" data-bs-dismiss="offcanvas" ></button>
            </div>
 
-          <div class="items-cont"><div class="details">
-        <p class="item-tit">${item.name}</p>
-        <p class="item-price">Rs.${item.price}</p>
-        </div>
-          <div class="img-det">
-        <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
-        </div></div>
-        <div class="line"></div>
 
 
 
