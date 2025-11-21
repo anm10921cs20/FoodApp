@@ -34,7 +34,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
        
        
          <div class="off-container">
-         <img src="${item.img}"  height="300px" width="100%" alt="${item.name}">
+         <img src="${item.img}"  height="300px" width="100%"  alt="${item.name}">
         </div>
         <div class="off-det">
             <div class="off-det-cont">
@@ -43,7 +43,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
              </div>
             
                 <div class="add-btns">
-                 <button type="button" class="add-btn-text">ADD</button>
+                 <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
                 </div>
               
         </div>
@@ -54,20 +54,67 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         </div>
         
         <div class="add-btn">
-        <button type="button" class="add-btn-text">ADD</button>
+        <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
         </div>
         
         <div class="img-det">
-        <img src="${item.img}"  alt="${item.name}">
-        </div></div>`
+        <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
+
+
+
+
+
+
+
+
+
+
+
+
+        </div></div>
+        
+           <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="item${item.id}">
+           <div class="offcanvas-header">
+             <button class="btn-closed text-dark fas fa-close" type="button" data-bs-dismiss="offcanvas" ></button>
+           </div>
+
+          <div class="items-cont"><div class="details">
+        <p class="item-tit">${item.name}</p>
+        <p class="item-price">Rs.${item.price}</p>
+        </div>
+          <div class="img-det">
+        <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
+        </div></div>
+        <div class="line"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           </div>
+        `
         document.getElementsByClassName('mahan')[0].appendChild(div);
         const offCanvsContainer = document.getElementById(`food${item.id}`);
         offCanvsContainer.style.height = "600px";
-        offCanvsContainer.style.borderTopLeftRadius="20px";
-        offCanvsContainer.style.borderTopRightRadius="20px";
+        offCanvsContainer.style.borderTopLeftRadius = "20px";
+        offCanvsContainer.style.borderTopRightRadius = "20px";
+
+        const addBtn = document.getElementsByClassName('add-btn-text')[0];
+
 
     })
 })
+
+
 
 
 
@@ -132,7 +179,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         <img src="${item.img}" height="100px" width="100px"  alt="${item.name}">
         </div><div class="detailss">
         <p class="item-tits">${item.name}</p>
-        <button class="more-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">Click Details <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="more-btn">Click Details <i class="fa-solid fa-chevron-right"></i></button>
         </div></div>
         
         
@@ -144,8 +191,8 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         document.getElementsByClassName('cuisines')[0].appendChild(div);
         const offCanvsContainer = document.getElementById(`food${item.id}`);
         offCanvsContainer.style.height = "600px";
-        offCanvsContainer.style.borderTopLeftRadius="20px";
-        offCanvsContainer.style.borderTopRightRadius="20px";
+        offCanvsContainer.style.borderTopLeftRadius = "20px";
+        offCanvsContainer.style.borderTopRightRadius = "20px";
 
     })
 })

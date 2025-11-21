@@ -450,6 +450,14 @@
         border-radius: 12px;
         object-fit: contain;
     }
+    .line
+    {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    #item1
+    {
+        height: 80vh;
+    }
     
 
 
@@ -646,6 +654,7 @@
         border-radius: 12px;
         object-fit: contain;
     }
+
     
 
 }

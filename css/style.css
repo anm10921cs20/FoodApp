@@ -698,6 +698,47 @@ body {
   .select-color {
     color: #ff9900;
   }
+  .locate-data {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    position: absolute;
+    bottom: 100px;
+    width: 90%;
+    margin: auto;
+    height: 200px;
+    border-radius: 12px;
+  }
+  .pincodeinputtext {
+    text-align: center;
+    padding: 3px;
+  }
+  .pincodeinp {
+    width: 90%;
+  }
+  .inputs {
+    padding: 0 40px;
+  }
+  .pincodeinp:focus {
+    outline: none;
+  }
+  .liveloc {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    justify-content: center;
+  }
+  .ipb {
+    background-color: #ff9900;
+    width: 90%;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .title-data {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+  }
 }
 @media only screen and (min-width: 400px) and (max-width: 767px) {
   .headerContainer {
@@ -1503,6 +1544,47 @@ body {
   }
   .select-color {
     color: #ff9900;
+  }
+  .locate-data {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    position: absolute;
+    bottom: 100px;
+    width: 90%;
+    margin: auto;
+    height: 200px;
+    border-radius: 12px;
+  }
+  .pincodeinputtext {
+    text-align: center;
+    padding: 3px;
+  }
+  .pincodeinp {
+    width: 90%;
+  }
+  .inputs {
+    padding: 0 40px;
+  }
+  .pincodeinp:focus {
+    outline: none;
+  }
+  .liveloc {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+    justify-content: center;
+  }
+  .ipb {
+    background-color: #ff9900;
+    width: 90%;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .title-data {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
