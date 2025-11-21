@@ -330,12 +330,6 @@
         width: 150px;
     }
 
-    .add-btn {
-        position: absolute;
-        bottom: 24px;
-        right: 60px;
-
-    }
 
     .item-tit {
         font-weight: 700;
@@ -363,6 +357,9 @@
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 4px;
         font-weight: 900;
+         position: absolute;
+        bottom: 24px;
+        right: 60px;
     }
 
     .dishes {
@@ -453,6 +450,10 @@
     #item1
     {
         height: 80vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: #f0f0f5;
+
     }
     
 

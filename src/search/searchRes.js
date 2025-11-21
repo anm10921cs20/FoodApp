@@ -53,10 +53,9 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         
         </div>
         
-        <div class="add-btn">
+      
         <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
-        </div>
-        
+       
         <div class="img-det">
         <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
 
@@ -100,7 +99,19 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         offCanvsContainer.style.borderTopLeftRadius = "20px";
         offCanvsContainer.style.borderTopRightRadius = "20px";
 
-        const addBtn = document.getElementsByClassName('add-btn-text')[0];
+        const addBtn = document.querySelectorAll('.add-btn-text');
+
+
+        addBtn.forEach((btn) => {
+            btn.addEventListener('click', additems)
+        })
+
+      
+
+
+
+
+
 
 
     })
@@ -188,3 +199,25 @@ db.ref(`${data}`).get('value').then((snapshot) => {
 
     })
 })
+
+
+
+
+  function additems(event) {
+            var btn = event.target;
+            var file = btn.parentElement.children[0];
+            var file1 = btn.parentElement.children[3];
+
+            console.log(file);
+            console.log(file1);
+            
+            const products = {
+                names:file.getElementsByClassName('item-tit')[0].innerText,
+                price:file.getElementsByClassName('item-price')[0].innerText,
+                img:file1.getElementsByTagName('img')[0].src
+
+            }
+
+            
+
+        }
