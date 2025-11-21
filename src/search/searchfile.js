@@ -15,7 +15,7 @@ db.ref('popularcuisines/').get('value').then((snapshot) => {
 
 })
 
-db.ref('Biriyani/').get('value').then((snapshot) => {
+db.ref('Biryani/').get('value').then((snapshot) => {
     const dataInstamart = snapshot.val();
     dataFilter.push(dataInstamart);
 
@@ -246,6 +246,32 @@ db.ref('Pancake/').get('value').then((snapshot) => {
 
 
 db.ref('Vada/').get('value').then((snapshot) => {
+    const dataInstamart = snapshot.val();
+    dataFilter.push(dataInstamart);
+
+
+
+
+}).catch(err => {
+    console.log(err.message);
+
+})
+
+
+db.ref('Dessert/').get('value').then((snapshot) => {
+    const dataInstamart = snapshot.val();
+    dataFilter.push(dataInstamart);
+
+
+
+
+}).catch(err => {
+    console.log(err.message);
+
+})
+
+
+db.ref('Tea/').get('value').then((snapshot) => {
     const dataInstamart = snapshot.val();
     dataFilter.push(dataInstamart);
 
