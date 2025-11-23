@@ -1,5 +1,5 @@
 
-const data = localStorage.getItem('itemname') || [];
+const data = localStorage.getItem('foodname') || [];
 const firebaseConfig = {
     apiKey: "AIzaSyAm--sfbEonD49xNHSWPWoeMbkwFXXqF4U",
     authDomain: "mahan-food-app.firebaseapp.com",
@@ -160,6 +160,149 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
 })
 
 
+db.ref(`${data}`).get('value').then((snapshot) => {
+    var datas = snapshot.val()
+    datas.forEach((item) => {
+       
+        
+        const div = document.createElement('div');
+        div.className = "items";
+        div.innerHTML += `<div class="items-cont"><div class="details">
+        <p class="item-tit">${item.name}</p>
+        <p class="item-price">Rs.${item.price}</p>
+        <button class="more-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">More Details <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        
+        
+        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="food${item.id}">
+       
+       
+         <div class="off-container">
+         <img src="${item.img}"  height="300px" width="100%"  alt="${item.name}">
+        </div>
+        <div class="off-det">
+            <div class="off-det-cont">
+            <p class="item-tit">${item.name}</p>
+             <p class="item-price">Rs.${item.price}</p>
+             </div>
+            
+                <div class="add-btns">
+                 <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
+                </div>
+              
+        </div>
+         <p class="item-details">${item.details}</p>
+         <button class="btn-closed fas fa-close" type="button" data-bs-dismiss="offcanvas" ></button>
+        
+        
+        </div>
+        
+     
+        <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
+      
+       
+        <div class="img-det">
+        <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
+
+
+
+
+
+
+
+
+
+
+
+
+        </div></div>
+        
+        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="item${item.id}">
+    <div class="offcanvas-header">
+    
+<div class="top-container">
+    <div class="prod-tit"><span class="prod-name">${item.name}</span> . <span class="prod-pric">Rs.${item.price}</span></div>
+    <p class="cyt">Customize as Per Your Taste</p>
+</div>
+        <button class="btn-closed text-dark fas fa-close" type="button" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="canvas-bodys">
+        <div class="items-conts">
+            <div class="details">
+                <p class="item-tit">${item.name}</p>
+                <p class="item-price">Rs.${item.price}</p>
+            </div>
+            <div class="img-det">
+                <img src="${item.img}" alt="${item.name}" >
+            </div>
+        </div>
+        <div class="taste">
+    <h1 class="sidetit">Sides (<Span class="countsitem">0</Span>/3)</h1><br>
+    <div class="sides">
+        
+    </div>
+</div>
+        
+        <div class="amt-dt">
+            <div class="amt">Rs.<span id="amt">${item.price}</span></div>
+            <br>
+        </div>
+        <button class="btn btn-success click">Add To Cart</button>
+    </div>
+</div>
+               
+
+           
+        `
+
+        document.getElementsByClassName('mahan')[0].appendChild(div);
+        const offCanvsContainer = document.getElementById(`food${item.id}`);
+        const offCanvsContainer1 = document.getElementById(`item${item.id}`);
+
+        offCanvsContainer.style.height = "600px";
+        offCanvsContainer.style.borderTopLeftRadius = "20px";
+        offCanvsContainer.style.borderTopRightRadius = "20px";
+        offCanvsContainer1.style.height = "90vh";
+        offCanvsContainer1.style.borderTopLeftRadius = "20px";
+        offCanvsContainer1.style.borderTopRightRadius = "20px";
+        offCanvsContainer1.style.backgroundColor = "#f0f0f5";
+
+        const screenwidth = innerWidth;
+
+        if (screenwidth > 1024) {
+            offCanvsContainer.style.width = "500px"
+            offCanvsContainer.style.margin = "100px 100px"
+            offCanvsContainer1.style.width = "500px"
+            offCanvsContainer1.style.margin = "100px 100px"
+
+
+        }
+
+        const btnClick = document.querySelectorAll('.click')
+
+        btnClick.forEach((btn) => {
+            btn.addEventListener('click', addtocart)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+})
+
+
+
 
 
 
@@ -201,51 +344,9 @@ dishes.addEventListener('click', () => {
     cuisenceContainer.style.display = "none";
 
 })
-dishes1.addEventListener('click', () => {
-    dishes1.classList.add('dishes-active')
-    dishes.classList.remove('dishes-active')
-    disheContainer.style.display = "none";
-    cuisenceContainer.style.display = "block";
-
-})
 
 
 
-// cuisines
-
-
-db.ref(`${data}`).get('value').then((snapshot) => {
-    var datas = snapshot.val()
-    datas.forEach((item) => {
-        const div = document.createElement('div');
-        div.className = "item";
-        div.innerHTML += `<div class="items-cont">
-        <div class="img-dets">
-        <img src="${item.img}" height="100px" width="100px"  alt="${item.name}">
-        </div><div class="detailss">
-        <p class="item-tits">${item.name}</p>
-        <button class="more-btn">Click Details <i class="fa-solid fa-chevron-right"></i></button>
-        </div></div>
-        
-        
-        
-        
-      
-        
-        `
-        document.getElementsByClassName('cuisines')[0].appendChild(div);
-        const data = document.querySelectorAll('.more-btn');
-       
-        
-        data.forEach((menu) =>{
-           
-            menu.addEventListener('click',clicked);
-          
-            
-        })
-
-    })
-})
 
 
 // main dish
@@ -282,22 +383,6 @@ function addtocart(event) {
 
 
 }
-
-
-// main cusines
-
-function clicked(event)
-{
-    var btn = event.target;
-    var value = btn.parentElement
-    var productvalue = value.children[0].innerText;
-    localStorage.setItem('foodname',productvalue)
-
-
-    window.location.href = '../foodresponce/foodresponce.html';
-}
-
-
 
 
 

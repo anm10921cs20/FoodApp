@@ -316,9 +316,65 @@ input.addEventListener('input', function (e) {
 
     // optional: render results if an element with id="results" exists
     const resultsEl = document.getElementsByClassName('results')[0];
-    if (resultsEl) {
-        resultsEl.innerHTML = matches.map(it => `<li class="list-content"><a class="list-anchor" href=""><div class="img-content"><img src="${it.img}" class="img-ctrl"></div> <div class="name-content"><p class="pr-name">${it.name}</p><p class="pr-rel">${it.rel}</p></div> </a> </li>`).join('');
 
-    }
+
+    matches.map(item=>{
+        const li = document.createElement('li');
+        li.className = 'list-content';
+        li.innerHTML+=    `<a class="list-anchor"><div class="img-content"><img src="${item.img}" class="img-ctrl" alt="${item.name}"></div> <div class="name-content"><p class="pr-name">${item.name}</p><p class="pr-rel">${item.rel}</p></div> </a>`
+        resultsEl.appendChild(li)
+
+        const value = document.querySelectorAll('.list-content');
+        value.forEach((items) => {
+            items.addEventListener('click', click)
+        })
+    })
+
 });
 
+
+
+function click()
+{
+
+   var doc = document.querySelectorAll('.img-ctrl');
+   doc.forEach((val) => {
+   val.addEventListener('click',alt)
+    
+   })
+   var docs = document.querySelectorAll('.pr-name')
+   docs.forEach(doc=>{
+    doc.addEventListener('click', value)
+    
+   })
+   
+   
+   
+
+    
+
+    
+    
+}
+
+function alt(event)
+{
+var value = event.target;
+var foodvalue = value.alt;
+
+localStorage.setItem('foodname',foodvalue)
+    window.location.href = '../foodresponce/foodresponce.html';
+    
+    
+}
+
+function value(event)
+{
+var values = event.target;
+var foodvalue = values.innerText;
+
+localStorage.setItem('foodname',foodvalue)
+    window.location.href = '../foodresponce/foodresponce.html';
+
+    
+}
