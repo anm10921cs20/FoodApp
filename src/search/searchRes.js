@@ -21,6 +21,8 @@ title.innerText = data;
 db.ref(`${data}Item`).get('value').then((snapshot) => {
     var datas = snapshot.val()
     datas.forEach((item) => {
+       
+        
         const div = document.createElement('div');
         div.className = "items";
         div.innerHTML += `<div class="items-cont"><div class="details">
@@ -53,8 +55,9 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         
         </div>
         
-      
+     
         <button type="button" class="add-btn-text" data-bs-toggle="offcanvas" data-bs-target="#item${item.id}">ADD</button>
+      
        
         <div class="img-det">
         <img src="${item.img}"  alt="${item.name} type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">
@@ -72,41 +75,80 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
 
         </div></div>
         
-           <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="item${item.id}">
-           <div class="offcanvas-header">
-             <button class="btn-closed text-dark fas fa-close" type="button" data-bs-dismiss="offcanvas" ></button>
-           </div>
+        <div class="offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="item${item.id}">
+    <div class="offcanvas-header">
+    
+<div class="top-container">
+    <div class="prod-tit"><span class="prod-name">${item.name}</span> . <span class="prod-pric">Rs.${item.price}</span></div>
+    <p class="cyt">Customize as Per Your Taste</p>
+</div>
+        <button class="btn-closed text-dark fas fa-close" type="button" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="canvas-bodys">
+        <div class="items-conts">
+            <div class="details">
+                <p class="item-tit">${item.name}</p>
+                <p class="item-price">Rs.${item.price}</p>
+            </div>
+            <div class="img-det">
+                <img src="${item.img}" alt="${item.name}" >
+            </div>
+        </div>
+        <div class="taste">
+    <h1 class="sidetit">Sides (<Span class="countsitem">0</Span>/3)</h1><br>
+    <div class="sides">
+        
+    </div>
+</div>
+        
+        <div class="amt-dt">
+            <div class="amt">Rs.<span id="amt">${item.price}</span></div>
+            <br>
+        </div>
+        <button class="btn btn-success click">Add To Cart</button>
+    </div>
+</div>
+               
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           </div>
+           
         `
+
         document.getElementsByClassName('mahan')[0].appendChild(div);
         const offCanvsContainer = document.getElementById(`food${item.id}`);
+        const offCanvsContainer1 = document.getElementById(`item${item.id}`);
+
         offCanvsContainer.style.height = "600px";
         offCanvsContainer.style.borderTopLeftRadius = "20px";
         offCanvsContainer.style.borderTopRightRadius = "20px";
+        offCanvsContainer1.style.height = "90vh";
+        offCanvsContainer1.style.borderTopLeftRadius = "20px";
+        offCanvsContainer1.style.borderTopRightRadius = "20px";
+        offCanvsContainer1.style.backgroundColor = "#f0f0f5";
 
-        const addBtn = document.querySelectorAll('.add-btn-text');
+        const screenwidth = innerWidth;
+
+        if (screenwidth > 1024) {
+            offCanvsContainer.style.width = "500px"
+            offCanvsContainer.style.margin = "100px 100px"
+            offCanvsContainer1.style.width = "500px"
+            offCanvsContainer1.style.margin = "100px 100px"
 
 
-        addBtn.forEach((btn) => {
-            btn.addEventListener('click', additems)
+        }
+
+        const btnClick = document.querySelectorAll('.click')
+
+        btnClick.forEach((btn) => {
+            btn.addEventListener('click', addtocart)
         })
 
-      
+
+
+
+
+
+
+
 
 
 
@@ -177,7 +219,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
     datas.forEach((item) => {
         const div = document.createElement('div');
         div.className = "item";
-        div.innerHTML += `<div class="items-conts">
+        div.innerHTML += `<div class="items-cont">
         <div class="img-dets">
         <img src="${item.img}" height="100px" width="100px"  alt="${item.name}">
         </div><div class="detailss">
@@ -192,32 +234,91 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         
         `
         document.getElementsByClassName('cuisines')[0].appendChild(div);
-        const offCanvsContainer = document.getElementById(`food${item.id}`);
-        offCanvsContainer.style.height = "600px";
-        offCanvsContainer.style.borderTopLeftRadius = "20px";
-        offCanvsContainer.style.borderTopRightRadius = "20px";
+        const data = document.querySelectorAll('.more-btn');
+       
+        
+        data.forEach((menu) =>{
+           
+            menu.addEventListener('click',clicked);
+          
+            
+        })
 
     })
 })
 
 
+// main dish
 
+function addtocart(event) {
+    var btn = event.target;
+    var value = btn.parentElement;
+    var productData = value.children[0];
 
-  function additems(event) {
-            var btn = event.target;
-            var file = btn.parentElement.children[0];
-            var file1 = btn.parentElement.children[3];
+    var mainData = productData.children[0];
+    var mainData1 = productData.children[1];
 
-            console.log(file);
-            console.log(file1);
-            
-            const products = {
-                names:file.getElementsByClassName('item-tit')[0].innerText,
-                price:file.getElementsByClassName('item-price')[0].innerText,
-                img:file1.getElementsByTagName('img')[0].src
+    const name = mainData.getElementsByClassName('item-tit')[0].innerText;
+    const price = mainData.getElementsByClassName('item-price')[0].innerText;
+    const img = mainData1.getElementsByTagName('img')[0].src;
 
+    const foodItems = {
+        name, price, img
+    }
+
+    let foodArray = JSON.parse(localStorage.getItem('cartfood')) || [];
+
+    const exist = foodArray.some(data => data.img === foodItems.img)
+
+    if (!exist) {
+        foodArray.push({ ...foodItems });
+        localStorage.setItem('cartfood', JSON.stringify(foodArray))
+        db.ref('cartFood/' + 'vishnu').set(
+            {
+                foodArray
             }
+        )
+    }
 
-            
 
-        }
+}
+
+
+// main cusines
+
+function clicked(event)
+{
+    var btn = event.target;
+    var value = btn.parentElement
+    var productvalue = value.children[0].innerText;
+    localStorage.setItem('itemname',productvalue)
+
+
+    window.location.href = './  searchres.html';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
