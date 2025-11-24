@@ -283,6 +283,18 @@ db.ref('Tea/').get('value').then((snapshot) => {
 
 })
 
+db.ref('Sandwich/').get('value').then((snapshot) => {
+    const dataInstamart = snapshot.val();
+    dataFilter.push(dataInstamart);
+
+
+
+
+}).catch(err => {
+    console.log(err.message);
+
+})
+
 
 
 

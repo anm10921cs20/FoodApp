@@ -224,7 +224,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         <img src="${item.img}" height="100px" width="100px"  alt="${item.name}">
         </div><div class="detailss">
         <p class="item-tits">${item.name}</p>
-        <button class="more-btn">Click Details <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="more-btn send-btn">Click Details <i class="fa-solid fa-chevron-right"></i></button>
         </div></div>
         
         
@@ -234,7 +234,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         
         `
         document.getElementsByClassName('cuisines')[0].appendChild(div);
-        const data = document.querySelectorAll('.more-btn');
+        const data = document.querySelectorAll('.send-btn');
        
         
         data.forEach((menu) =>{
