@@ -195,10 +195,10 @@ document.getElementsByClassName('ipb')[0].addEventListener('click', locationpinc
 var datastores = document.getElementsByClassName('locations-tit')[0];
 console.log(datastores);
 
-const locationStore = JSON.parse(localStorage.getItem('location'));
+const locationStore = JSON.parse(localStorage.getItem('location')) || [];
 console.log(locationStore);
 
-datastores.innerText = locationStore.district + " " + locationStore.pincode;
+datastores.innerText = locationStore.district + " " +locationStore.pincode ;
 
 
 
