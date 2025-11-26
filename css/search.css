@@ -225,6 +225,9 @@ header {
     width: 70px;
     border-radius: 12px;
   }
+  .list-content {
+    list-style-type: none;
+  }
 }
 @media only screen and (min-width: 400px) and (max-width: 767px) {
   .search-box-data {
@@ -327,6 +330,9 @@ header {
     width: 70px;
     border-radius: 12px;
   }
+  .list-content {
+    list-style-type: none;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .search-box-data {
@@ -424,6 +430,9 @@ header {
     height: 70px;
     width: 70px;
     border-radius: 12px;
+  }
+  .list-content {
+    list-style-type: none;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
@@ -822,7 +831,7 @@ header {
     padding: 0;
     width: 100%;
   }
-  .list-anchor {
+  .list-content a {
     display: flex;
     align-items: center;
     text-decoration: none;

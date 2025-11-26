@@ -4,16 +4,6 @@ const dataFilter = []
 
 
 
-db.ref('popularcuisines/').get('value').then((snapshot) => {
-    const dataInstamart = snapshot.val();
-    dataFilter.push(dataInstamart);
-
-
-
-}).catch(err => {
-    console.log(err.message);
-
-})
 
 db.ref('Biryani/').get('value').then((snapshot) => {
     const dataInstamart = snapshot.val();
