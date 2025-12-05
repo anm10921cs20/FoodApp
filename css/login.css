@@ -133,6 +133,15 @@
          text-align: center;
          color: #ff9900;
      }
+     .alerts
+     {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 90%;
+        height: 40px;
+     }
 
 
 
