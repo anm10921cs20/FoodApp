@@ -55,18 +55,4 @@ already.addEventListener('click', () => {
 })
 
 
-// click login
-
-const userbtn = document.getElementsByClassName('nav-btns')[0];
-const logincontainer = document.getElementsByClassName('login-container')[0];
-const closebtn = document.getElementsByClassName('close-btns')[0];
-
-
-userbtn.addEventListener('click', () => {
- logincontainer.style.display = "block";
-});
-
-closebtn.addEventListener('click', () => {
- logincontainer.style.display = "none";
-})
 

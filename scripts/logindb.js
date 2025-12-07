@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
 
 
 
@@ -29,54 +31,49 @@ const signUp = () => {
     const logincontainer = document.getElementsByClassName('signin-details')[0];
     const signupcontainer = document.getElementsByClassName('signup-details')[0];
 
-        const divfail = document.createElement('div');
-            divfail.className = "alerts"
-            divfail.innerHTML = `<div class="alert alert-danger d-flex align-items-center" role="alert">
-  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-  <div class="data">
-  
-  </div>
-</div>`;
 
- signupcontainer.appendChild(divfail);
-            const alertContainer = document.getElementsByClassName('alerts')[0];
-           
-            const alertText = document.getElementsByClassName('data')[0]
-           
-            var counter = 1;
-            var interval = setInterval(() => {
-                counter--;
-                if (counter < 0) {
-                    clearInterval(interval);
-                    alertContainer.style.display = "none";
-                }
-            }, 1000)
+
+    const alertContainer = document.getElementsByClassName('alerts')[0];
+
+    const alertText = document.getElementsByClassName('data')[0]
+
+    var counter = 1;
+    var interval = setInterval(() => {
+        counter--;
+        if (counter < 0) {
+            clearInterval(interval);
+            alertContainer.style.display = "none";
+        }
+    }, 1000)
 
     if (name === "") {
-         alertContainer.style.display = "block";
+        alertContainer.style.display = "block";
         alertText.innerText = 'please enter valid Details';
         return
 
     } else if (phoneNumber === "") {
-         alertContainer.style.display = "block";
-      alertText.innerText = 'please enter valid Details';
+        alertContainer.style.display = "block";
+        alertText.innerText = 'please enter valid Details';
         return
 
     }
     else if (email === "") {
-         alertContainer.style.display = "block";
+        alertContainer.style.display = "block";
         alertText.innerText = 'please enter valid Details';
         return
 
     }
     else if (password === "") {
-         alertContainer.style.display = "block";
+        alertContainer.style.display = "block";
         alertText.innerText = 'please enter valid Details';
         return
 
     }
     else {
+
         auth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
+            const alertContainer1 = document.getElementsByClassName('alerttrue')[0];
+            alertContainer1.style.display = "block";
             const user = userCredential.user;
             const uid = user.uid;
             console.log(uid);
@@ -91,19 +88,10 @@ const signUp = () => {
             // old state
 
 
-            const divSucces = document.createElement('div');
-            divSucces.className = "alerts"
-            divSucces.innerHTML = `<div class="alert alert-success d-flex align-items-center" role="alert">
-  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-  <div>
-  Registration Successful
-  </div>
-</div>`;
 
 
-            signupcontainer.appendChild(divSucces);
-            const alertContainer1 = document.getElementsByClassName('alerts')[1];
-            alertContainer1.style.display = "block";
+
+
 
             // close
             const names = document.getElementById('signupname');
@@ -128,7 +116,7 @@ const signUp = () => {
 
 
         }).catch((error) => {
-             alertContainer.style.display = "block";
+            alertContainer.style.display = "block";
             alertText.innerText = `${error.message}`;
 
         })
@@ -151,7 +139,23 @@ const signUp = () => {
 
 
 
-
+function resetPassword() {
+    const email = document.getElementById("forgetemail").value;
+    const forgetContainer = document.getElementsByClassName('forget-container')[0];
+    const logincontainer = document.getElementsByClassName('signin-details')[0];
+    auth.sendPasswordResetEmail(email)
+        .then(() => {
+            logincontainer.style.display = "flex";
+            forgetContainer.style.display = "none";
+            title.innerText = "Login";
+            alert("Password reset email sent!");
+            console.log("Reset email sent to:", email);
+        })
+        .catch((error) => {
+            console.error("Reset error:", error);
+            alert(error.message);
+        });
+}
 
 
 
@@ -159,35 +163,62 @@ const signUp = () => {
 const login = () => {
     const loginName = document.getElementById('signinemail').value;
     const loginPassword = document.getElementById('signinpassword').value;
-    
-  
+
+
 
     auth.signInWithEmailAndPassword(loginName, loginPassword).then((user) => {
+
+        
+
+
         const users = user.user;
         const uid = users.uid;
-        localStorage.setItem('uid',uid);
+    
+
+        localStorage.setItem('uid', uid);
         const localuid = localStorage.getItem('uid');
 
         const loginName1 = document.getElementById('signinemail').value = "";
         const loginPassword1 = document.getElementById('signinpassword').value = "";
+        if (localStorage.getItem('uid') == uid) {
+            document.getElementsByClassName('display')[0].style.display = "block";
+            const logincontainer = document.getElementsByClassName('login-container')[0];
+            logincontainer.style.display = "none";
+        }
+
+
 
         firestore.collection('client').doc(localuid).get().then((doc) => {
             const data = doc.data();
-           const dataname = data.name;
-           const dataphone = data.phoneNumber;
-           const dataemail = data.email;
-           localStorage.setItem('name',dataname)
-           localStorage.setItem('email',dataemail)
-           localStorage.setItem('phonenumber',dataphone)
+            const dataname = data.name;
+            const dataphone = data.phoneNumber;
+            const dataemail = data.email;
+            localStorage.setItem('name', dataname)
+            localStorage.setItem('email', dataemail)
+            localStorage.setItem('phonenumber', dataphone)
 
 
-            
 
-            
+
+
         })
-    }).catch((error)=> {
-        console.log(error.message);
-        
+    }).catch((error) => {
+        const alertContainertrue = document.getElementsByClassName('alerts')[0];
+
+        const alertText = document.getElementsByClassName('data')[0]
+        alertContainertrue.style.display = "block";
+        alertText.innerText = error.message;
+
+           var counter = 1;
+        var interval = setInterval(() => {
+            counter--;
+            if (counter < 0) {
+                clearInterval(interval);
+                alertContainertrue.style.display = "none";
+                alertText.innerText = ""
+            }
+        }, 1000)
     })
-    
+
 }
+

@@ -135,12 +135,28 @@
      }
      .alerts
      {
+         position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20000000000000000000000;
+        width: 100%;
+        border-radius: 0px;
         display: none;
+     }
+     .alerttrue
+     {
         position: absolute;
         top: 0;
-        left: 20px;
-        width: 90%;
-        height: 40px;
+        z-index: 20000000000000000000000;
+        width: 100%;
+        border-radius: 0px;
+        display: none;
+     }
+
+     .display
+     {
+        position: absolute;
+        top: 0;
      }
 
 
@@ -154,6 +170,7 @@
      {
          display: none;
      }
+  
    
    
  
