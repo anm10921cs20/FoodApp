@@ -388,7 +388,7 @@ function addtocart(event) {
             alertText.innerText = "Succesfully Added To Cart"
               setTimeout(function(){
                   alertbox.style.display = "none";
-            },7000)
+            },4000)
             
             db.ref("MahanFoodCart/" + name + uid).set(
                 {
@@ -405,7 +405,7 @@ function addtocart(event) {
 
             setTimeout(function(){
                   alertbox.style.display = "none";
-            },7000)
+            },4000)
 
         }
 

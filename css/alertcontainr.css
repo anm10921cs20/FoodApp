@@ -49,7 +49,7 @@
 	padding: 1.75rem 1.25rem 1.25rem;
 	overflow: clip;
 	transform: translateX(calc(100% + var(--notification-inset)));
-	animation: slideInOut 10s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
 	animation-play-state: var(--animation-play-state);
 
 	&:hover {
@@ -64,7 +64,7 @@
 		background-color: #49a87d;
 		transform-origin: left;
 		position: absolute;
-		animation: countdown 10s infinite linear;
+		animation: countdown 4s infinite linear;
 		animation-play-state: var(--animation-play-state);
 	}
 
@@ -169,7 +169,7 @@
 	padding: 1.75rem 1.25rem 1.25rem;
 	overflow: clip;
 	transform: translateX(calc(100% + var(--notification-inset)));
-	animation: slideInOut 10s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
 	animation-play-state: var(--animation-play-state);
 
 	&:hover {
@@ -184,7 +184,7 @@
 		background-color: #49a87d;
 		transform-origin: left;
 		position: absolute;
-		animation: countdown 10s infinite linear;
+		animation: countdown 4s infinite linear;
 		animation-play-state: var(--animation-play-state);
 	}
 
@@ -291,7 +291,7 @@
 	padding: 1.75rem 1.25rem 1.25rem;
 	overflow: clip;
 	transform: translateX(calc(100% + var(--notification-inset)));
-	animation: slideInOut 10s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
 	animation-play-state: var(--animation-play-state);
 
 	&:hover {
@@ -306,7 +306,7 @@
 		background-color: #49a87d;
 		transform-origin: left;
 		position: absolute;
-		animation: countdown 10s infinite linear;
+		animation: countdown 4s infinite linear;
 		animation-play-state: var(--animation-play-state);
 	}
 
@@ -410,7 +410,7 @@
 	padding: 1.75rem 1.25rem 1.25rem;
 	overflow: clip;
 	transform: translateX(calc(100% + var(--notification-inset)));
-	animation: slideInOut 10s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
 	animation-play-state: var(--animation-play-state);
 
 	&:hover {
@@ -425,7 +425,7 @@
 		background-color: #49a87d;
 		transform-origin: left;
 		position: absolute;
-		animation: countdown 10s infinite linear;
+		animation: countdown 4s infinite linear;
 		animation-play-state: var(--animation-play-state);
 	}
 
@@ -530,7 +530,7 @@
 	padding: 1.75rem 1.25rem 1.25rem;
 	overflow: clip;
 	transform: translateX(calc(100% + var(--notification-inset)));
-	animation: slideInOut 10s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
 	animation-play-state: var(--animation-play-state);
 
 	&:hover {
@@ -545,7 +545,7 @@
 		background-color: #49a87d;
 		transform-origin: left;
 		position: absolute;
-		animation: countdown 10s infinite linear;
+		animation: countdown 4s infinite linear;
 		animation-play-state: var(--animation-play-state);
 	}
 

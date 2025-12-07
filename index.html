@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
 
+ 
+
     <!-- fiere base -->
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -79,7 +81,7 @@
                             <li><a href="">Foods</a></li>
                             <div class="mobile-data locate-data">
                                 <li class="display" onclick="signOutUser()">log out</li>
-                                
+
                                 <div class="bodycontent">
                                     <p class="pincodeinputtext">Use Pincode to Check Delivery Info</p>
                                 </div>
@@ -93,7 +95,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <li class="getapp">Partner Account <i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                            <li class="getapp">Partner Account <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </li>
                             <li class="mobile-data title-data"><i class="fas fa-location"></i> <span
                                     class="locations-tit"> Set Location</span></li>
                             <li class="signin">SignIn</li>
@@ -161,6 +164,25 @@
                     </div>
                 </div>
             </div>
+            <!-- main container -->
+
+            <main class="main-container">
+                <header>
+                    My Cart <span id="cart-count">(0)</span>
+                </header>
+                <div class="cart-container">
+                    <div class="cart-content">
+                        <div class="products-list">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="total-container">
+                    <div class="Total">Total: <span id="totalAmt">0</span></div>
+                    <button>CheckOut</button>
+                </div>
+            </main>
+
         </div>
     </div>
 
@@ -594,7 +616,7 @@
                     </div>
                 </div>
 
-                
+
             </main>
 
         </div>
@@ -672,4 +694,5 @@
 <script src="./scripts/auth.js"></script>
 <script src="./scripts/google.js"></script>
 
+<script src="./scripts/cartpop.js"></script>
 </html>
