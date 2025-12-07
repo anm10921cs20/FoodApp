@@ -27,7 +27,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         div.className = "items";
         div.innerHTML += `<div class="items-cont"><div class="details">
         <p class="item-tit">${item.name}</p>
-        <p class="item-price">Rs.${item.price}</p>
+        <p class="item-price">Rs.<span class="item-price">${item.price}</span></p>
         <button class="more-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#food${item.id}">More Details <i class="fa-solid fa-chevron-right"></i></button>
         </div>
         

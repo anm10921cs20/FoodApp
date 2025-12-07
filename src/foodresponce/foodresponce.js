@@ -230,7 +230,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         <div class="items-conts">
             <div class="details">
                 <p class="item-tit">${item.name}</p>
-                <p class="item-price">Rs.${item.price}</p>
+                <p class="item-price">Rs.<span class="item-price">${item.price}</span></p>
             </div>
             <div class="img-det">
                 <img src="${item.img}" alt="${item.name}" >
