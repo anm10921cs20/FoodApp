@@ -352,34 +352,78 @@ dishes.addEventListener('click', () => {
 // main dish
 
 function addtocart(event) {
-    var btn = event.target;
-    var value = btn.parentElement;
-    var productData = value.children[0];
+  
+    const uid = localStorage.getItem('uid');
+   
 
-    var mainData = productData.children[0];
-    var mainData1 = productData.children[1];
 
-    const name = mainData.getElementsByClassName('item-tit')[0].innerText;
-    const price = mainData.getElementsByClassName('item-price')[0].innerText;
-    const img = mainData1.getElementsByTagName('img')[0].src;
+    if (uid) {
+        var btn = event.target;
+        var value = btn.parentElement;
+        var productData = value.children[0];
 
-    const foodItems = {
-        name, price, img
+        var mainData = productData.children[0];
+        var mainData1 = productData.children[1];
+
+        const name = mainData.getElementsByClassName('item-tit')[0].innerText;
+        const price = mainData.getElementsByClassName('item-price')[0].innerText;
+        const img = mainData1.getElementsByTagName('img')[0].src;
+
+        const foodItems = {
+            name, price, img
+        }
+
+        let foodArray = JSON.parse(localStorage.getItem('cartfood')) || [];
+
+        const exist = foodArray.some(data => data.img === foodItems.img)
+
+        if (!exist) {
+            foodArray.push({ ...foodItems });
+            localStorage.setItem('cartfood', JSON.stringify(foodArray))
+            const name = localStorage.getItem('name');
+            console.log(name);
+            const alertText = document.getElementsByClassName('notification__text')[1];
+              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Succesfully Added To Cart"
+              setTimeout(function(){
+                  alertbox.style.display = "none";
+            },7000)
+            
+            db.ref("MahanFoodCart/" + name + uid).set(
+                {
+                    foodCart : foodArray
+                }
+            )
+        }
+        else
+        {
+            const alertText = document.getElementsByClassName('notification__text')[1];
+              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Already Added To Cart"
+
+            setTimeout(function(){
+                  alertbox.style.display = "none";
+            },7000)
+
+        }
+
+
+    }else
+    {
+        const alertbox = document.getElementsByClassName('alert-container')[0];
+            alertbox.style.display = "block";
+        setTimeout(function(){
+           
+             window.location.href = "../../index.html";
+        console.log('please login');
+        },3000)
+        
     }
 
-    let foodArray = JSON.parse(localStorage.getItem('cartfood')) || [];
 
-    const exist = foodArray.some(data => data.img === foodItems.img)
 
-    if (!exist) {
-        foodArray.push({ ...foodItems });
-        localStorage.setItem('cartfood', JSON.stringify(foodArray))
-        db.ref('cartFood/' + 'vishnu').set(
-            {
-                foodArray
-            }
-        )
-    }
 
 
 }

@@ -12,6 +12,7 @@
 
     <link rel="icon" type="text/png" href="../../images/logo/Food App.png">
     <link rel="stylesheet" href="../../css/searchres.css">
+    <link rel="stylesheet" href="../../css/alertcontainr.css">
 
 
 
@@ -67,6 +68,45 @@
         <div class="mahan"></div>
         <div class="cuisines"><br></div>
     </main>
+
+    
+
+    <div class="alert-container">
+        <div id="notification" popover- class="notification" role="alert" aria-live="assertive" aria-atomic="true"
+            closedby="anny">
+            <div class="notification__icon"></div>
+            <div class="notification__body">
+                <h2 class="notification__header">Please Login</h2>
+                <p class="notification__text">Could Not login Not Working Cart</p>
+            </div>
+            <div class="notification__action">
+                <button class="button" aria-label="dismiss this notification">
+                    <span aria-hidden="true">✕</span>
+                </button>
+            </div>
+        </div>
+        <!--
+<button popovertarget="notification">Save</button>
+-->
+    </div>
+
+      <div class="alert-container-true">
+        <div id="notification" popover- class="notification" role="alert" aria-live="assertive" aria-atomic="true"
+            closedby="anny">
+            <div class="notification__icon"></div>
+            <div class="notification__body">
+                <p class="notification__text">added Success</p>
+            </div>
+            <div class="notification__action">
+                <button class="button" aria-label="dismiss this notification">
+                    <span aria-hidden="true">✕</span>
+                </button>
+            </div>
+        </div>
+        <!--
+<button popovertarget="notification">Save</button>
+-->
+    </div>
 
 </body>
 <script src="./searchRes.js"></script>

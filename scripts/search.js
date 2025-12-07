@@ -196,3 +196,24 @@ console.log(locationStore);
 datastores.innerText = locationStore.district + " " + locationStore.pincode;
 
 
+
+
+// login register
+
+
+const uid = localStorage.getItem('uid');
+const name = localStorage.getItem('name');
+const signdata = document.getElementsByClassName('singdata')[0];
+
+if(uid)
+{
+    signdata.innerText = name;
+    signdata.style.textTransform = "uppercase";
+    signdata.addEventListener('click', () =>{
+         window.location.reload()
+    }) 
+}
+else
+{
+    signdata.innerText = "Sign In";
+}

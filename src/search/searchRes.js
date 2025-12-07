@@ -21,8 +21,8 @@ title.innerText = data;
 db.ref(`${data}Item`).get('value').then((snapshot) => {
     var datas = snapshot.val()
     datas.forEach((item) => {
-       
-        
+
+
         const div = document.createElement('div');
         div.className = "items";
         div.innerHTML += `<div class="items-cont"><div class="details">
@@ -235,13 +235,13 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         `
         document.getElementsByClassName('cuisines')[0].appendChild(div);
         const data = document.querySelectorAll('.send-btn');
-       
-        
-        data.forEach((menu) =>{
-           
-            menu.addEventListener('click',clicked);
-          
-            
+
+
+        data.forEach((menu) => {
+
+            menu.addEventListener('click', clicked);
+
+
         })
 
     })
@@ -251,34 +251,75 @@ db.ref(`${data}`).get('value').then((snapshot) => {
 // main dish
 
 function addtocart(event) {
-    var btn = event.target;
-    var value = btn.parentElement;
-    var productData = value.children[0];
 
-    var mainData = productData.children[0];
-    var mainData1 = productData.children[1];
 
-    const name = mainData.getElementsByClassName('item-tit')[0].innerText;
-    const price = mainData.getElementsByClassName('item-price')[0].innerText;
-    const img = mainData1.getElementsByTagName('img')[0].src;
+    const uid = localStorage.getItem('uid');
+   
 
-    const foodItems = {
-        name, price, img
+
+    if (uid) {
+        var btn = event.target;
+        var value = btn.parentElement;
+        var productData = value.children[0];
+
+        var mainData = productData.children[0];
+        var mainData1 = productData.children[1];
+
+        const name = mainData.getElementsByClassName('item-tit')[0].innerText;
+        const price = mainData.getElementsByClassName('item-price')[0].innerText;
+        const img = mainData1.getElementsByTagName('img')[0].src;
+
+        const foodItems = {
+            name, price, img
+        }
+
+        let foodArray = JSON.parse(localStorage.getItem('cartfood')) || [];
+
+        const exist = foodArray.some(data => data.img === foodItems.img)
+
+        if (!exist) {
+            foodArray.push({ ...foodItems });
+            localStorage.setItem('cartfood', JSON.stringify(foodArray))
+            const name = localStorage.getItem('name');
+            const alertText = document.getElementsByClassName('notification__text')[1];
+              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Succesfully Added To Cart";
+              setTimeout(function(){
+                  alertbox.style.display = "none";
+            },7000)
+            
+            db.ref("MahanFoodCart/" + name + uid).set(
+                {
+                    foodCart : foodArray
+                }
+            )
+        }
+        else
+        {
+            const alertText = document.getElementsByClassName('notification__text')[1];
+              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Already Added To Cart"
+              setTimeout(function(){
+                  alertbox.style.display = "none";
+            },7000)
+
+        }
+
+
+    }else
+    {
+          const alertbox = document.getElementsByClassName('alert-container')[0];
+            alertbox.style.display = "block";
+        setTimeout(function(){
+           
+             window.location.href = "../../index.html";
+        console.log('please login');
+        },3000)
+        
     }
 
-    let foodArray = JSON.parse(localStorage.getItem('cartfood')) || [];
-
-    const exist = foodArray.some(data => data.img === foodItems.img)
-
-    if (!exist) {
-        foodArray.push({ ...foodItems });
-        localStorage.setItem('cartfood', JSON.stringify(foodArray))
-        db.ref('cartFood/' + 'vishnu').set(
-            {
-                foodArray
-            }
-        )
-    }
 
 
 }
@@ -286,12 +327,11 @@ function addtocart(event) {
 
 // main cusines
 
-function clicked(event)
-{
+function clicked(event) {
     var btn = event.target;
     var value = btn.parentElement
     var productvalue = value.children[0].innerText;
-    localStorage.setItem('foodname',productvalue)
+    localStorage.setItem('foodname', productvalue)
 
 
     window.location.href = '../foodresponce/foodresponce.html';

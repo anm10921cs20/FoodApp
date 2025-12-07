@@ -13,7 +13,6 @@ function loginWithGoogle() {
             )
 
             if (user.emailVerified === true) {
-                document.getElementsByClassName('display')[0].style.display = "block";
                 const logincontainer = document.getElementsByClassName('login-container')[0];
                 logincontainer.style.display = "none";
                 localStorage.setItem('name', user.displayName);
@@ -37,7 +36,6 @@ function signOutUser() {
             console.log("User signed out");
             alert("Signed out successfully");
             const logincontainer = document.getElementsByClassName('login-container')[0];
-            document.getElementsByClassName('display')[0].style.display = "none";
             logincontainer.style.display = "block";
             localStorage.removeItem('name');
             localStorage.removeItem('email')
