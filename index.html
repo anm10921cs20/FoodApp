@@ -13,7 +13,8 @@
     <!-- alert-cotnainer -->
 
     <link rel="stylesheet" href="./css/alertcontainr.css">
- 
+    <link rel="stylesheet" href="./css/cartpop.css">
+
 
     <!-- fiere base -->
 
@@ -22,8 +23,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
-
-
+<!-- pop up cart -->
+    
     <!-- bootstrap File -->
     <link rel="stylesheet" href="../bootstrap-5.3.5-dist/css/bootstrap.min.css">
     <!-- font awesome icon -->
@@ -107,6 +108,7 @@
                             <div class="App-cart" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#cart-container">
                                 <li><i class="fa-solid fa-cart-shopping"></i></li>
+                                     <div class="cart-count">0</div>
                             </div>
                         </ul>
                     </nav>
@@ -153,13 +155,15 @@
             </div>
         </div>
     </header><br>
+
     <!-- off canvas cart -->
     <div class="offcanvas-container">
         <div class="offcanvas offcanvas-end" tabindex="-1" data-bs-backdrop="static" id="cart-container">
             <div class="offcanvas-headers">
                 <div class="offcanvas-heading">
                     <div class="cart-title-container">
-                        <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Cart</h1>
+                        <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Cart (<span
+                                id="cart-count">0</span>)</h1>
                     </div>
                     <div class="cart-close-btn-container">
                         <button type="button" class=" close-off fas fa-close" data-bs-dismiss="offcanvas"
@@ -167,24 +171,26 @@
                     </div>
                 </div>
             </div>
-            <!-- main container -->
+            <!-- cart container -->
 
-            <main class="main-container">
-                <header>
-                    My Cart <span id="cart-count">(0)</span>
-                </header>
-                <div class="cart-container">
-                    <div class="cart-content">
-                        <div class="products-list">
 
-                        </div>
+
+            <div class="cart-container">
+                <div class="cart-content">
+                    <div class="products-list">
+
                     </div>
                 </div>
-                <div class="total-container">
-                    <div class="Total">Total: <span id="totalAmt">0</span></div>
-                    <button>CheckOut</button>
-                </div>
-            </main>
+            </div>
+            <div class="total-container">
+                <div class="Total">Total: <span id="totalAmt">0</span></div>
+                <button>CheckOut</button>
+            </div>
+
+
+
+
+
 
         </div>
     </div>
@@ -195,7 +201,7 @@
 
 
 
- <div class="alert-container-true">
+    <div class="alert-container-true">
         <div id="notification" popover- class="notification" role="alert" aria-live="assertive" aria-atomic="true"
             closedby="anny">
             <div class="notification__icon"></div>
@@ -712,6 +718,8 @@
 <script src="./scripts/logindb.js"></script>
 <script src="./scripts/auth.js"></script>
 <script src="./scripts/google.js"></script>
-
 <script src="./scripts/cartpop.js"></script>
+
+
+
 </html>

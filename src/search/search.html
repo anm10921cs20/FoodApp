@@ -12,6 +12,7 @@
     <link rel="icon" type="text/png" href="../../images/logo/Food App.png">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/cartpop.css">
 
     <!-- fiere base -->
 
@@ -101,10 +102,11 @@
     <!-- off canvas cart -->
     <div class="offcanvas-container">
         <div class="offcanvas offcanvas-end" tabindex="-1" data-bs-backdrop="static" id="cart-container">
-            <div class="offcanvas-headers">
+               <div class="offcanvas-headers">
                 <div class="offcanvas-heading">
                     <div class="cart-title-container">
-                        <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Cart</h1>
+                        <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Cart (<span
+                                id="cart-count">0</span>)</h1>
                     </div>
                     <div class="cart-close-btn-container">
                         <button type="button" class=" close-off fas fa-close" data-bs-dismiss="offcanvas"
@@ -112,6 +114,22 @@
                     </div>
                 </div>
             </div>
+            <!-- cart container -->
+
+
+
+            <div class="cart-container">
+                <div class="cart-content">
+                    <div class="products-list">
+
+                    </div>
+                </div>
+            </div>
+            <div class="total-container">
+                <div class="Total">Total: <span id="totalAmt">0</span></div>
+                <button>CheckOut</button>
+            </div>
+
         </div>
     </div>
 
@@ -189,6 +207,7 @@
 
 <script src="../../scripts/search.js"></script>
 <script src="./searchfile.js"></script>
+<script src="../../scripts/cartpop.js"></script>
 
 <!-- bootStrap Scripts -->
 <script src="../../bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>

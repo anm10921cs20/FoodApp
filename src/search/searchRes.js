@@ -147,8 +147,10 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         offCanvsContainer1.style.backgroundColor = "#f0f0f5";
 
         const screenwidth = innerWidth;
+        console.log(screenwidth);
+        
 
-        if (screenwidth > 1024) {
+        if (screenwidth >= 1024) {
             offCanvsContainer.style.width = "500px"
             offCanvsContainer.style.margin = "100px 100px"
             offCanvsContainer1.style.width = "500px"

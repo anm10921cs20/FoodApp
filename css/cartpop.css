@@ -1,0 +1,220 @@
+/* laptops */
+@media only screen and (min-width:1024px) and (max-width:1439px) {
+    .cart-container {
+        padding: 10px 0;
+        height: 86vh;
+        overflow-y: scroll;
+    }
+
+    .product-content {
+        display: flex;
+        gap: 30px;
+    }
+
+    .product-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 10px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        align-items: center;
+    }
+
+    .product-img img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .productname {
+        font-size: 12px;
+        color: #ff9900;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: 36ch;
+    }
+
+    .productprice {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .fa-trash-can {
+        color: #ff4343;
+    }
+     .fa-trash-can:hover {
+        color: #ff4343cc;
+    }
+
+    .product-emptyContainer {
+        display: flex;
+        height: 50vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .empty-text {
+        color: #ff9900;
+        font-weight: 600;
+        font-size: 28px;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .product-empty button {
+        color: #fff;
+        border: none;
+        background-color: #ff9900;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
+    .total-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    .Total {
+        color: #ff9900;
+        font-weight: 700;
+        font-size: 17px;
+        text-shadow: 1px 1px 2px #d4c6c6;
+    }
+
+    .total-container button {
+        border: none;
+        padding: 5px 30px;
+        background-color: #ff9900;
+        color: #fff;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -18px;
+        left: 10px;
+        background-color: red;
+        color: white;
+        width: 6px;
+        height: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+/* desktop */
+@media only screen and (min-width:1440px) and (max-width:2159px) {
+    .cart-container {
+        padding: 10px 0;
+        height: 86vh;
+        overflow-y: scroll;
+    }
+
+    .product-content {
+        display: flex;
+        gap: 30px;
+    }
+
+    .product-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 10px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        align-items: center;
+    }
+
+    .product-img img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .productname {
+        font-size: 12px;
+        color: #ff9900;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: 36ch;
+    }
+
+    .productprice {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .fa-trash-can {
+        color: #ff4343;
+    }
+
+    .fa-trash-can:hover {
+        color: #bd4b4b;
+    }
+
+    .product-emptyContainer {
+        display: flex;
+        height: 50vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .empty-text {
+        color: #ff9900;
+        font-weight: 600;
+        font-size: 28px;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .product-empty button {
+        color: #fff;
+        border: none;
+        background-color: #ff9900;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
+    .total-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    .Total {
+        color: #ff9900;
+        font-weight: 700;
+        font-size: 17px;
+        text-shadow: 1px 1px 2px #d4c6c6;
+    }
+
+    .total-container button {
+        border: none;
+        padding: 5px 30px;
+        background-color: #ff9900;
+        color: #fff;
+    }
+
+}

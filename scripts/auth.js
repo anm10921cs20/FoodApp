@@ -13,10 +13,15 @@ auth.onAuthStateChanged(function (user) {
             window.location.href = "./src/search/search.html";
         })
         const signin = document.getElementsByClassName('signin')[0];
-        const localName = localStorage.getItem('name');
-        signin.innerHTML = `<i class="fas fa-user-circle"></i> ${localName.slice(0,10)}`;
+        signin.innerHTML = `<i class="fas fa-user-circle"></i>`;
+        signin.style.fontSize = "23px";
+        signin.style.border = "none";
         signin.style.backgroundColor = "transparent";
-        signin.style.borderColor = "#fff"; 
+        signin.style.cursor = "pointer";
+
+        signin.addEventListener('click', () => {
+            alert('user')
+        })
 
     }
     else {
