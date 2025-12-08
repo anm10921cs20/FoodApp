@@ -39,7 +39,7 @@
     .cart-container
     {
         padding: 10px 0;
-        height: 760px;
+        height: 720px;
         overflow-y: scroll;
     }
     .product-content
@@ -85,7 +85,7 @@
     .product-emptyContainer
     {
         display: flex;
-        height: 80vh;
+        height: 60vh;
         width: 100%;
         justify-content: center;
         align-items: center;

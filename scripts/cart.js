@@ -43,9 +43,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
             for (var i = 0; i < productContainer.length; i++) {
                 const productsList = productContainer[i];
                 const priceElement = productsList.getElementsByClassName('productprice')[0].innerText;
-                console.log(priceElement);
                 var price = parseFloat(priceElement.slice(3));
-                console.log(price);
                 total = total + price
 
 
