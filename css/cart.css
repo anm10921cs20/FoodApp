@@ -85,7 +85,7 @@
     .product-emptyContainer
     {
         display: flex;
-        height: 60vh;
+        height: 70vh;
         width: 100%;
         justify-content: center;
         align-items: center;
@@ -113,6 +113,8 @@
         align-items: center;
         height: 50px;
         padding: 0 20px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
     }
     .Total
     {
