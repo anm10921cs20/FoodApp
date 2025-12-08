@@ -9,8 +9,8 @@ const uids = localStorage.getItem('uid');
 
 
 
-db.ref("MahanFoodCart/" + names + uids).get('value').then(async (snapshot) => {
-    const responce = await snapshot.val()
+db.ref("MahanFoodCart/" + names + uids).get('value').then( (snapshot) => {
+    const responce =  snapshot.val()
 
     // array destructuring
 
