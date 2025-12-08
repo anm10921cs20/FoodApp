@@ -247,7 +247,7 @@ db.ref(`${data}`).get('value').then((snapshot) => {
             <div class="amt">Rs.<span id="amt">${item.price}</span></div>
             <br>
         </div>
-        <button class="btn btn-success click">Add To Cart</button>
+        <button class="btn btn-success click food${item.id}">Add To Cart</button>
     </div>
 </div>
                
@@ -258,6 +258,14 @@ db.ref(`${data}`).get('value').then((snapshot) => {
         document.getElementsByClassName('mahan')[0].appendChild(div);
         const offCanvsContainer = document.getElementById(`food${item.id}`);
         const offCanvsContainer1 = document.getElementById(`item${item.id}`);
+
+
+        const buttons = document.getElementsByClassName(`food${item.id}`)[0];
+        buttons.addEventListener('click', () => {
+            const myModal = new bootstrap.Modal(offCanvsContainer1);
+         myModal.hide();
+        })
+         
 
         offCanvsContainer.style.height = "600px";
         offCanvsContainer.style.borderTopLeftRadius = "20px";

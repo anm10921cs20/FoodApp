@@ -20,11 +20,24 @@ function loginWithGoogle() {
                 localStorage.setItem('uid', user.uid)
             }
 
-            alert("Welcome " + user.displayName);
+            const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Welcome " + user.displayName;
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 4000)
+
         })
         .catch((error) => {
             console.error("Error:", error);
-            alert(error.message);
+            const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Error " + error.message;
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 4000)
         });
 
 
@@ -33,14 +46,21 @@ function loginWithGoogle() {
 function signOutUser() {
     auth.signOut()
         .then(() => {
-            console.log("User signed out");
-            alert("Signed out successfully");
-            const logincontainer = document.getElementsByClassName('login-container')[0];
-            logincontainer.style.display = "block";
+            const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Sign out Successfully"
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 3000)
+
+         
             localStorage.removeItem('name');
             localStorage.removeItem('email')
             localStorage.removeItem('uid')
-            window.location.reload();
+            localStorage.removeItem('cartfood')
+            localStorage.removeItem('phonenumber')
+          
         })
         .catch((error) => {
             console.error("Sign out error:", error);

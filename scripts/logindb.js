@@ -196,7 +196,13 @@ const login = () => {
             localStorage.setItem('name', dataname)
             localStorage.setItem('email', dataemail)
             localStorage.setItem('phonenumber', dataphone)
-
+             const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Welcome " + dataname;  
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 5000)
 
 
 

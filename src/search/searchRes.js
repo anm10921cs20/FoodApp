@@ -105,7 +105,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
             <div class="amt">Rs.<span id="amt">${item.price}</span></div>
             <br>
         </div>
-        <button class="btn btn-success click">Add To Cart</button>
+        <button class="btn btn-success click food${item.id}">Add To Cart</button>
     </div>
 </div>
                
@@ -116,6 +116,27 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         document.getElementsByClassName('mahan')[0].appendChild(div);
         const offCanvsContainer = document.getElementById(`food${item.id}`);
         const offCanvsContainer1 = document.getElementById(`item${item.id}`);
+
+        const buttons = document.querySelectorAll(`.food${item.id}`);
+
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+
+                const offCanvashide = document.querySelectorAll(`#item${item.id}`);
+                offCanvashide.forEach((offcanvas) => {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                    if (bsOffcanvas) bsOffcanvas.hide();
+                })
+
+            })
+        })
+
+
+
+
+
+
 
         offCanvsContainer.style.height = "600px";
         offCanvsContainer.style.borderTopLeftRadius = "20px";
@@ -254,7 +275,7 @@ function addtocart(event) {
 
 
     const uid = localStorage.getItem('uid');
-   
+
 
 
     if (uid) {
@@ -282,42 +303,40 @@ function addtocart(event) {
             localStorage.setItem('cartfood', JSON.stringify(foodArray))
             const name = localStorage.getItem('name');
             const alertText = document.getElementsByClassName('notification__text')[1];
-              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
             alertbox.style.display = "block";
             alertText.innerText = "Succesfully Added To Cart";
-              setTimeout(function(){
-                  alertbox.style.display = "none";
-            },4000)
-            
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 4000)
+
             db.ref("MahanFoodCart/" + name + uid).set(
                 {
-                    foodCart : foodArray
+                    foodCart: foodArray
                 }
             )
         }
-        else
-        {
+        else {
             const alertText = document.getElementsByClassName('notification__text')[1];
-              const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
             alertbox.style.display = "block";
             alertText.innerText = "Already Added To Cart"
-              setTimeout(function(){
-                  alertbox.style.display = "none";
-            },4000)
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 4000)
 
         }
 
 
-    }else
-    {
-          const alertbox = document.getElementsByClassName('alert-container')[0];
-            alertbox.style.display = "block";
-        setTimeout(function(){
-           
-             window.location.href = "../../index.html";
-        console.log('please login');
-        },3000)
-        
+    } else {
+        const alertbox = document.getElementsByClassName('alert-container')[0];
+        alertbox.style.display = "block";
+        setTimeout(function () {
+
+            window.location.href = "../../index.html";
+            console.log('please login');
+        }, 3000)
+
     }
 
 
