@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff9900" />
+    <title>Account Profile</title>
+    <link rel="icon" type="text/png" href="../../images/logo/Food App.png">
+    <link rel="stylesheet" href="../../css/cartmobile.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/alertcontainr.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+
+
+    <!-- fiere base -->
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+
+
+
+    <!-- bootstrap File -->
+    <link rel="stylesheet" href="../../bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- main data nav bar  -->
+    <div class="app-controler  mobile-data">
+        <div class="app-controler-data">
+            <div class="cart-btn"><i class="fas fa-home control"></i>
+                <p class="cart-tit">HOME</p>
+            </div>
+            <div class="cart-btn select-color"><i class="fas fa-user control"></i>
+                <p class="cart-tit">USER</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- loader -->
+
+    <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </section>
+
+    <!-- mobile user page -->
+
+
+    <div class="mobile-user-page mobile-data">
+        <header class="header-cont">
+            <div class="header-text">
+                <p class="content-text">
+                    Account Profile
+                </p>
+                <div class="logout">
+                    <div class="displays" onclick="signOutUser()">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                </div>
+            </div>
+            <div class="first-container">
+                <div class="content-show">
+                    <img src="https://i.ibb.co/ZDMFp9F/user.png" alt="user" height="50px" width="50px" class="img-src">
+                    <p class="name">Mahavishnu</p>
+                </div>
+            </div>
+
+        </header>
+        <div class="second-content-heading">
+            User Profile
+        </div>
+
+        <table class="table-user">
+            <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td class="name">Mahavishnu</td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>:</td>
+                <td class="number">8056429712</td>
+                <td class="edit">Edit</td>
+            </tr>
+            <tr>
+                <td>Gmail</td>
+                <td>:</td>
+                <td class="gmail">mahanvishnu3@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>:</td>
+                <td class="address">Cudalore murugan kovil street</td>
+                <td class="edit">Edit</td>
+            </tr>
+        </table>
+        <div class="third-content-heading">
+            Order & Details
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+<!-- phone number -->
+
+<div class="phoneNumber-container">
+    <div class="close"><i class="fas fa-close"></i></div>
+    <div class="phoneNumber">
+        <p class="pNtit">Edit Phone Number</p>
+        <div class="ph-input">
+            <label for="phinput" class="pNtext">Phone Number</label>
+            <input type="number" name="phoneNumber" id="phinput">
+        </div>
+        <button onclick="addNumber()" class="submit-container">Save</button>
+        <p class="message-alert">Successful Saved</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- main Scripts -->
+<script src="../../scripts/cartmobile.js"></script>
+<script src="../scripts/profilemob.js"></script>
+<!-- database script -->
+<script src="../scripts/google.js"></script>
+
+
+<!-- bootStrap Scripts -->
+<script src="../../bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+
+</html>

@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #ff9900;
+    font-family: "Inter", sans-serif;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+@media only screen and (min-width:200px) and (max-width:399px) {
+
+}
+
+
+
+
+
+/* lg mobiles */
+@media only screen and (min-width:400px) and (max-width:767px) {
+    
+    .header-cont
+    {
+        background-color: var(--primary-color);
+        height: 200px;
+        color: #ffff;
+    }
+    .header-text
+    {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .first-container
+    {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 130px;
+    }
+    .content-show p
+    {
+        text-transform: capitalize;
+        padding: 10px 0;
+    }
+    .second-content-heading,.third-content-heading
+    {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 17px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        font-weight: 700;
+    }
+    tr,td
+    {
+        padding: 10px;
+    }
+    .edit
+    {
+        color: #ff9900;
+    }
+    .img-src
+    {
+        border-radius: 50%;
+    }
+    .phoneNumber-container
+    {
+        position: absolute;
+        top: 300px;
+        left: 55px;
+        background-color: #ffff;
+        height: 240px;
+        width: 300px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        box-shadow: 1px 5px 7px rgba(0, 0, 0, 0.1),
+        -1px -5px -7px rgba(0, 0, 0, 0.1);
+        display: none;
+        transition: all 0.5s;
+    }
+    .phoneNumber
+    {
+        padding: 0px 20px;
+    }
+    .pNtit
+    {
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 600;
+        color: #ff9900;
+    }
+    .ph-input
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .pNtext
+    {
+        color: #777;
+    }
+    #phinput
+    {
+        outline: none;
+        padding: 4px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+    .phoneNumber button
+    {
+        padding: 2px 10px;
+        margin-top: 10px;
+        border: none;
+        background-color: #ff9900;
+        color: #fff;
+    }
+     .message-alert
+    {
+        text-align: center;
+        color: #1b945b;
+        display: none;
+    }
+    .close
+    {
+        text-align: end;
+        padding: 10px 10px;
+    }
+    .fa-close
+    {
+        color: #ff9900;
+    }
+
+
+
+    
+}
+
+
+
+
+
+
+
+/*  tablets */
+@media only screen and (min-width:768px) and (max-width:1023px) {
+	 :root {
+	--accent-900: #49a87d;
+	--accent-800: #1b945b;
+	--check-svg: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23ffffff'%3E%3Cpath d='M400-314.46 250.46-464 296-509.54l104 104 264-264L709.54-624 400-314.46Z'/%3E%3C/svg%3E");
+
+	--notification-inset: 2rem;
+
+	font-family: system-ui;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
+.alert-container,.alert-container-true
+{
+   display: none;
+}
+
+.notification {
+	color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	display: flex;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	gap: 1.75rem;
+	top: 0;
+	right: 0;
+	margin: var(--notification-inset);
+	width: 24rem;
+	background-color: white;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+	border-radius: 0.5rem;
+	max-width: calc(100% - 6rem);
+	 z-index: 1435435903539857235935678932562000000;
+	padding: 1.75rem 1.25rem 1.25rem;
+	overflow: clip;
+	transform: translateX(calc(100% + var(--notification-inset)));
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation-play-state: var(--animation-play-state);
+
+	&:hover {
+		--animation-play-state: paused;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		inset: 0 0 auto;
+		height: 0.5rem;
+		background-color: #49a87d;
+		transform-origin: left;
+		position: absolute;
+		animation: countdown 4s infinite linear;
+		animation-play-state: var(--animation-play-state);
+	}
+
+	&__text {
+		margin: 0.3rem 0 0;
+	}
+
+	&__header {
+		color: black;
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	&__action {
+		margin-left: auto;
+	}
+
+	&__icon {
+		border-radius: 50%;
+		display: block;
+		aspect-ratio: 1;
+		background-size: 3rem;
+		background-color: #49a87d;
+		background-image: var(--check-svg);
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+		width: 3.2rem;
+		margin-bottom: auto;
+		flex-shrink: 0;
+	}
+}
+
+.button {
+	appearance: none;
+	background: no-repeat;
+	border: none;
+	font: inherit;
+	margin: 0;
+	color: currentColor;
+	padding: 0;
+}
+
+@keyframes slideInOut {
+	15%,
+	66% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes countdown {
+	66%,
+	100% {
+		transform: scaleX(0);
+	}
+}
+}
+
+
+
+
+
+/* laptops */
+@media only screen and (min-width:1024px) and (max-width:1439px) {
+	 :root {
+	--accent-900: #49a87d;
+	--accent-800: #1b945b;
+	--check-svg: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23ffffff'%3E%3Cpath d='M400-314.46 250.46-464 296-509.54l104 104 264-264L709.54-624 400-314.46Z'/%3E%3C/svg%3E");
+
+	--notification-inset: 2rem;
+
+	font-family: system-ui;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
+.alert-container,.alert-container-true
+{
+   display: none;
+}
+
+.notification {
+	color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	display: flex;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	gap: 1.75rem;
+	top: 0;
+	right: 0;
+	margin: var(--notification-inset);
+	width: 24rem;
+	background-color: white;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+	border-radius: 0.5rem;
+	max-width: calc(100% - 6rem);
+	 z-index: 1435435903539857235935678932562000000;
+	padding: 1.75rem 1.25rem 1.25rem;
+	overflow: clip;
+	transform: translateX(calc(100% + var(--notification-inset)));
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation-play-state: var(--animation-play-state);
+
+	&:hover {
+		--animation-play-state: paused;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		inset: 0 0 auto;
+		height: 0.5rem;
+		background-color: #49a87d;
+		transform-origin: left;
+		position: absolute;
+		animation: countdown 4s infinite linear;
+		animation-play-state: var(--animation-play-state);
+	}
+
+	&__text {
+		margin: 0.3rem 0 0;
+	}
+
+	&__header {
+		color: black;
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	&__action {
+		margin-left: auto;
+	}
+
+	&__icon {
+		border-radius: 50%;
+		display: block;
+		aspect-ratio: 1;
+		background-size: 3rem;
+		background-color: #49a87d;
+		background-image: var(--check-svg);
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+		width: 3.2rem;
+		margin-bottom: auto;
+		flex-shrink: 0;
+	}
+}
+
+.button {
+	appearance: none;
+	background: no-repeat;
+	border: none;
+	font: inherit;
+	margin: 0;
+	color: currentColor;
+	padding: 0;
+}
+
+@keyframes slideInOut {
+	15%,
+	66% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes countdown {
+	66%,
+	100% {
+		transform: scaleX(0);
+	}
+}
+}
+
+
+
+
+
+
+/* desktop */
+@media only screen and (min-width:1440px) and (max-width:2159px) {
+	 :root {
+	--accent-900: #49a87d;
+	--accent-800: #1b945b;
+	--check-svg: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23ffffff'%3E%3Cpath d='M400-314.46 250.46-464 296-509.54l104 104 264-264L709.54-624 400-314.46Z'/%3E%3C/svg%3E");
+
+	--notification-inset: 2rem;
+
+	font-family: system-ui;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
+.alert-container,.alert-container-true
+{
+   display: none;
+}
+
+.notification {
+	color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	display: flex;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	gap: 1.75rem;
+	top: 0;
+	right: 0;
+	margin: var(--notification-inset);
+	width: 24rem;
+	background-color: white;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+	border-radius: 0.5rem;
+	max-width: calc(100% - 6rem);
+	 z-index: 1435435903539857235935678932562000000;
+	padding: 1.75rem 1.25rem 1.25rem;
+	overflow: clip;
+	transform: translateX(calc(100% + var(--notification-inset)));
+	animation: slideInOut 4s infinite cubic-bezier(0.33, 0, 0.66, 1.33);
+	animation-play-state: var(--animation-play-state);
+
+	&:hover {
+		--animation-play-state: paused;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		inset: 0 0 auto;
+		height: 0.5rem;
+		background-color: #49a87d;
+		transform-origin: left;
+		position: absolute;
+		animation: countdown 4s infinite linear;
+		animation-play-state: var(--animation-play-state);
+	}
+
+	&__text {
+		margin: 0.3rem 0 0;
+	}
+
+	&__header {
+		color: black;
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	&__action {
+		margin-left: auto;
+	}
+
+	&__icon {
+		border-radius: 50%;
+		display: block;
+		aspect-ratio: 1;
+		background-size: 3rem;
+		background-color: #49a87d;
+		background-image: var(--check-svg);
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+		width: 3.2rem;
+		margin-bottom: auto;
+		flex-shrink: 0;
+	}
+}
+
+.button {
+	appearance: none;
+	background: no-repeat;
+	border: none;
+	font: inherit;
+	margin: 0;
+	color: currentColor;
+	padding: 0;
+}
+
+@keyframes slideInOut {
+	15%,
+	66% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes countdown {
+	66%,
+	100% {
+		transform: scaleX(0);
+	}
+}
+}

@@ -302,20 +302,17 @@ body {
     background-color: #ff9900;
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
-
   50% {
     transform: scale(1.2);
     background-color: #ff9900;
     box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
   }
-
   100% {
     transform: scale(0.8);
     background-color: #ff9900;
     box-shadow: 0 0 0 0 rgba(218, 108, 35, 0.768627451);
   }
 }
-
 .loader-hidden {
   opacity: 0;
   visibility: hidden;
@@ -327,7 +324,6 @@ body {
     height: 690px;
     background-color: #ff9900;
   }
-
   .headerImage {
     display: flex;
     gap: 10px;
@@ -337,14 +333,12 @@ body {
     left: 20px;
     top: 1px;
   }
-
   .header-img {
     width: 40px;
     height: 40px;
     border-radius: 12px 12px 12px 12px;
     object-fit: fill;
   }
-
   .header-title {
     color: #fff;
     font-size: 1.3rem;
@@ -352,17 +346,14 @@ body {
     margin-top: 12px;
     font-weight: 1000;
   }
-
   .nav-bar {
     display: flex;
     justify-content: space-around;
   }
-
   .nav-menu {
     list-style-type: none;
     color: #fff;
   }
-
   .nav-menu a {
     text-decoration: none;
     color: #fff;
@@ -370,7 +361,6 @@ body {
     font-weight: 1000;
     position: relative;
   }
-
   .getapp {
     font-size: 1.1rem;
     border: 1px solid #fff;
@@ -380,7 +370,6 @@ body {
     width: 90%;
     bottom: 20px;
   }
-
   .signin {
     background-color: #000;
     font-size: 1.1rem;
@@ -389,15 +378,12 @@ body {
     border-radius: 10px;
     font-weight: bold;
   }
-
   .imgLeft {
     display: none;
   }
-
   .imgRight {
     display: none;
   }
-
   .search {
     display: flex;
     justify-content: center;
@@ -406,7 +392,6 @@ body {
     width: 380px;
     margin: auto;
   }
-
   .search-box {
     width: 450px;
     height: 50px;
@@ -420,30 +405,25 @@ body {
     color: #6f7274;
     position: relative;
   }
-
   .text-span {
     width: 20ch;
     overflow: hidden;
     text-wrap: nowrap;
     animation: run 4s steps(20) infinite alternate-reverse;
   }
-
   @keyframes run {
     from {
       width: 0ch;
     }
   }
-
   .glass-work {
     position: absolute;
     top: 14px;
     right: 10px;
   }
-
   .App-cart {
     display: none;
   }
-
   .nav-btn {
     display: block;
     position: absolute;
@@ -452,7 +432,6 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .headerNav {
     position: fixed;
     background-color: #ff9900;
@@ -462,16 +441,13 @@ body {
     margin-left: -1099px;
     transition: all 1s;
   }
-
   .headerNav-active {
     margin-left: 0;
     transition: all 1s;
   }
-
   .nav-btn-close {
     display: block;
   }
-
   .nav-btns {
     display: block;
     position: absolute;
@@ -480,7 +456,6 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .nav-btn-close {
     display: block;
     text-align: end;
@@ -488,23 +463,18 @@ body {
     font-size: 1.2rem;
     color: #fff;
   }
-
   .nav-menu {
     padding: 20px 20px;
   }
-
   .nav-menu li {
     padding: 10px 0;
   }
-
   .signin {
     display: none;
   }
-
   .mobile-data {
     display: block;
   }
-
   .app-controler {
     position: fixed;
     width: 100%;
@@ -516,26 +486,21 @@ body {
     padding: 6px 0;
     background-color: #fff;
   }
-
   .app-controler-data {
     display: flex;
     justify-content: space-around;
   }
-
   .cart-btn {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-
   .control {
     margin-left: 5px;
   }
-
   .cart-tit {
     font-size: 12px;
   }
-
   .orders-tit {
     position: absolute;
     top: 160px;
@@ -544,83 +509,68 @@ body {
     justify-content: center;
     align-items: center;
   }
-
   .orders-tit-cnt {
     color: #fff;
     font-size: 1.2rem;
     padding: 0 20px;
   }
-
   .orders-img {
     position: absolute;
     top: 310px;
   }
-
   .orders-img-cnt,
   .orders-img-cnt1 {
     margin: auto;
   }
-
   .orders-img1 {
     position: absolute;
     top: 460px;
     display: flex;
     justify-content: center;
   }
-
   main {
     height: 1100px;
   }
-
   .food-container,
   .instantshop-container,
   .dineout-container {
     margin-left: 15px;
   }
-
   .food-container-title,
   .instantshop-container-title {
     font-size: 17px;
     font-weight: 900;
     padding: 0 10px;
   }
-
   .food-list img,
   .instantshop-list img {
     height: 86px;
     width: 86px;
-    cursor: pointer;
   }
-
   .instantshop-list {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     height: 150px;
   }
-
   .instantshop-list::-webkit-scrollbar {
     display: none;
   }
-
   .instantshop-list a {
     color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
   }
-
   .dineout-content {
     display: flex;
     overflow-x: auto;
     height: 320px;
     gap: 20px;
   }
-
   .dineout-content::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content-files {
     width: 322px;
     height: 320px;
@@ -628,18 +578,15 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
   }
-
   .dineout-content-img img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 318px;
     height: 182px;
   }
-
   .dineout-content-img {
     background-color: rgba(0, 0, 0, 0.0470588235);
   }
-
   .company-topic {
     position: absolute;
     top: 47%;
@@ -649,7 +596,6 @@ body {
     align-items: center;
     color: #fff;
   }
-
   .company-rating {
     font-weight: 600;
     font-size: 16px;
@@ -659,17 +605,14 @@ body {
     align-items: center;
     gap: 7px;
   }
-
   .fa-star {
     color: var(--bs-success);
   }
-
   .company-tit-topic {
     font-size: 21px;
     text-shadow: 4px 4px 12px #000;
     font-weight: 900;
   }
-
   .contenttitle {
     display: flex;
     font-size: 14px;
@@ -678,13 +621,11 @@ body {
     padding: 0 10px;
     color: #6f7274;
   }
-
   .fa-square-check,
   .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
-
   .table-booking {
     width: 37%;
     font-size: 13px;
@@ -692,11 +633,9 @@ body {
     border-radius: 4px;
     background-color: #f0f0f5;
   }
-
   .offer-img img {
     height: 20px;
   }
-
   .offers {
     display: flex;
     border: 1px solid #1ba672;
@@ -709,52 +648,43 @@ body {
     justify-content: center;
     margin-top: 5px;
   }
-
   footer {
     background-color: #f0f0f5;
     height: 400px;
     width: 100%;
     margin-top: 20px;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
   }
-
   .footer-img {
     padding: 10px 20px;
   }
-
   .footer-img img {
     border-radius: 20%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-
   .footer-tit {
     color: #ff9900;
     font-weight: 1000;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
-
   .footer-copu {
     padding: 0px 20px;
     color: #616469;
   }
-
   .company-tit {
     font-size: 22px;
     padding: 0px 20px;
     font-weight: 700;
   }
-
   .company-list {
     font-size: 18px;
     padding: 10px 20px;
     color: #6f7274;
   }
-
   .tit-container {
     display: flex;
     justify-content: space-between;
@@ -762,15 +692,12 @@ body {
     align-items: center;
     padding-bottom: 10px;
   }
-
   .right-link {
     color: #ff9900;
   }
-
   .select-color {
     color: #ff9900;
   }
-
   .locate-data {
     background-color: rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -781,31 +708,25 @@ body {
     height: 200px;
     border-radius: 12px;
   }
-
   .pincodeinputtext {
     text-align: center;
     padding: 3px;
   }
-
   .pincodeinp {
     width: 90%;
   }
-
   .inputs {
     padding: 0 40px;
   }
-
   .pincodeinp:focus {
     outline: none;
   }
-
   .liveloc {
     display: flex;
     gap: 10px;
     color: #fff;
     justify-content: center;
   }
-
   .ipb {
     background-color: #ff9900;
     width: 90%;
@@ -813,21 +734,18 @@ body {
     margin-top: 20px;
     text-align: center;
   }
-
   .title-data {
     position: absolute;
     top: 0;
     font-size: 20px;
   }
 }
-
 @media only screen and (min-width: 400px) and (max-width: 767px) {
   .headerContainer {
     width: 100%;
     height: 690px;
     background-color: #ff9900;
   }
-
   .headerImage {
     display: flex;
     gap: 10px;
@@ -837,14 +755,12 @@ body {
     left: 20px;
     top: 1px;
   }
-
   .header-img {
     width: 40px;
     height: 40px;
     border-radius: 12px 12px 12px 12px;
     object-fit: fill;
   }
-
   .header-title {
     color: #fff;
     font-size: 1.3rem;
@@ -852,17 +768,14 @@ body {
     margin-top: 12px;
     font-weight: 1000;
   }
-
   .nav-bar {
     display: flex;
     justify-content: space-around;
   }
-
   .nav-menu {
     list-style-type: none;
     color: #fff;
   }
-
   .nav-menu a {
     text-decoration: none;
     color: #fff;
@@ -870,7 +783,6 @@ body {
     font-weight: 1000;
     position: relative;
   }
-
   .getapp {
     font-size: 1.1rem;
     border: 1px solid #fff;
@@ -880,7 +792,6 @@ body {
     width: 90%;
     bottom: 20px;
   }
-
   .signin {
     background-color: #000;
     font-size: 1.1rem;
@@ -889,15 +800,12 @@ body {
     border-radius: 10px;
     font-weight: bold;
   }
-
   .imgLeft {
     display: none;
   }
-
   .imgRight {
     display: none;
   }
-
   .search {
     display: flex;
     justify-content: center;
@@ -906,7 +814,6 @@ body {
     width: 380px;
     margin: auto;
   }
-
   .search-box {
     width: 450px;
     height: 50px;
@@ -921,11 +828,9 @@ body {
     position: relative;
     padding: 0 12px;
   }
-
   .App-cart {
     display: none;
   }
-
   .nav-btn {
     display: block;
     position: absolute;
@@ -934,7 +839,6 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .headerNav {
     position: fixed;
     background-color: #ff9900;
@@ -944,12 +848,10 @@ body {
     margin-left: -1099px;
     transition: all 1s;
   }
-
   .headerNav-active {
     margin-left: 0;
     transition: all 1s;
   }
-
   .nav-btn-close {
     display: block;
     text-align: end;
@@ -957,19 +859,15 @@ body {
     font-size: 1.2rem;
     color: #fff;
   }
-
   .nav-menu {
     padding: 20px 20px;
   }
-
   .nav-menu li {
     padding: 10px 0;
   }
-
   .signin {
     display: none;
   }
-
   .nav-btns {
     display: block;
     position: absolute;
@@ -978,11 +876,9 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .mobile-data {
     display: block;
   }
-
   .app-controler {
     position: fixed;
     width: 100%;
@@ -994,26 +890,21 @@ body {
     padding: 6px 0;
     background-color: #fff;
   }
-
   .app-controler-data {
     display: flex;
     justify-content: space-around;
   }
-
   .cart-btn {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-
   .control {
     margin-left: 5px;
   }
-
   .cart-tit {
     font-size: 12px;
   }
-
   .orders-tit {
     position: absolute;
     top: 160px;
@@ -1022,24 +913,20 @@ body {
     justify-content: center;
     align-items: center;
   }
-
   .orders-tit-cnt {
     color: #fff;
     font-size: 1.2rem;
     padding: 0 20px;
   }
-
   .orders-img {
     position: absolute;
     top: 310px;
     left: 12px;
   }
-
   .orders-img-cnt,
   .orders-img-cnt1 {
     margin: auto;
   }
-
   .orders-img1 {
     position: absolute;
     top: 460px;
@@ -1047,60 +934,49 @@ body {
     display: flex;
     justify-content: center;
   }
-
   main {
     height: 1130px;
   }
-
   .food-container,
   .instantshop-container,
   .dineout-container {
     margin-left: 6px;
   }
-
   .food-container-title,
   .instantshop-container-title {
     font-size: 17px;
     font-weight: 900;
     padding: 0 10px;
   }
-
   .food-list img,
   .instantshop-list img {
     height: 96px;
     width: 96px;
-    cursor: pointer;
   }
-
   .instantshop-list {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     height: 150px;
   }
-
   .instantshop-list::-webkit-scrollbar {
     display: none;
   }
-
   .instantshop-list a {
     color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
   }
-
   .dineout-content {
     display: flex;
     overflow-x: auto;
     height: 320px;
     gap: 20px;
   }
-
   .dineout-content::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content-files {
     width: 322px;
     height: 320px;
@@ -1108,7 +984,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
   }
-
   .dineout-content-img img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -1116,11 +991,9 @@ body {
     height: 182px;
     object-fit: cover;
   }
-
   .dineout-content-img {
     background-color: rgba(0, 0, 0, 0.0470588235);
   }
-
   .company-topic {
     position: absolute;
     top: 47%;
@@ -1130,7 +1003,6 @@ body {
     align-items: center;
     color: #fff;
   }
-
   .company-rating {
     font-weight: 600;
     font-size: 16px;
@@ -1140,17 +1012,14 @@ body {
     align-items: center;
     gap: 7px;
   }
-
   .fa-star {
     color: var(--bs-success);
   }
-
   .company-tit-topic {
     font-size: 21px;
     text-shadow: 4px 4px 12px #000;
     font-weight: 900;
   }
-
   .contenttitle {
     display: flex;
     font-size: 14px;
@@ -1159,13 +1028,11 @@ body {
     padding: 0 10px;
     color: #6f7274;
   }
-
   .fa-square-check,
   .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
-
   .table-booking {
     width: 37%;
     font-size: 13px;
@@ -1173,11 +1040,9 @@ body {
     border-radius: 4px;
     background-color: #f0f0f5;
   }
-
   .offer-img img {
     height: 20px;
   }
-
   .offers {
     display: flex;
     border: 1px solid #1ba672;
@@ -1190,52 +1055,43 @@ body {
     justify-content: center;
     margin-top: 5px;
   }
-
   footer {
     background-color: #f0f0f5;
     height: 400px;
     width: 100%;
     margin-top: 50px;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
   }
-
   .footer-img {
     padding: 10px 20px;
   }
-
   .footer-img img {
     border-radius: 20%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-
   .footer-tit {
     color: #ff9900;
     font-weight: 1000;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
-
   .footer-copu {
     padding: 0px 20px;
     color: #616469;
   }
-
   .company-tit {
     font-size: 22px;
     padding: 0px 20px;
     font-weight: 700;
   }
-
   .company-list {
     font-size: 18px;
     padding: 10px 20px;
     color: #6f7274;
   }
-
   .tit-container {
     display: flex;
     justify-content: space-between;
@@ -1243,34 +1099,28 @@ body {
     align-items: center;
     padding-bottom: 10px;
   }
-
   .right-link {
     color: #ff9900;
   }
-
   .select-color {
     color: #ff9900;
   }
-
   .text-span {
     width: 20ch;
     overflow: hidden;
     text-wrap: nowrap;
     animation: run 4s steps(20) infinite alternate-reverse;
   }
-
   @keyframes run {
     from {
       width: 0ch;
     }
   }
-
   .glass-work {
     position: absolute;
     top: 14px;
     right: 10px;
   }
-
   .locate-data {
     background-color: rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -1281,31 +1131,27 @@ body {
     height: 200px;
     border-radius: 12px;
   }
-
   .pincodeinputtext {
     text-align: center;
     padding: 3px;
   }
-
   .pincodeinp {
     width: 90%;
+    padding: 5px;
+    border-radius: 12px;
   }
-
   .inputs {
     padding: 0 40px;
   }
-
   .pincodeinp:focus {
     outline: none;
   }
-
   .liveloc {
     display: flex;
     gap: 10px;
     color: #fff;
     justify-content: center;
   }
-
   .ipb {
     background-color: #ff9900;
     width: 90%;
@@ -1313,21 +1159,21 @@ body {
     margin-top: 20px;
     text-align: center;
   }
-
   .title-data {
     position: absolute;
     top: 0;
     font-size: 20px;
   }
+  .logouts {
+    padding: 240px 0;
+  }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .headerContainer {
     width: 100%;
     height: 690px;
     background-color: #ff9900;
   }
-
   .headerImage {
     display: flex;
     gap: 10px;
@@ -1337,14 +1183,12 @@ body {
     left: 20px;
     top: 1px;
   }
-
   .header-img {
     width: 40px;
     height: 40px;
     border-radius: 12px 12px 12px 12px;
     object-fit: fill;
   }
-
   .header-title {
     color: #fff;
     font-size: 1.3rem;
@@ -1352,17 +1196,14 @@ body {
     margin-top: 12px;
     font-weight: 1000;
   }
-
   .nav-bar {
     display: flex;
     justify-content: space-around;
   }
-
   .nav-menu {
     list-style-type: none;
     color: #fff;
   }
-
   .nav-menu a {
     text-decoration: none;
     color: #fff;
@@ -1370,7 +1211,6 @@ body {
     font-weight: 1000;
     position: relative;
   }
-
   .getapp {
     font-size: 1.1rem;
     border: 1px solid #fff;
@@ -1380,7 +1220,6 @@ body {
     width: 90%;
     bottom: 20px;
   }
-
   .signin {
     background-color: #000;
     font-size: 1.1rem;
@@ -1389,7 +1228,6 @@ body {
     border-radius: 10px;
     font-weight: bold;
   }
-
   .nav-btn-close {
     display: block;
     text-align: end;
@@ -1397,27 +1235,21 @@ body {
     font-size: 1.2rem;
     color: #fff;
   }
-
   .nav-menu {
     padding: 20px 20px;
   }
-
   .nav-menu li {
     padding: 10px 0;
   }
-
   .signin {
     display: none;
   }
-
   .imgLeft {
     display: none;
   }
-
   .imgRight {
     display: none;
   }
-
   .search {
     display: flex;
     justify-content: center;
@@ -1426,7 +1258,6 @@ body {
     width: 480px;
     margin: auto;
   }
-
   .search-box {
     width: 450px;
     height: 50px;
@@ -1439,30 +1270,25 @@ body {
     border-radius: 12px;
     position: relative;
   }
-
   .text-span {
     width: 20ch;
     overflow: hidden;
     text-wrap: nowrap;
     animation: run 4s steps(20) infinite alternate-reverse;
   }
-
   @keyframes run {
     from {
       width: 0ch;
     }
   }
-
   .glass-work {
     position: absolute;
     top: 14px;
     right: 10px;
   }
-
   .App-cart {
     display: none;
   }
-
   .nav-btn {
     display: block;
     position: absolute;
@@ -1471,7 +1297,6 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .headerNav {
     position: fixed;
     background-color: #ff9900;
@@ -1482,16 +1307,13 @@ body {
     margin-left: -2099px;
     transition: all 2s;
   }
-
   .headerNav-active {
     margin-left: 0;
     transition: all 1s;
   }
-
   .nav-btn-close {
     display: block;
   }
-
   .nav-btns {
     display: block;
     position: absolute;
@@ -1500,11 +1322,9 @@ body {
     font-size: 1.4rem;
     color: #fff;
   }
-
   .mobile-data {
     display: block;
   }
-
   .app-controler {
     position: fixed;
     width: 100%;
@@ -1516,26 +1336,21 @@ body {
     padding: 10px 0;
     background-color: #fff;
   }
-
   .app-controler-data {
     display: flex;
     justify-content: space-around;
   }
-
   .cart-btn {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-
   .control {
     margin-left: 5px;
   }
-
   .cart-tit {
     font-size: 12px;
   }
-
   .orders-tit {
     position: absolute;
     top: 160px;
@@ -1545,83 +1360,68 @@ body {
     justify-content: center;
     align-items: center;
   }
-
   .orders-tit-cnt {
     color: #fff;
     font-size: 1.2rem;
     padding: 0 20px;
   }
-
   .orders-img {
     position: absolute;
     top: 310px;
     left: 200px;
   }
-
   .orders-img-cnt,
   .orders-img-cnt1 {
     margin: auto;
   }
-
   .orders-img1 {
     position: absolute;
     top: 460px;
     left: 200px;
   }
-
   main {
     height: 1130px;
   }
-
   .food-container,
   .instantshop-container,
   .dineout-container {
     margin-left: 15px;
   }
-
   .food-container-title,
   .instantshop-container-title {
     font-size: 17px;
     font-weight: 900;
     padding: 0 10px;
   }
-
   .food-list img,
   .instantshop-list img {
     height: 96px;
     width: 96px;
-    cursor: pointer;
   }
-
   .instantshop-list {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     height: 150px;
   }
-
   .instantshop-list::-webkit-scrollbar {
     display: none;
   }
-
   .instantshop-list a {
     color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
   }
-
   .dineout-content {
     display: flex;
     overflow-x: auto;
     height: 320px;
     gap: 20px;
   }
-
   .dineout-content::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content-files {
     width: 322px;
     height: 320px;
@@ -1629,7 +1429,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
   }
-
   .dineout-content-img img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -1637,11 +1436,9 @@ body {
     height: 182px;
     object-fit: cover;
   }
-
   .dineout-content-img {
     background-color: rgba(0, 0, 0, 0.0470588235);
   }
-
   .company-topic {
     position: absolute;
     top: 47%;
@@ -1651,7 +1448,6 @@ body {
     align-items: center;
     color: #fff;
   }
-
   .company-rating {
     font-weight: 600;
     font-size: 16px;
@@ -1661,17 +1457,14 @@ body {
     align-items: center;
     gap: 7px;
   }
-
   .fa-star {
     color: var(--bs-success);
   }
-
   .company-tit-topic {
     font-size: 21px;
     text-shadow: 4px 4px 12px #000;
     font-weight: 900;
   }
-
   .contenttitle {
     display: flex;
     font-size: 14px;
@@ -1680,13 +1473,11 @@ body {
     padding: 0 10px;
     color: #6f7274;
   }
-
   .fa-square-check,
   .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
-
   .table-booking {
     width: 37%;
     font-size: 13px;
@@ -1694,11 +1485,9 @@ body {
     border-radius: 4px;
     background-color: #f0f0f5;
   }
-
   .offer-img img {
     height: 20px;
   }
-
   .offers {
     display: flex;
     border: 1px solid #1ba672;
@@ -1711,52 +1500,43 @@ body {
     justify-content: center;
     margin-top: 5px;
   }
-
   footer {
     background-color: #f0f0f5;
     height: 400px;
     width: 100%;
     margin-top: 50px;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
   }
-
   .footer-img {
     padding: 10px 20px;
   }
-
   .footer-img img {
     border-radius: 20%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-
   .footer-tit {
     color: #ff9900;
     font-weight: 1000;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
-
   .footer-copu {
     padding: 0px 20px;
     color: #616469;
   }
-
   .company-tit {
     font-size: 22px;
     padding: 0px 20px;
     font-weight: 700;
   }
-
   .company-list {
     font-size: 18px;
     padding: 10px 20px;
     color: #6f7274;
   }
-
   .tit-container {
     display: flex;
     justify-content: space-between;
@@ -1764,15 +1544,12 @@ body {
     align-items: center;
     padding-bottom: 10px;
   }
-
   .right-link {
     color: #ff9900;
   }
-
   .select-color {
     color: #ff9900;
   }
-
   .locate-data {
     background-color: rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -1783,31 +1560,25 @@ body {
     height: 200px;
     border-radius: 12px;
   }
-
   .pincodeinputtext {
     text-align: center;
     padding: 3px;
   }
-
   .pincodeinp {
     width: 90%;
   }
-
   .inputs {
     padding: 0 40px;
   }
-
   .pincodeinp:focus {
     outline: none;
   }
-
   .liveloc {
     display: flex;
     gap: 10px;
     color: #fff;
     justify-content: center;
   }
-
   .ipb {
     background-color: #ff9900;
     width: 90%;
@@ -1815,35 +1586,30 @@ body {
     margin-top: 20px;
     text-align: center;
   }
-
   .title-data {
     position: absolute;
     top: 0;
     font-size: 20px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .headerContainer {
     width: 100%;
     height: 500px;
     background-color: #ff9900;
   }
-
   .headerImage {
     display: flex;
     gap: 10px;
     align-items: center;
     height: 60px;
   }
-
   .header-img {
     width: 40px;
     height: 40px;
     border-radius: 12px 12px 12px 12px;
     object-fit: fill;
   }
-
   .header-title {
     color: #fff;
     font-size: 1.3rem;
@@ -1851,7 +1617,6 @@ body {
     margin-top: 12px;
     font-weight: 1000;
   }
-
   .nav-bar {
     display: flex;
     justify-content: space-around;
@@ -1859,7 +1624,6 @@ body {
     padding: 0;
     border-bottom: 1px solid rgba(226, 189, 22, 0.3);
   }
-
   .nav-menu {
     display: flex;
     gap: 20px;
@@ -1870,7 +1634,6 @@ body {
     width: 100%;
     padding: 0;
   }
-
   .nav-menu a {
     text-decoration: none;
     color: #fff;
@@ -1879,7 +1642,6 @@ body {
     position: relative;
     padding: 2px 0;
   }
-
   .nav-menu a::before {
     content: "";
     height: 2px;
@@ -1890,23 +1652,21 @@ body {
     background-color: #fff;
     transition: all 0.22s;
   }
-
   .nav-menu li:hover a::before {
     width: 90%;
   }
-
   .getapp {
     font-size: 1.1rem;
     border: 1px solid #fff;
     padding: 5px 20px;
     border-radius: 10px;
+    cursor: pointer;
   }
-
   .App-cart {
     font-size: 1.3rem;
     position: relative;
   }
-    .cart-count {
+  .cart-count {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -1921,7 +1681,6 @@ body {
     padding: 10px;
     font-size: 14px;
   }
-
   .signin {
     background-color: #000;
     font-size: 1.1rem;
@@ -1929,8 +1688,8 @@ body {
     padding: 4px 20px;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
   }
-
   .imgLeft {
     position: absolute;
     left: 0;
@@ -1938,7 +1697,6 @@ body {
     height: 450px;
     width: 250px;
   }
-
   .imgRight {
     position: absolute;
     right: 0;
@@ -1946,14 +1704,12 @@ body {
     height: 450px;
     width: 250px;
   }
-
   .search {
     display: flex;
     justify-content: center;
     height: 370px;
     align-items: center;
   }
-
   .search-box {
     width: 450px;
     height: 50px;
@@ -1966,26 +1722,22 @@ body {
     border-radius: 12px;
     position: relative;
   }
-
   .text-span {
     width: 20ch;
     overflow: hidden;
     text-wrap: nowrap;
     animation: run 4s steps(20) infinite alternate-reverse;
   }
-
   @keyframes run {
     from {
       width: 0ch;
     }
   }
-
   .glass-work {
     position: absolute;
     top: 14px;
     right: 10px;
   }
-
   .food-container-title,
   .instantshop-container-title {
     width: 80%;
@@ -1993,26 +1745,21 @@ body {
     font-size: 23px;
     font-weight: 700;
   }
-
   .food-list img,
   .instantshop-list img {
     width: 144px;
     height: 180px;
-    cursor: pointer;
   }
-
   .food-list {
     width: 80%;
     margin: auto;
   }
-
   .instantshop-list a {
     color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
   }
-
   .instantshop-list {
     display: flex;
     width: 80%;
@@ -2021,11 +1768,9 @@ body {
     gap: 20px;
     scroll-behavior: smooth;
   }
-
   .instantshop-list::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content {
     display: flex;
     overflow-x: auto;
@@ -2035,11 +1780,9 @@ body {
     margin: auto;
     scroll-behavior: smooth;
   }
-
   .dineout-content::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content-files {
     width: 322px;
     height: 320px;
@@ -2047,7 +1790,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
   }
-
   .dineout-content-img img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -2055,11 +1797,9 @@ body {
     height: 182px;
     object-fit: cover;
   }
-
   .dineout-content-img {
     background-color: rgba(0, 0, 0, 0.0470588235);
   }
-
   .company-topic {
     position: absolute;
     top: 47%;
@@ -2069,7 +1809,6 @@ body {
     align-items: center;
     color: #fff;
   }
-
   .company-rating {
     font-weight: 600;
     font-size: 16px;
@@ -2079,17 +1818,14 @@ body {
     align-items: center;
     gap: 7px;
   }
-
   .fa-star {
     color: var(--bs-success);
   }
-
   .company-tit-topic {
     font-size: 21px;
     text-shadow: 4px 4px 12px #000;
     font-weight: 900;
   }
-
   .contenttitle {
     display: flex;
     font-size: 14px;
@@ -2098,13 +1834,11 @@ body {
     padding: 0 10px;
     color: #6f7274;
   }
-
   .fa-square-check,
   .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
-
   .table-booking {
     width: 37%;
     font-size: 13px;
@@ -2112,11 +1846,9 @@ body {
     border-radius: 4px;
     background-color: #f0f0f5;
   }
-
   .offer-img img {
     height: 20px;
   }
-
   .offers {
     display: flex;
     border: 1px solid #1ba672;
@@ -2129,62 +1861,51 @@ body {
     justify-content: center;
     margin-top: 5px;
   }
-
   footer {
     background-color: #f0f0f5;
     height: 100px;
     width: 100%;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .footer-img {
     padding: 10px 20px;
   }
-
   .footer-img img {
     border-radius: 20%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-
   .footer-tit {
     color: #ff9900;
     font-weight: 1000;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
-
   .footer-copu {
     padding: 0px 20px;
     color: #616469;
   }
-
   .company-tit {
     font-size: 22px;
     padding: 0px 20px;
     font-weight: 700;
   }
-
   .footer-company {
     display: none;
   }
-
   .company-list {
     font-size: 18px;
     padding: 10px 20px;
     color: #6f7274;
   }
-
   .Scrollbar-bottom {
     display: flex;
     gap: 10px;
     justify-content: space-around;
   }
-
   .arrow-left,
   .arrow-right {
     background-color: #d9dadb;
@@ -2194,42 +1915,34 @@ body {
     text-align: center;
     cursor: pointer;
   }
-
   .arrow-left:hover,
   .arrow-right:hover {
     background-color: #ff9900;
     color: #fff;
   }
-
   .tit-container {
     display: flex;
     justify-content: space-around;
     padding: 20px 0;
   }
-
   .right-link {
     width: 80%;
     margin: auto;
     cursor: pointer;
   }
-
   .right-link:hover {
     color: #ff9900;
   }
-
   #cart-container {
     width: 450px;
   }
-
   .offcanvas-heading {
     display: flex;
     gap: 300px;
   }
-
   .cart-title {
     font-size: 23px;
   }
-
   .offcanvas-headers {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 8px 10px;
@@ -2237,7 +1950,6 @@ body {
     color: #fff;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
-
   .close-off {
     color: #fff;
     border: none;
@@ -2245,29 +1957,24 @@ body {
     margin-top: 6px;
   }
 }
-
 @media only screen and (min-width: 1440px) and (max-width: 2159px) {
   .headerContainer {
     width: 100%;
     height: 500px;
     background-color: #ff9900;
-    
   }
-
   .headerImage {
     display: flex;
     gap: 10px;
     align-items: center;
     height: 130px;
   }
-
   .header-img {
     width: 40px;
     height: 40px;
     border-radius: 12px 12px 12px 12px;
     object-fit: fill;
   }
-
   .header-title {
     color: #fff;
     font-size: 1.3rem;
@@ -2275,13 +1982,10 @@ body {
     margin-top: 12px;
     font-weight: 1000;
   }
-
   .nav-bar {
     display: flex;
     justify-content: space-around;
-    
   }
-
   .nav-menu {
     display: flex;
     gap: 50px;
@@ -2289,9 +1993,7 @@ body {
     align-items: center;
     list-style-type: none;
     color: #fff;
-    
   }
-
   .nav-menu a {
     text-decoration: none;
     color: #fff;
@@ -2300,7 +2002,6 @@ body {
     position: relative;
     padding: 4px;
   }
-
   .nav-menu a::before {
     content: "";
     height: 2px;
@@ -2311,24 +2012,22 @@ body {
     background-color: #fff;
     transition: all 0.22s;
   }
-
   .nav-menu li:hover a::before {
     width: 90%;
   }
-
   .getapp {
     font-size: 1.1rem;
     border: 1px solid #fff;
     padding: 10px 30px;
     border-radius: 10px;
-    
+    cursor: pointer;
+    transition: all 0.8s ease;
+    background-size: 0;
   }
-
   .App-cart {
     font-size: 1.3rem;
     position: relative;
   }
-
   .cart-count {
     position: absolute;
     top: -17px;
@@ -2344,7 +2043,6 @@ body {
     padding: 10px;
     font-size: 14px;
   }
-
   .signin {
     background-color: #000;
     font-size: 1.1rem;
@@ -2352,8 +2050,14 @@ body {
     padding: 10px 30px;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
   }
-
+  .signin:hover {
+    background-color: rgba(0, 0, 0, 0.6705882353);
+  }
+  .getapp:hover {
+    background-color: #ff4343;
+  }
   .imgLeft {
     position: absolute;
     left: 0;
@@ -2361,7 +2065,6 @@ body {
     height: 450px;
     width: 250px;
   }
-
   .imgRight {
     position: absolute;
     right: 0;
@@ -2369,14 +2072,12 @@ body {
     height: 450px;
     width: 250px;
   }
-
   .search {
     display: flex;
     justify-content: center;
     height: 370px;
     align-items: center;
   }
-
   .search-box {
     width: 450px;
     height: 50px;
@@ -2389,26 +2090,22 @@ body {
     border-radius: 12px;
     position: relative;
   }
-
   .text-span {
     width: 20ch;
     overflow: hidden;
     text-wrap: nowrap;
     animation: run 4s steps(20) infinite alternate-reverse;
   }
-
   @keyframes run {
     from {
       width: 0ch;
     }
   }
-
   .glass-work {
     position: absolute;
     top: 14px;
     right: 10px;
   }
-
   .food-container-title,
   .instantshop-container-title {
     width: 80%;
@@ -2416,26 +2113,21 @@ body {
     font-size: 23px;
     font-weight: 700;
   }
-
   .food-list img,
   .instantshop-list img {
     width: 144px;
     height: 180px;
-    cursor: pointer;
   }
-
   .food-list {
     width: 80%;
     margin: auto;
   }
-
   .instantshop-list a {
     color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
   }
-
   .instantshop-list {
     display: flex;
     width: 80%;
@@ -2444,11 +2136,9 @@ body {
     gap: 20px;
     scroll-behavior: smooth;
   }
-
   .instantshop-list::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content {
     display: flex;
     overflow-x: auto;
@@ -2459,11 +2149,9 @@ body {
     scroll-behavior: smooth;
     cursor: pointer;
   }
-
   .dineout-content::-webkit-scrollbar {
     display: none;
   }
-
   .dineout-content-files {
     width: 322px;
     height: 320px;
@@ -2471,7 +2159,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
   }
-
   .dineout-content-img img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -2479,11 +2166,9 @@ body {
     height: 182px;
     object-fit: cover;
   }
-
   .dineout-content-img {
     background-color: rgba(0, 0, 0, 0.0470588235);
   }
-
   .company-topic {
     position: absolute;
     top: 47%;
@@ -2493,7 +2178,6 @@ body {
     align-items: center;
     color: #fff;
   }
-
   .company-rating {
     font-weight: 600;
     font-size: 16px;
@@ -2503,17 +2187,14 @@ body {
     align-items: center;
     gap: 7px;
   }
-
   .fa-star {
     color: var(--bs-success);
   }
-
   .company-tit-topic {
     font-size: 21px;
     text-shadow: 4px 4px 12px #000;
     font-weight: 900;
   }
-
   .contenttitle {
     display: flex;
     font-size: 14px;
@@ -2522,13 +2203,11 @@ body {
     padding: 0 10px;
     color: #6f7274;
   }
-
   .fa-square-check,
   .table-booking {
     color: #6f7274;
     margin-left: 10px;
   }
-
   .table-booking {
     width: 37%;
     font-size: 13px;
@@ -2536,11 +2215,9 @@ body {
     border-radius: 4px;
     background-color: #f0f0f5;
   }
-
   .offer-img img {
     height: 20px;
   }
-
   .offers {
     display: flex;
     border: 1px solid #1ba672;
@@ -2553,62 +2230,51 @@ body {
     justify-content: center;
     margin-top: 5px;
   }
-
   footer {
     background-color: #f0f0f5;
     height: 100px;
     width: 100%;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .footer-img {
     padding: 10px 20px;
   }
-
   .footer-img img {
     border-radius: 20%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-
   .footer-tit {
     color: #ff9900;
     font-weight: 1000;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
-
   .footer-copu {
     padding: 0px 20px;
     color: #616469;
   }
-
   .company-tit {
     font-size: 22px;
     padding: 0px 20px;
     font-weight: 700;
   }
-
   .footer-company {
     display: none;
   }
-
   .company-list {
     font-size: 18px;
     padding: 10px 20px;
     color: #6f7274;
   }
-
   .Scrollbar-bottom {
     display: flex;
     gap: 10px;
     justify-content: space-around;
   }
-
   .arrow-left,
   .arrow-right {
     background-color: #d9dadb;
@@ -2618,42 +2284,34 @@ body {
     text-align: center;
     cursor: pointer;
   }
-
   .arrow-left:hover,
   .arrow-right:hover {
     background-color: #ff9900;
     color: #fff;
   }
-
   .tit-container {
     display: flex;
     justify-content: space-around;
     padding: 20px 0;
   }
-
   .right-link {
     width: 80%;
     margin: auto;
     cursor: pointer;
   }
-
   .right-link:hover {
     color: #ff9900;
   }
-
   #cart-container {
     width: 450px;
   }
-
   .offcanvas-heading {
     display: flex;
     gap: 300px;
   }
-
   .cart-title {
     font-size: 23px;
   }
-
   .offcanvas-headers {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 8px 10px;
@@ -2661,7 +2319,6 @@ body {
     color: #fff;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
-
   .close-off {
     color: #fff;
     border: none;

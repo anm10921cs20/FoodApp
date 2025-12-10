@@ -3,14 +3,13 @@ auth.onAuthStateChanged(function (user) {
         console.log("user Logged in " + user.email);
         const logincontainer = document.getElementsByClassName('login-container')[0];
         logincontainer.style.display = "none";
-           document.getElementsByClassName('display')[0].style.display = "block";
 
         // login page
         const loginpage = document.getElementsByClassName('login')[0];
         loginpage.addEventListener('click', () => {
             const logincontainer = document.getElementsByClassName('login-container')[0];
             logincontainer.style.display = "none";
-            window.location.href = "./src/search/search.html";
+            window.location.replace("./src/profile.html");
         })
         const signin = document.getElementsByClassName('signin')[0];
         signin.innerHTML = `<i class="fas fa-user-circle"></i>`;
@@ -20,7 +19,7 @@ auth.onAuthStateChanged(function (user) {
         signin.style.cursor = "pointer";
 
         signin.addEventListener('click', () => {
-            alert('user')
+            window.location.href = "./src/profile.html";
         })
 
     }
@@ -28,7 +27,6 @@ auth.onAuthStateChanged(function (user) {
         console.log("user Logged out");
         const logincontainer = document.getElementsByClassName('login-container')[0];
         logincontainer.style.display = "block";
-        document.getElementsByClassName('display')[0].style.display = "none";
       
 
         // click login
