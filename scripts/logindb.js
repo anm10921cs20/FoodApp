@@ -87,7 +87,7 @@ const signUp = () => {
                 }
             )
             // old state
-
+           
 
 
 
@@ -114,6 +114,8 @@ const signUp = () => {
                     phoneNumbers.value = ""
                 }
             }, 1000)
+            
+             return auth.signOut()
 
 
         }).catch((error) => {
@@ -182,7 +184,6 @@ const login = () => {
         const loginName1 = document.getElementById('signinemail').value = "";
         const loginPassword1 = document.getElementById('signinpassword').value = "";
         if (localStorage.getItem('uid') == uid) {
-            document.getElementsByClassName('display')[0].style.display = "block";
             const logincontainer = document.getElementsByClassName('login-container')[0];
             logincontainer.style.display = "none";
         }
