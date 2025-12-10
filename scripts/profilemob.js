@@ -32,7 +32,10 @@ firestore.collection('gmailClient').doc(uiddata).get().then((result) => {
 const logoutBtn = document.getElementsByClassName('displays')[0];
 
 logoutBtn.addEventListener('click', () => {
-    window.location.replace('../index.html')
+    setTimeout(() => {
+         window.location.replace('../index.html')
+    },2000)
+   
 })
 
 
