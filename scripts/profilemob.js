@@ -33,9 +33,9 @@ const logoutBtn = document.getElementsByClassName('displays')[0];
 
 logoutBtn.addEventListener('click', () => {
     setTimeout(() => {
-         window.location.replace('../index.html')
-    },2000)
-   
+        window.location.replace('../index.html')
+    }, 2000)
+
 })
 
 
@@ -60,7 +60,7 @@ function addNumber() {
     console.log(phoneValue);
     localStorage.setItem('phonenumber', phoneValue);
     alertMessage.style.display = "block";
-    var counter = 2;
+    var counter = 1;
     var interval = setInterval(() => {
         counter--;
         if (counter < 0) {
@@ -69,7 +69,136 @@ function addNumber() {
             window.location.reload()
 
         }
-    },1000)
+    }, 1000)
 
 }
 
+// address edit
+
+const closeBtn1 = document.getElementsByClassName('close')[1];
+const AddressContainer = document.getElementsByClassName('address-container')[0];
+const openBtn1 = document.getElementsByClassName('edit')[1];
+
+
+openBtn1.addEventListener('click', () => {
+    AddressContainer.style.display = "block";
+})
+closeBtn1.addEventListener('click', () => {
+    AddressContainer.style.display = "none";
+})
+
+
+
+
+function setAddressData() {
+    const street = document.getElementById('street').value;
+    const district = document.getElementById('district').value;
+    const state = document.getElementById('state').value;
+    const pincode = document.getElementById('pincode').value;
+    const input = document.getElementsByTagName('input');
+
+    if (!pincode) {
+        for (var i = 0; i < input.length; i++) {
+            if (street == "") {
+                input[i].style.border = "1px solid #ff4343";
+
+            }
+            else if (district == "") {
+                input[i].style.border = "1px solid #ff4343";
+
+            }
+            else if (state == "") {
+                input[i].style.border = "1px solid #ff4343";
+
+            }
+            else if (pincode == "") {
+                input[i].style.border = "1px solid #ff4343";
+
+            }
+
+            setTimeout(() => {
+                for (var i = 0; i < input.length; i++) {
+                    input[i].style.border = "1px solid rgba(0,0,0,0.2)";
+                }
+
+            }, 3000)
+
+
+        }
+
+    }
+    else {
+        const alertMessage = document.getElementsByClassName('message-alert')[1];
+        alertMessage.style.display = "block";
+        var counter = 1;
+        var interval = setInterval(() => {
+            counter--;
+            if (counter < 0) {
+                clearInterval(interval);
+                alertMessage.style.display = "none";
+                window.location.reload()
+
+            }
+        }, 1000)
+        firestore.collection('UserAddress/').doc(uiddata).set(
+            {
+                street: street,
+                district: district,
+                state: state,
+                pincode: pincode
+            }
+        )
+    }
+
+}
+
+
+
+
+firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
+    const dataresponce = responce.data();
+    const addressDet = document.getElementsByClassName('address')[0];
+    if (dataresponce) {
+        const address = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode ?? 0;
+        addressDet.innerText = address ?? "Please Edit Address";
+
+    }
+
+})
+
+
+
+async function apiLocation() {
+    navigator.geolocation.getCurrentPosition((position) => {
+        const lon = position.coords.longitude;
+        const lat = position.coords.latitude;
+        const api = 'fd4200764f7d4f378e08903b8322e6fd'
+        const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&format=json&apiKey=${api}`
+        async function getloc() {
+            const responce = await fetch(url);
+            const data = await responce.json()
+            const street = document.getElementById('street');
+            const district = document.getElementById('district');
+            const state = document.getElementById('state');
+            const pincode = document.getElementById('pincode');
+            street.value = data.results[0].street;
+             district.value = data.results[0].city;
+              state.value = data.results[0].state;
+               pincode.value = data.results[0].postcode;
+           
+
+        }
+        getloc()
+
+
+    }),
+        (error) => {
+            console.log(error);
+
+        }
+
+
+
+
+
+}

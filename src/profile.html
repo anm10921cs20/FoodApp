@@ -95,7 +95,7 @@
             <tr>
                 <td>Phone Number</td>
                 <td>:</td>
-                <td class="number">8056429712</td>
+                <td class="number"></td>
                 <td class="edit">Edit</td>
             </tr>
             <tr>
@@ -106,7 +106,7 @@
             <tr>
                 <td>Address</td>
                 <td>:</td>
-                <td class="address">Cudalore murugan kovil street</td>
+                <td class="address">Please Edit Address</td>
                 <td class="edit">Edit</td>
             </tr>
         </table>
@@ -155,6 +155,37 @@
 
 
 
+
+
+<!-- Address -->
+
+<div class="address-container mobile-data">
+    <div class="close"><i class="fas fa-close"></i></div>
+    <div class="phoneNumber">
+        <p class="pNtit">Edit Address Details</p>
+        <div class="ph-input">
+            <label for="phinput" class="pNtext">Street</label>
+            <input type="text" name="phoneNumber" id="street">
+        </div>
+        <div class="ph-input">
+            <label for="phinput" class="pNtext">District</label>
+            <input type="text" name="phoneNumber" id="district">
+        </div>
+         <div class="ph-input">
+            <label for="phinput" class="pNtext">State</label>
+            <input type="text" name="phoneNumber" id="state">
+        </div>
+        <div class="ph-input">
+            <label for="phinput" class="pNtext">Pincode</label>
+            <input type="number" name="phoneNumber" id="pincode">
+        </div>
+          <div class="addresss-api" onclick="apiLocation()">
+            <i class="fa-solid fa-location-crosshairs"></i> Get Location
+        </div><br>
+        <button onclick="setAddressData()" class="submit-container">Save</button>
+        <p class="message-alert">Successful Saved</p>
+    </div>
+</div>
 
 
 
