@@ -105,7 +105,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
             <div class="amt">Rs.<span id="amt">${item.price}</span></div>
             <br>
         </div>
-        <button class="btn btn-success click">Add To Cart</button>
+        <button class="btn btn-success click food${item.id}">Add To Cart</button>
     </div>
 </div>
                
@@ -117,6 +117,21 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
         const offCanvsContainer = document.getElementById(`food${item.id}`);
         const offCanvsContainer1 = document.getElementById(`item${item.id}`);
 
+        const buttons = document.querySelectorAll(`.food${item.id}`);
+
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+
+                const offCanvashide = document.querySelectorAll(`#item${item.id}`);
+                offCanvashide.forEach((offcanvas) => {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                    if (bsOffcanvas) bsOffcanvas.hide();
+                })
+
+            })
+        })
+
         offCanvsContainer.style.height = "600px";
         offCanvsContainer.style.borderTopLeftRadius = "20px";
         offCanvsContainer.style.borderTopRightRadius = "20px";
@@ -127,7 +142,7 @@ db.ref(`${data}Item`).get('value').then((snapshot) => {
 
         const screenwidth = innerWidth;
 
-        if (screenwidth > 1024) {
+        if (screenwidth >= 1024) {
             offCanvsContainer.style.width = "500px"
             offCanvsContainer.style.margin = "100px 100px"
             offCanvsContainer1.style.width = "500px"
@@ -389,7 +404,6 @@ function addtocart(event) {
             foodArray.push({ ...foodItems });
             localStorage.setItem('cartfood', JSON.stringify(foodArray))
             const name = localStorage.getItem('name');
-            console.log(name);
             const alertText = document.getElementsByClassName('notification__text')[1];
               const alertbox = document.getElementsByClassName('alert-container-true')[0];
             alertbox.style.display = "block";

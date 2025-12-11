@@ -1,8 +1,15 @@
 const name = document.getElementsByClassName('name')[0];
 const name1 = document.getElementsByClassName('name')[1];
+const name2 = document.getElementsByClassName('name')[2];
+const name3 = document.getElementsByClassName('name')[3];
+const name4 = document.getElementsByClassName('name')[4];
+
+
 
 const phone = document.getElementsByClassName('number')[0];
 const email = document.getElementsByClassName('gmail')[0];
+const email1 = document.getElementsByClassName('gmail')[1];
+
 const address = document.getElementsByClassName('address')[0];
 
 const nameData = localStorage.getItem('name');
@@ -11,7 +18,12 @@ const emailData = localStorage.getItem('email');
 
 name.innerText = nameData;
 name1.innerText = nameData;
+name2.innerText = nameData;
+name3.innerText = nameData;
+name4.innerText = nameData;
 phone.innerText = phoneData ?? "Please Edit Phone";
+email.innerText = emailData;
+email1.innerText = emailData;
 
 const firestore = firebase.firestore()
 const auth = firebase.auth()
@@ -21,7 +33,12 @@ firestore.collection('gmailClient').doc(uiddata).get().then((result) => {
     const data = result.data()
 
     const imgsrc = document.getElementsByClassName('img-src')[0];
+     const imgsrc1 = document.getElementsByClassName('img-src')[1];
+      const imgsrc2 = document.getElementsByClassName('img-src')[2];
     imgsrc.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
+    imgsrc1.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
+    imgsrc2.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
+
 
 
 }).catch((err) => {

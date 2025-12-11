@@ -71,7 +71,8 @@
                     Account Profile
                 </p>
                 <div class="logout">
-                    <div class="displays" onclick="signOutUser()">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                    <div class="displays" onclick="signOutUser()">Logout <i
+                            class="fa-solid fa-arrow-right-from-bracket"></i></div>
                 </div>
             </div>
             <div class="first-container">
@@ -117,7 +118,7 @@
 
 
 
-  <div class="alert-container-true">
+    <div class="alert-container-true">
         <div id="notification" popover- class="notification" role="alert" aria-live="assertive" aria-atomic="true"
             closedby="anny">
             <div class="notification__icon"></div>
@@ -137,55 +138,232 @@
 
 
 
-<!-- phone number -->
+    <!-- phone number -->
 
-<div class="phoneNumber-container mobile-data">
-    <div class="close"><i class="fas fa-close"></i></div>
-    <div class="phoneNumber">
-        <p class="pNtit">Edit Phone Number</p>
-        <div class="ph-input">
-            <label for="phinput" class="pNtext">Phone Number</label>
-            <input type="number" name="phoneNumber" id="phinput">
+    <div class="phoneNumber-container mobile-data">
+        <div class="close"><i class="fas fa-close"></i></div>
+        <div class="phoneNumber">
+            <p class="pNtit">Edit Phone Number</p>
+            <div class="ph-input">
+                <label for="phinput" class="pNtext">Phone Number</label>
+                <input type="number" name="phoneNumber" id="phinput">
+            </div>
+            <button onclick="addNumber()" class="submit-container">Save</button>
+            <p class="message-alert">Successful Saved</p>
         </div>
-        <button onclick="addNumber()" class="submit-container">Save</button>
-        <p class="message-alert">Successful Saved</p>
     </div>
-</div>
 
 
 
 
 
 
-<!-- Address -->
+    <!-- Address -->
 
-<div class="address-container mobile-data">
-    <div class="close"><i class="fas fa-close"></i></div>
-    <div class="phoneNumber">
-        <p class="pNtit">Edit Address Details</p>
-        <div class="ph-input">
-            <label for="phinput" class="pNtext">Street</label>
-            <input type="text" name="phoneNumber" id="street">
+    <div class="address-container mobile-data">
+        <div class="close"><i class="fas fa-close"></i></div>
+        <div class="phoneNumber">
+            <p class="pNtit">Edit Address Details</p>
+            <div class="ph-input">
+                <label for="phinput" class="pNtext">Street</label>
+                <input type="text" name="phoneNumber" id="street">
+            </div>
+            <div class="ph-input">
+                <label for="phinput" class="pNtext">District</label>
+                <input type="text" name="phoneNumber" id="district">
+            </div>
+            <div class="ph-input">
+                <label for="phinput" class="pNtext">State</label>
+                <input type="text" name="phoneNumber" id="state">
+            </div>
+            <div class="ph-input">
+                <label for="phinput" class="pNtext">Pincode</label>
+                <input type="number" name="phoneNumber" id="pincode">
+            </div>
+            <div class="addresss-api" onclick="apiLocation()">
+                <i class="fa-solid fa-location-crosshairs"></i> Get Location
+            </div><br>
+            <button onclick="setAddressData()" class="submit-container">Save</button>
+            <p class="message-alert">Successful Saved</p>
         </div>
-        <div class="ph-input">
-            <label for="phinput" class="pNtext">District</label>
-            <input type="text" name="phoneNumber" id="district">
-        </div>
-         <div class="ph-input">
-            <label for="phinput" class="pNtext">State</label>
-            <input type="text" name="phoneNumber" id="state">
-        </div>
-        <div class="ph-input">
-            <label for="phinput" class="pNtext">Pincode</label>
-            <input type="number" name="phoneNumber" id="pincode">
-        </div>
-          <div class="addresss-api" onclick="apiLocation()">
-            <i class="fa-solid fa-location-crosshairs"></i> Get Location
-        </div><br>
-        <button onclick="setAddressData()" class="submit-container">Save</button>
-        <p class="message-alert">Successful Saved</p>
     </div>
-</div>
+
+
+
+
+
+
+    <!-- pc user -->
+
+    <div class="pc-container">
+        <div class="header">
+            <div class="nav-menus">
+
+                <div class="displays visually-hidden-focusable"> <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div>
+                <div class="logo-container">
+                    <img src="../images/logo/Red and White Cartoon Food Logo.png" height="30px" width="30px" alt="">
+                    <p class="logo-name">Mahan Foods</p>
+                </div>
+            </div>
+            <div class="nav-menus">
+                <div class="loginimg">
+                    <img src="https://i.ibb.co/ZDMFp9F/user.png" height="30px" width="30px" alt="" class="img-src">
+                    <p class="name"></p>
+                </div>
+                <div class="displays"> <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+            </div>
+        </div>
+        <main class="main-data">
+            <div class="side-bar">
+                <div class="side-container">
+                    <div class="user-det">
+                        <div class="imgdata">
+                            <img src="https://i.ibb.co/ZDMFp9F/user.png" width="60px" height="60px" alt=""
+                                class="img-src">
+                        </div>
+                        <div class="datatit">
+                            <p><i class="fas fa-user"> </i><span class="name"></span></p>
+                            <p><i class="fas fa-envelope"></i> <span class="gmail"></span></p>
+                        </div>
+                    </div><br>
+                    <div class="side-menu-content side-menu-content-active "><i class="fas fa-user"></i> User Account
+                    </div>
+                    <div class="side-menu-content"><i class="fa-solid fa-cart-flatbed"></i> Orders</div>
+                    <div class="side-menu-content"><i class="fa-solid fa-users"></i> Partner</div>
+                    <div class="foodvarieties">
+                        <div class="head-tit"><i class="fa-solid fa-bowl-food"></i> Food Variety</div>
+                        <div class="side-menu-content"><i class="fa-solid fa-burger"></i> Cuisines</div>
+                    </div>
+
+                    <div class="other-service">
+                        <div class="head-tit"><i class="fa-solid fa-bell-concierge"></i> Other Service</div>
+                        <div class="side-menu-content"><i class="fa-solid fa-bag-shopping"></i> Grocery</div>
+                        <div class="side-menu-content"><i class="fa-solid fa-utensils"></i> Restarunts</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main-bar">
+
+                <!-- account container -->
+                <div class="account-container">
+                    <div class="account-content">
+                        <div class="account-first">
+                            <div class="account-first-container">
+                                <h1>Customer Information</h1>
+                                <p>Manage Your Information, Contact Details Hanlde The Safety Maintain The Working
+                                    Details Using The Products Delivery To Contact The Delivery Team </p>
+                                <br>
+                                <div class="detailsforuser">
+                                    <div class="accountdet">
+                                        <div class="name-details">
+                                            <div class="name-container">
+                                                <p class="nametopic">Name</p>
+                                            </div>
+                                            <div class="name-icon">
+                                                <i class="fas fa-user-circle"></i>
+
+                                            </div>
+                                        </div>
+                                        <div class="nameform">
+                                            <p class="name"></p>
+                                        </div>
+                                    </div>
+                                    <div class="accountdet">
+                                            <div class="accountdet">
+                                        <div class="name-details">
+                                            <div class="name-container">
+                                                <p class="nametopic">Phone Number</p>
+                                            </div>
+                                            <div class="name-icon">
+                                                <i class="fas fa-user-circle"></i>
+
+                                            </div>
+                                        </div>
+                                        <div class="nameform">
+                                            <p class="name"></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="accountdet">
+                                            <div class="accountdet">
+                                        <div class="name-details">
+                                            <div class="name-container">
+                                                <p class="nametopic">Email Address</p>
+                                            </div>
+                                            <div class="name-icon">
+                                                <i class="fas fa-user-circle"></i>
+
+                                            </div>
+                                        </div>
+                                        <div class="nameform">
+                                            <p class="name"></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="accountdet">
+                                            <div class="accountdet">
+                                        <div class="name-details">
+                                            <div class="name-container">
+                                                <p class="nametopic">Address</p>
+                                            </div>
+                                            <div class="name-icon">
+                                                <i class="fas fa-user-circle"></i>
+
+                                            </div>
+                                        </div>
+                                        <div class="nameform">
+                                            <p class="name"></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="accountdet">
+                                            <div class="accountdet">
+                                        <div class="name-details">
+                                            <div class="name-container">
+                                                <p class="nametopic">Name</p>
+                                            </div>
+                                            <div class="name-icon">
+                                                <i class="fas fa-user-circle"></i>
+
+                                            </div>
+                                        </div>
+                                        <div class="nameform">
+                                            <p class="name"></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-second">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </main>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,6 +380,9 @@
 <!-- main Scripts -->
 <script src="../../scripts/cartmobile.js"></script>
 <script src="../scripts/profilemob.js"></script>
+<script src="../scripts/profilepc.js"></script>
+
+<script src="../scripts/profilescript/account.js"></script>
 <!-- database script -->
 <script src="../scripts/google.js"></script>
 
