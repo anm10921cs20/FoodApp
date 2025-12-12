@@ -163,7 +163,7 @@ function setAddressData() {
 
             }
         }, 1000)
-        firestore.collection('UserAddress/').doc(uiddata).set(
+        firestore.collection('UserAddressMobile/').doc(uiddata).set(
             {
                 street: street,
                 district: district,
@@ -178,6 +178,30 @@ function setAddressData() {
 
 
 
+firestore.collection('UserAddressMobile/').doc(uiddata).get().then((responce) => {
+    const dataresponce = responce.data();
+
+
+    if (dataresponce) {
+
+
+        const addressdet = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode ?? 0;
+        const addressDet = document.getElementsByClassName('address')[0];
+        const phone = document.getElementsByClassName('number')[0];
+        const name = document.getElementsByClassName('name')[0];
+        const name1 = document.getElementsByClassName('name')[1];
+        const nameData = localStorage.getItem('name');
+        const phoneData = localStorage.getItem('phonenumber');
+        addressDet.innerText = addressdet ?? "Please Edit Address";
+        phone.innerText = phoneData ?? "Pleae Edit Number"
+
+
+
+
+    }
+})
+
+
 firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
     const dataresponce = responce.data();
 
@@ -190,7 +214,7 @@ firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
         const phonenumbers = dataresponce.phoneNumber;
         localStorage.setItem('name', namedata);
         localStorage.setItem('phonenumber', phonenumbers)
-        localStorage.setItem('address',address)
+        localStorage.setItem('address', address)
 
 
 
@@ -199,27 +223,23 @@ firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
 
 
 })
-const addressDet = document.getElementsByClassName('address')[0];
+
 const addressDet1 = document.getElementsByClassName('address')[1];
 const name2 = document.getElementsByClassName('name')[2];
 const name3 = document.getElementsByClassName('name')[3];
 const name4 = document.getElementsByClassName('name')[4];
 const phone1 = document.getElementsByClassName('number')[1];
-const name = document.getElementsByClassName('name')[0];
-const name1 = document.getElementsByClassName('name')[1];
-const phone = document.getElementsByClassName('number')[0];
+
+
 const nameData = localStorage.getItem('name');
 const phoneData = localStorage.getItem('phonenumber');
 const addressdata = localStorage.getItem('address')
-addressDet.innerText = addressdata ?? "Please Edit Address";
+
 addressDet1.innerText = addressdata ?? "Please Edit Address";
-name.innerText = nameData
-name1.innerText = nameData
 name2.innerText = nameData
 name3.innerText = nameData
 name4.innerText = nameData
 phone1.innerText = phoneData ?? "Please Enter Number";
-phone.innerText = phoneData ?? "Please Enter Number";
 
 
 async function apiLocation() {
@@ -232,32 +252,31 @@ async function apiLocation() {
 
         async function getloc() {
 
-            try{
+            try {
                 const responce = await fetch(url);
-            const data = await responce.json()
-            const street = document.getElementById('street');
-            const district = document.getElementById('district');
-            const state = document.getElementById('state');
-            const pincode = document.getElementById('pincode');
-            const street1 = document.getElementById('streetid');
-            const district1 = document.getElementById('districtid');
-            const state1 = document.getElementById('stateid');
-            const pincode1 = document.getElementById('pincodeid');
-            street.value = data.results[0].street;
-            district.value = data.results[0].city;
-            state.value = data.results[0].state;
-            pincode.value = data.results[0].postcode;
-            street1.value = data.results[0].street;
-            district1.value = data.results[0].city;
-            state1.value = data.results[0].state;
-            pincode1.value = data.results[0].postcode;
+                const data = await responce.json()
+                const street = document.getElementById('street');
+                const district = document.getElementById('district');
+                const state = document.getElementById('state');
+                const pincode = document.getElementById('pincode');
+                const street1 = document.getElementById('streetid');
+                const district1 = document.getElementById('districtid');
+                const state1 = document.getElementById('stateid');
+                const pincode1 = document.getElementById('pincodeid');
+                street.value = data.results[0].street;
+                district.value = data.results[0].city;
+                state.value = data.results[0].state;
+                pincode.value = data.results[0].postcode;
+                street1.value = data.results[0].street;
+                district1.value = data.results[0].city;
+                state1.value = data.results[0].state;
+                pincode1.value = data.results[0].postcode;
 
-            }catch(err)
-            {
+            } catch (err) {
                 console.log(err);
-                
+
             }
-            
+
 
         }
         getloc()
