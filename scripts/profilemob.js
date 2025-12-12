@@ -231,7 +231,9 @@ async function apiLocation() {
         console.log('hi');
 
         async function getloc() {
-            const responce = await fetch(url);
+
+            try{
+                const responce = await fetch(url);
             const data = await responce.json()
             const street = document.getElementById('street');
             const district = document.getElementById('district');
@@ -250,6 +252,12 @@ async function apiLocation() {
             state1.value = data.results[0].state;
             pincode1.value = data.results[0].postcode;
 
+            }catch(err)
+            {
+                console.log(err);
+                
+            }
+            
 
         }
         getloc()

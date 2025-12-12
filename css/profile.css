@@ -306,6 +306,7 @@
 		transition: all 0.5s;
 		padding: 10px 0;
 		display: none;
+		z-index: 1000;
 
 	}
 
