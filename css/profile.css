@@ -559,10 +559,11 @@
 
 	.main-data {
 		display: flex;
+		width: 100%;
 	}
 
 	.side-bar {
-		width: 18%;
+		width: 23%;
 		display: flex;
 		justify-content: center;
 		height: 93vh;
@@ -626,7 +627,7 @@
 	}
 
 	.account-first {
-		width: 90%;
+		width: 70%;
 		height:1100px;
 	}
 	#map
@@ -651,7 +652,7 @@
 
 	.account-first-container {
 		background-color: #fff;
-		height:400px;
+		height:500px;
 		width: 90%;
 	}
 
@@ -676,8 +677,9 @@
 		height: 300px;
 		width: 100%;
 		display: grid;
-		grid-template-columns: 2fr 2fr 2fr;
+		grid-template-columns: 2fr 2fr;
 		flex-wrap: wrap;
+		row-gap: 20px;
 	}
 
 	.accountdet {

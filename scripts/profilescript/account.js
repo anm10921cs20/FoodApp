@@ -178,9 +178,9 @@ navigator.geolocation.watchPosition((pos) => {
     const lng = pos.coords.longitude;
     updateLocation(lat, lng);
 
-    const datalocalstore = localStorage.getItem('name');
+    
 
-    firestore.collection('userLocation/').doc(datalocalstore).set({
+    firestore.collection('userLocation/').doc(uiddata).set({
         lat:lat,
         lon:lng
     })
