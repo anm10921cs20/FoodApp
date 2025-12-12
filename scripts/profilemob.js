@@ -1,6 +1,12 @@
 
-
-
+const phone = document.getElementsByClassName('number')[0];
+const name = document.getElementsByClassName('name')[0];
+const name1 = document.getElementsByClassName('name')[1];
+const nameData1= localStorage.getItem('name');
+const phoneData1 = localStorage.getItem('phonenumber');
+phone.innerText = phoneData1 ?? "Pleae Edit Number"
+name.innerText = nameData1;
+name1.innerText = nameData1
 
 
 
@@ -187,13 +193,9 @@ firestore.collection('UserAddressMobile/').doc(uiddata).get().then((responce) =>
 
         const addressdet = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode ?? 0;
         const addressDet = document.getElementsByClassName('address')[0];
-        const phone = document.getElementsByClassName('number')[0];
-        const name = document.getElementsByClassName('name')[0];
-        const name1 = document.getElementsByClassName('name')[1];
-        const nameData = localStorage.getItem('name');
-        const phoneData = localStorage.getItem('phonenumber');
+
         addressDet.innerText = addressdet ?? "Please Edit Address";
-        phone.innerText = phoneData ?? "Pleae Edit Number"
+
 
 
 
