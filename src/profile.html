@@ -22,7 +22,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
 
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <!-- bootstrap File -->
     <link rel="stylesheet" href="../../bootstrap-5.3.5-dist/css/bootstrap.min.css">
@@ -211,7 +212,8 @@
                     <img src="https://i.ibb.co/ZDMFp9F/user.png" height="30px" width="30px" alt="" class="img-src">
                     <p class="name"></p>
                 </div>
-                <div class="displays"> <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                <div class="displays" onclick="signOutUser()"> <i
+                        class="fa-solid displays fa-arrow-right-from-bracket"></i></div>
             </div>
         </div>
         <main class="main-data">
@@ -238,7 +240,7 @@
 
                     <div class="other-service">
                         <div class="head-tit"><i class="fa-solid fa-bell-concierge"></i> Other Service</div>
-                        <div class="side-menu-content"><i class="fa-solid fa-bag-shopping"></i> Grocery</div>
+                        <div class="side-menu-content"><i class="fa-solid fa-bag-shopping"></i> Instamart</div>
                         <div class="side-menu-content"><i class="fa-solid fa-utensils"></i> Restarunts</div>
                     </div>
 
@@ -262,7 +264,7 @@
                                                 <p class="nametopic">Name</p>
                                             </div>
                                             <div class="name-icon">
-                                                <i class="fas fa-user-circle"></i>
+                                                <i class="fas fa-user-circle icon-font"></i>
 
                                             </div>
                                         </div>
@@ -271,77 +273,119 @@
                                         </div>
                                     </div>
                                     <div class="accountdet">
-                                            <div class="accountdet">
-                                        <div class="name-details">
-                                            <div class="name-container">
-                                                <p class="nametopic">Phone Number</p>
-                                            </div>
-                                            <div class="name-icon">
-                                                <i class="fas fa-user-circle"></i>
+                                        <div class="accountdet">
+                                            <div class="name-details">
+                                                <div class="name-container">
+                                                    <p class="nametopic">Phone Number</p>
+                                                </div>
+                                                <div class="name-icon">
+                                                    <i class="fa-solid fa-phone-volume icon-font"></i>
 
+                                                </div>
+                                            </div>
+                                            <div class="nameform">
+                                                <p class="number"></p>
                                             </div>
                                         </div>
-                                        <div class="nameform">
-                                            <p class="name"></p>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="accountdet">
-                                            <div class="accountdet">
-                                        <div class="name-details">
-                                            <div class="name-container">
-                                                <p class="nametopic">Email Address</p>
-                                            </div>
-                                            <div class="name-icon">
-                                                <i class="fas fa-user-circle"></i>
+                                        <div class="accountdet">
+                                            <div class="name-details">
+                                                <div class="name-container">
+                                                    <p class="nametopic">Email Address</p>
+                                                </div>
+                                                <div class="name-icon">
+                                                    <i class="fa-regular fa-envelope-open icon-font"></i>
 
+                                                </div>
+                                            </div>
+                                            <div class="nameform">
+                                                <p class="gmail"></p>
                                             </div>
                                         </div>
-                                        <div class="nameform">
-                                            <p class="name"></p>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="accountdet">
-                                            <div class="accountdet">
-                                        <div class="name-details">
-                                            <div class="name-container">
-                                                <p class="nametopic">Address</p>
-                                            </div>
-                                            <div class="name-icon">
-                                                <i class="fas fa-user-circle"></i>
+                                        <div class="accountdet">
+                                            <div class="name-details">
+                                                <div class="name-container">
+                                                    <p class="nametopic">Address</p>
+                                                </div>
+                                                <div class="name-icon">
+                                                    <i class="fa-solid fa-location-dot icon-font"></i>
+
+                                                </div>
 
                                             </div>
+                                            <div class="nameform">
+                                                <p class="address"></p>
+                                            </div>
                                         </div>
-                                        <div class="nameform">
-                                            <p class="name"></p>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="accountdet">
-                                            <div class="accountdet">
-                                        <div class="name-details">
-                                            <div class="name-container">
-                                                <p class="nametopic">Name</p>
-                                            </div>
-                                            <div class="name-icon">
-                                                <i class="fas fa-user-circle"></i>
+                                        <div class="accountdet">
+                                            <div class="name-details">
+                                                <div class="name-container">
+                                                    <p class="nametopic">Edit</p>
+                                                </div>
+                                                <div class="name-icon">
+                                                    <i class="fa-solid fa-pen-to-square icon-font"></i>
 
+                                                </div>
+                                            </div>
+                                            <div class="nameform">
+                                                <p class="name">Any Data Edit in Your Details Click The Edit Button</p>
                                             </div>
                                         </div>
-                                        <div class="nameform">
-                                            <p class="name"></p>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
+                            <h1 class="text-start fa-2x">Your Location Map</h1>
+                             <div id="map" style="height: 600px; width:100%;"></div>
                         </div>
                         <div class="account-second">
+                            <div class="accounts-details">
+                                <div class="close"><i class="fas fa-close"></i></div>
+                                <p class="titac">Edit Accounts Details </p>
+                                <div class="accounts-input">
+                                    <div class="ph-input">
+                                        <label for="nameid" class="pNtext">Name</label>
+                                        <input type="text" name="phoneNumber" id="nameid">
+                                    </div>
+                                    <div class="ph-input">
+                                        <label for="phoneid" class="pNtext">Phone Number</label>
+                                        <input type="number" name="phoneNumber" id="phoneid">
+                                    </div>
+                                    <div class="ph-input">
+                                        <label for="streetid" class="pNtext">Street</label>
+                                        <input type="text" name="phoneNumber" id="streetid">
+                                    </div>
+                                    <div class="ph-input">
+                                        <label for="districtid" class="pNtext">District</label>
+                                        <input type="text" name="phoneNumber" id="districtid">
+                                    </div>
+                                    <div class="ph-input">
+                                        <label for="stateid" class="pNtext">State</label>
+                                        <input type="text" name="phoneNumber" id="stateid">
+                                    </div>
+                                    <div class="ph-input">
+                                        <label for="pincodeid" class="pNtext">Pincode</label>
+                                        <input type="number" name="phoneNumber" id="pincodeid">
+                                    </div>
+                                    <div class="addresss-api" onclick="apiLocation()">
+                                        <i class="fa-solid fa-location-crosshairs"></i> Get Location
+                                    </div><br>
+                                    <button class="submit-container" onclick="storeDataAccount()">Save Changes</button>
+                                </div>
+                            </div>
+                             
+
+
 
                         </div>
                     </div>
                 </div>
+
+                <!-- close aaccount container -->
 
 
 

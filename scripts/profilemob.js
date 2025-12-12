@@ -1,14 +1,16 @@
 const name = document.getElementsByClassName('name')[0];
 const name1 = document.getElementsByClassName('name')[1];
-const name2 = document.getElementsByClassName('name')[2];
-const name3 = document.getElementsByClassName('name')[3];
-const name4 = document.getElementsByClassName('name')[4];
 
 
 
-const phone = document.getElementsByClassName('number')[0];
+
+
+
+
 const email = document.getElementsByClassName('gmail')[0];
 const email1 = document.getElementsByClassName('gmail')[1];
+const email2 = document.getElementsByClassName('gmail')[2];
+
 
 const address = document.getElementsByClassName('address')[0];
 
@@ -16,14 +18,12 @@ const nameData = localStorage.getItem('name');
 const phoneData = localStorage.getItem('phonenumber');
 const emailData = localStorage.getItem('email');
 
-name.innerText = nameData;
-name1.innerText = nameData;
-name2.innerText = nameData;
-name3.innerText = nameData;
-name4.innerText = nameData;
-phone.innerText = phoneData ?? "Please Edit Phone";
+
+
 email.innerText = emailData;
 email1.innerText = emailData;
+email2.innerText = emailData;
+
 
 const firestore = firebase.firestore()
 const auth = firebase.auth()
@@ -33,8 +33,8 @@ firestore.collection('gmailClient').doc(uiddata).get().then((result) => {
     const data = result.data()
 
     const imgsrc = document.getElementsByClassName('img-src')[0];
-     const imgsrc1 = document.getElementsByClassName('img-src')[1];
-      const imgsrc2 = document.getElementsByClassName('img-src')[2];
+    const imgsrc1 = document.getElementsByClassName('img-src')[1];
+    const imgsrc2 = document.getElementsByClassName('img-src')[2];
     imgsrc.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
     imgsrc1.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
     imgsrc2.src = data.img ?? "https://i.ibb.co/ZDMFp9F/user.png";
@@ -47,8 +47,17 @@ firestore.collection('gmailClient').doc(uiddata).get().then((result) => {
 });
 
 const logoutBtn = document.getElementsByClassName('displays')[0];
+const logoutBtn1 = document.getElementsByClassName('displays')[2];
+
+
 
 logoutBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        window.location.replace('../index.html')
+    }, 2000)
+
+})
+logoutBtn1.addEventListener('click', () => {
     setTimeout(() => {
         window.location.replace('../index.html')
     }, 2000)
@@ -175,11 +184,33 @@ function setAddressData() {
 firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
     const dataresponce = responce.data();
     const addressDet = document.getElementsByClassName('address')[0];
+    const addressDet1 = document.getElementsByClassName('address')[1];
+    const name2 = document.getElementsByClassName('name')[2];
+    const name3 = document.getElementsByClassName('name')[3];
+    const name4 = document.getElementsByClassName('name')[4];
+    const phone1 = document.getElementsByClassName('number')[1];
+    const name = document.getElementsByClassName('name')[0];
+    const name1 = document.getElementsByClassName('name')[1];
+    const phone = document.getElementsByClassName('number')[0];
+
     if (dataresponce) {
         const address = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode ?? 0;
+        const namedata = dataresponce.name;
+        const phonenumbers = dataresponce.phoneNumber;
         addressDet.innerText = address ?? "Please Edit Address";
+        addressDet1.innerText = address ?? "Please Edit Address";
+        name.innerText = namedata ?? nameData
+        name1.innerText = namedata ?? nameData
+        name2.innerText = namedata ?? nameData
+        name3.innerText = namedata ?? nameData
+        name4.innerText = namedata ?? nameData
+        phone1.innerText = phonenumbers ?? phoneData ?? "Please Enter Number";
+        phone.innerText = phonenumbers ?? phoneData ?? "Please Enter Number";
+
+
 
     }
+
 
 })
 
@@ -198,11 +229,19 @@ async function apiLocation() {
             const district = document.getElementById('district');
             const state = document.getElementById('state');
             const pincode = document.getElementById('pincode');
+            const street1 = document.getElementById('streetid');
+            const district1 = document.getElementById('districtid');
+            const state1 = document.getElementById('stateid');
+            const pincode1 = document.getElementById('pincodeid');
             street.value = data.results[0].street;
-             district.value = data.results[0].city;
-              state.value = data.results[0].state;
-               pincode.value = data.results[0].postcode;
-           
+            district.value = data.results[0].city;
+            state.value = data.results[0].state;
+            pincode.value = data.results[0].postcode;
+            street1.value = data.results[0].street;
+            district1.value = data.results[0].city;
+            state1.value = data.results[0].state;
+            pincode1.value = data.results[0].postcode;
+
 
         }
         getloc()

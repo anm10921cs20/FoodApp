@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
 	--primary-color: #ff9900;
-	  font-family: "Poppins", sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 * {
@@ -716,28 +717,42 @@
 		border-radius: 3px;
 		color: #ff9900;
 	}
+	.account-container
+	{
+		transition:all 0.6s;
+	}
 
 	.account-content {
 		display: flex;
 	}
 
 	.account-first {
-		width: 70%;
-		height: 820px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-right: 1px solid rgba(0, 0, 0, 0.1);
+		width: 90%;
+		height:1100px;
+	}
+	#map
+	{
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 12px;
 	}
 
 	.account-second {
 		width: 30%;
-		height: 50vh;
+		height: 86vh;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		margin-left: -2400px;
+		transition: all 1s;
+		background-color: #fff;
+
+	}
+	.account-second-active
+	{
+		margin-left: 0;
 	}
 
 	.account-first-container {
 		background-color: #fff;
-		height: 700px;
+		height:400px;
 		width: 90%;
 	}
 
@@ -770,15 +785,15 @@
 		border-radius: 2%;
 		width: 250px;
 		height: 90px;
-		border: 1px solid #ff9900;
-		line-height: 8px;
+		box-shadow: 1px 1px 1px #ff9900,
+			-1px -1px 1px rgba(0, 0, 0, 0.1);
 	}
 
 	.name-details {
 		display: flex;
 		justify-content: space-between;
-		padding: 10px 20px;
 		align-items: center;
+		padding: 0 20px;
 	}
 
 	.nametopic {
@@ -786,14 +801,82 @@
 		font-size: 17px;
 	}
 
-	.fa-user-circle {
+	.icon-font {
 		color: #ff9900;
-		font-size: 22px;
+		font-size: 17px;
+		cursor: pointer;
 	}
 
 	.nameform {
-		padding: 10px 20px;
 		color: #888;
+		font-size: 14px;
+		padding: 0 20px;
+	}
+
+	/* form design */
+
+	.close {
+		text-align: end;
+	}
+
+	.close:hover {
+		color: #ff9900;
+		cursor: pointer;
+	}
+
+	.titac {
+		text-align: center;
+		font-size: 19px;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #ff9900;
+	}
+
+	.accounts-input {
+		height: 500px;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1),
+			-1px -1px 1px rgba(0, 0, 0, 0.1);
+		width: 80%;
+		margin: auto;
+		padding: 20px;
+		border-radius: 12px;
+	}
+
+	.ph-input {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.pNtext
+	{
+		color: #888;
+		margin-top: 2px;
+	}
+	input
+	{
+		padding: 2px;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+	}
+	.addresss-api
+	{
+		padding: 10px;
+		text-align: center;
+		color: #ff9900;
+	}
+	.addresss-api:hover
+	{
+		color: #ff4343;
+		cursor: pointer;
+	}
+	.submit-container
+	{
+		background-color: #ff9900;
+		color:#fff;
+		border: none;
+		padding: 5px 8px;
+		border-radius: 17px;
 	}
 
 
