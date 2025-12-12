@@ -213,7 +213,7 @@ firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
         const namedata = dataresponce.name;
         const phonenumbers = dataresponce.phoneNumber;
         localStorage.setItem('name', namedata);
-        localStorage.setItem('phonenumber', phonenumbers)
+        localStorage.setItem('phonenumberdes', phonenumbers)
         localStorage.setItem('address', address)
 
 
@@ -232,7 +232,7 @@ const phone1 = document.getElementsByClassName('number')[1];
 
 
 const nameData = localStorage.getItem('name');
-const phoneData = localStorage.getItem('phonenumber');
+const phoneData = localStorage.getItem('phonenumberdes');
 const addressdata = localStorage.getItem('address')
 
 addressDet1.innerText = addressdata ?? "Please Edit Address";
