@@ -228,7 +228,7 @@ const addressDet1 = document.getElementsByClassName('address')[1];
 const name2 = document.getElementsByClassName('name')[2];
 const name3 = document.getElementsByClassName('name')[3];
 const name4 = document.getElementsByClassName('name')[4];
-const phone1 = document.getElementsByClassName('number')[1];
+const phone1 = document.getElementsByClassName('number')[0];
 
 
 const nameData = localStorage.getItem('name');
