@@ -3,7 +3,7 @@ const phone = document.getElementsByClassName('numbers')[0];
 const name = document.getElementsByClassName('name')[0];
 const name1 = document.getElementsByClassName('name')[1];
 const nameData1= localStorage.getItem('name');
-const phoneData1 = localStorage.getItem('phonenumber');
+const phoneData1 = localStorage.getItem('phonenumbermob');
 phone.innerText = phoneData1 ? phoneData1 : "Please Edit Number"
 
 
@@ -85,7 +85,7 @@ function addNumber() {
     const alertMessage = document.getElementsByClassName('message-alert')[0];
     const phoneValue = phoneinput.value;
     console.log(phoneValue);
-    localStorage.setItem('phonenumber', phoneValue);
+    localStorage.setItem('phonenumbermob', phoneValue);
     alertMessage.style.display = "block";
     var counter = 1;
     var interval = setInterval(() => {
