@@ -322,6 +322,13 @@
 	.pc-container {
 		display: none;
 	}
+	#mapmobile
+	{
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		width: 90%;
+		border-radius: 12px;
+		margin: auto;
+	}
 
 
 
