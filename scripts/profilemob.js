@@ -5,8 +5,6 @@ const name1 = document.getElementsByClassName('name')[1];
 const nameData1= localStorage.getItem('name');
 const phoneData1 = localStorage.getItem('phonenumber');
 phone.innerText = phoneData1 ?? "Pleae Edit Number"
-name.innerText = nameData1;
-name1.innerText = nameData1
 
 
 
