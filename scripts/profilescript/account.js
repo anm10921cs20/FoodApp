@@ -134,3 +134,43 @@ navigator.geolocation.watchPosition((pos) => {
         lon:lng
     })
 });
+
+
+
+
+const mapmobile = L.map('mapmobile').setView([0, 0], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+}).addTo(mapmobile);
+
+let marker1 = L.marker([0, 0]).addTo(mapmobile).bindPopup("Current Location")
+    .openPopup();;
+
+function updateLocation(lat, lng) {
+    marker1.setLatLng([lat, lng]);
+    mapmobile.setView([lat, lng], 15);
+}
+mapmobile.on("click", function (e) {
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
+
+    L.marker([lat, lng]).addTo(mapmobile)
+        .bindPopup(`Lat: ${lat}<br>Lng: ${lng}`)
+        .openPopup();
+        mapmobile.removeLayer(marker1);
+});
+
+// Live GPS tracking
+navigator.geolocation.watchPosition((pos) => {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    updateLocation(lat, lng);
+
+    const datalocalstore = localStorage.getItem('name');
+
+    firestore.collection('userLocation/').doc(datalocalstore).set({
+        lat:lat,
+        lon:lng
+    })
+});

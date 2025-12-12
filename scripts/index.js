@@ -196,7 +196,7 @@ var datastores = document.getElementsByClassName('locations-tit')[0];
 
 const locationStore = JSON.parse(localStorage.getItem('location')) || [];
 
-datastores.innerText = locationStore.district + " " +locationStore.pincode ;
+datastores.innerText = locationStore.district + " " + locationStore.pincode;
 
 
 
@@ -226,7 +226,21 @@ function addClick(event) {
 
 
 
+if (uiddata) {
+    // Live GPS tracking
+    navigator.geolocation.watchPosition((pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        updateLocation(lat, lng);
 
+        const datalocalstore = localStorage.getItem('name');
+
+        firestore.collection('userLocation/').doc(datalocalstore).set({
+            lat: lat,
+            lon: lng
+        })
+    });
+}
 
 
 
