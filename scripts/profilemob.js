@@ -239,7 +239,7 @@ addressDet1.innerText = addressdata ?? "Please Edit Address";
 name2.innerText = nameData
 name3.innerText = nameData
 name4.innerText = nameData
-phone1.innerText = phoneData ?? "Please Enter Number";
+phone1.innerText =phoneData ? phoneData : "Please Enter Number";
 
 
 async function apiLocation() {
