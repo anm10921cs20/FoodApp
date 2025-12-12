@@ -1,5 +1,4 @@
-const name = document.getElementsByClassName('name')[0];
-const name1 = document.getElementsByClassName('name')[1];
+
 
 
 
@@ -14,8 +13,6 @@ const email2 = document.getElementsByClassName('gmail')[2];
 
 const address = document.getElementsByClassName('address')[0];
 
-const nameData = localStorage.getItem('name');
-const phoneData = localStorage.getItem('phonenumber');
 const emailData = localStorage.getItem('email');
 
 
@@ -183,29 +180,18 @@ function setAddressData() {
 
 firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
     const dataresponce = responce.data();
-    const addressDet = document.getElementsByClassName('address')[0];
-    const addressDet1 = document.getElementsByClassName('address')[1];
-    const name2 = document.getElementsByClassName('name')[2];
-    const name3 = document.getElementsByClassName('name')[3];
-    const name4 = document.getElementsByClassName('name')[4];
-    const phone1 = document.getElementsByClassName('number')[1];
-    const name = document.getElementsByClassName('name')[0];
-    const name1 = document.getElementsByClassName('name')[1];
-    const phone = document.getElementsByClassName('number')[0];
+
 
     if (dataresponce) {
+
+
         const address = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode ?? 0;
         const namedata = dataresponce.name;
         const phonenumbers = dataresponce.phoneNumber;
-        addressDet.innerText = address ?? "Please Edit Address";
-        addressDet1.innerText = address ?? "Please Edit Address";
-        name.innerText = namedata ?? nameData
-        name1.innerText = namedata ?? nameData
-        name2.innerText = namedata ?? nameData
-        name3.innerText = namedata ?? nameData
-        name4.innerText = namedata ?? nameData
-        phone1.innerText = phonenumbers ?? phoneData ?? "Please Enter Number";
-        phone.innerText = phonenumbers ?? phoneData ?? "Please Enter Number";
+        localStorage.setItem('name', namedata);
+        localStorage.setItem('phonenumber', phonenumbers)
+        localStorage.setItem('address',address)
+
 
 
 
@@ -213,7 +199,27 @@ firestore.collection('UserAddress/').doc(uiddata).get().then((responce) => {
 
 
 })
-
+const addressDet = document.getElementsByClassName('address')[0];
+const addressDet1 = document.getElementsByClassName('address')[1];
+const name2 = document.getElementsByClassName('name')[2];
+const name3 = document.getElementsByClassName('name')[3];
+const name4 = document.getElementsByClassName('name')[4];
+const phone1 = document.getElementsByClassName('number')[1];
+const name = document.getElementsByClassName('name')[0];
+const name1 = document.getElementsByClassName('name')[1];
+const phone = document.getElementsByClassName('number')[0];
+const nameData = localStorage.getItem('name');
+const phoneData = localStorage.getItem('phonenumber');
+const addressdata = localStorage.getItem('address')
+addressDet.innerText = addressdata ?? "Please Edit Address";
+addressDet1.innerText = addressdata ?? "Please Edit Address";
+name.innerText = nameData
+name1.innerText = nameData
+name2.innerText = nameData
+name3.innerText = nameData
+name4.innerText = nameData
+phone1.innerText = phoneData ?? "Please Enter Number";
+phone.innerText = phoneData ?? "Please Enter Number";
 
 
 async function apiLocation() {
@@ -222,6 +228,8 @@ async function apiLocation() {
         const lat = position.coords.latitude;
         const api = 'fd4200764f7d4f378e08903b8322e6fd'
         const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&format=json&apiKey=${api}`
+        console.log('hi');
+
         async function getloc() {
             const responce = await fetch(url);
             const data = await responce.json()
