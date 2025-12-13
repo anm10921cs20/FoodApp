@@ -16,8 +16,8 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
         const productsCount = products.length;
         const cartCount = document.getElementById('cart-count');
         cartCount.innerText = "(" + productsCount + ")" ?? 0;
-      
-       
+
+
 
 
         products.forEach((product) => {
@@ -51,12 +51,12 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
 
             }
-              totalAmt.innerText = total;
+            totalAmt.innerText = total;
         }
         total()
 
 
-      
+
 
 
 
@@ -73,6 +73,13 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
         deleteConcept.forEach((del, index) => {
             del.addEventListener('click', function () {
                 this.parentElement.remove()
+                const alertText = document.getElementsByClassName('notification__text')[0];
+                const alertbox = document.getElementsByClassName('alert-container-true')[0];
+                alertbox.style.display = "block";
+                alertText.innerText = "Item Removed Successfully";
+                setTimeout(function () {
+                    alertbox.style.display = "none";
+                }, 4000)
                 db.ref("MahanFoodCart/" + name + uid + "/foodCart/" + index).remove();
                 total();
                 if (!index) {
@@ -106,6 +113,30 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
 
 })
+
+
+if (uid) {
+    const checkoutBtn = document.getElementsByClassName('checkout')[0];
+    checkoutBtn.addEventListener('click', () => {
+        window.location.replace('./checkout.html')    
+    })
+}
+else {
+
+    const checkoutBtn = document.getElementsByClassName('checkout')[0];
+    checkoutBtn.addEventListener('click', () => {
+        const alertText = document.getElementsByClassName('notification__text')[0];
+        const alertbox = document.getElementsByClassName('alert-container-true')[0];
+        alertbox.style.display = "block";
+        alertText.innerText = "Login to Checkout";
+        setTimeout(function () {
+            alertbox.style.display = "none";
+            window.location.replace('../../index.html')
+        }, 3000)
+    })
+
+}
+
 
 
 
