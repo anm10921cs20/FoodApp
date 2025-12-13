@@ -306,7 +306,7 @@ async function getAddressFromLatLng(lat, lon) {
 
 
     return {
-        fullAddress: address.road,
+        fullAddress: data.name,
         district: address.county || address.state_district,
         state: address.state,
         pincode: address.postcode,
