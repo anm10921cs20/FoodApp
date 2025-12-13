@@ -2,7 +2,7 @@
 const phone = document.getElementsByClassName('numbers')[0];
 const name = document.getElementsByClassName('name')[0];
 const name1 = document.getElementsByClassName('name')[1];
-const nameData1= localStorage.getItem('name');
+const nameData1 = localStorage.getItem('name');
 const phoneData1 = localStorage.getItem('phonenumbermob');
 phone.innerText = phoneData1 ? phoneData1 : "Please Edit Number"
 
@@ -239,57 +239,91 @@ addressDet1.innerText = addressdata ?? "Please Edit Address";
 name2.innerText = nameData
 name3.innerText = nameData
 name4.innerText = nameData
-phone1.innerText =phoneData ? phoneData : "Please Enter Number";
+phone1.innerText = phoneData ? phoneData : "Please Enter Number";
 
 
-async function apiLocation() {
-    navigator.geolocation.getCurrentPosition((position) => {
-        const lon = position.coords.longitude;
-        const lat = position.coords.latitude;
-        const api = 'fd4200764f7d4f378e08903b8322e6fd'
-        const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&format=json&apiKey=${api}`
-        console.log('hi');
-
-        async function getloc() {
-
-            try {
-                const responce = await fetch(url);
-                const data = await responce.json()
-                const street = document.getElementById('street');
-                const district = document.getElementById('district');
-                const state = document.getElementById('state');
-                const pincode = document.getElementById('pincode');
-                const street1 = document.getElementById('streetid');
-                const district1 = document.getElementById('districtid');
-                const state1 = document.getElementById('stateid');
-                const pincode1 = document.getElementById('pincodeid');
-                street.value = data.results[0].street;
-                district.value = data.results[0].city;
-                state.value = data.results[0].state;
-                pincode.value = data.results[0].postcode;
-                street1.value = data.results[0].street;
-                district1.value = data.results[0].city;
-                state1.value = data.results[0].state;
-                pincode1.value = data.results[0].postcode;
-
-            } catch (err) {
-                console.log(err);
-
-            }
 
 
+
+
+
+
+
+
+
+navigator.geolocation.getCurrentPosition(async (position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const addressData = await getAddressFromLatLng(lat, lon);
+    console.log(addressData);
+    
+
+    const street = document.getElementById('street');
+    const district = document.getElementById('district');
+    const state = document.getElementById('state');
+    const pincode = document.getElementById('pincode');
+    const street1 = document.getElementById('streetid');
+    const district1 = document.getElementById('districtid');
+    const state1 = document.getElementById('stateid');
+    const pincode1 = document.getElementById('pincodeid');
+    street.value = addressData.fullAddress;
+    district.value = addressData.district;
+    state.value = addressData.state;
+    pincode.value = addressData.pincode;
+
+
+
+
+
+    street1.value = addressData.fullAddress;
+     district1.value = addressData.district;
+     state1.value = addressData.state;
+     pincode1.value = addressData.pincode;
+    
+    // state.value = data.results[0].state;
+    // pincode.value = data.results[0].postcode;
+    // street1.value = data.results[0].street;
+    // district1.value = data.results[0].city;
+    // state1.value = data.results[0].state;
+    // pincode1.value = data.results[0].postcode;
+
+    
+
+
+async function getAddressFromLatLng(lat, lon) {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&addressdetails=1`;
+
+    const response = await fetch(url, {
+        headers: {
+            "User-Agent": "your-app-name" // required
         }
-        getloc()
+    });
+
+    const data = await response.json();
+
+    const address = data.address;
+    console.log(data);
 
 
-    }),
-        (error) => {
-            console.log(error);
-
-        }
-
-
-
-
-
+    return {
+        fullAddress: address.road,
+        district: address.county || address.state_district,
+        state: address.state,
+        pincode: address.postcode,
+        country: address.country
+    };
 }
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
