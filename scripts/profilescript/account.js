@@ -100,7 +100,6 @@ editpageclose.addEventListener('click', () => {
 
 
 
-console.log(window.innerWidth);
 
 const windowWidth = window.innerWidth;
 

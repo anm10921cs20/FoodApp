@@ -3,6 +3,7 @@ const db = firebase.database();
 const name = localStorage.getItem('name');
 const uid = localStorage.getItem('uid');
 
+
 db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
     const responce = snapshot.val()
 
@@ -15,6 +16,8 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
         const productsCount = products.length;
         const cartCount = document.getElementById('cart-count');
         cartCount.innerText = "(" + productsCount + ")" ?? 0;
+      
+       
 
 
         products.forEach((product) => {

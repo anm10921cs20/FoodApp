@@ -224,6 +224,3 @@ function addClick(event) {
 
 
 
-
-
-

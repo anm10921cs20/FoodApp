@@ -27,7 +27,7 @@ auth.onAuthStateChanged(function (user) {
         console.log("user Logged out");
         const logincontainer = document.getElementsByClassName('login-container')[0];
         logincontainer.style.display = "block";
-      
+
 
         // click login
 
@@ -35,8 +35,8 @@ auth.onAuthStateChanged(function (user) {
         const closebtn = document.getElementsByClassName('close-btns')[0];
         const signin = document.getElementsByClassName('signin')[0];
 
-        signin.addEventListener('click', () =>{
-             logincontainer.style.display = "block";
+        signin.addEventListener('click', () => {
+            logincontainer.style.display = "block";
         })
 
 
@@ -50,4 +50,24 @@ auth.onAuthStateChanged(function (user) {
 
 
     }
+})
+
+const uid = localStorage.getItem('uid');
+const name = localStorage.getItem('name');
+
+db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
+    const responce = snapshot.val()
+
+    if (responce) {
+        const products = responce.foodCart;
+        const productsCount = products.length;
+        const cartspan = document.getElementById('countspan');
+        cartspan.innerText = productsCount;
+        const windowWidth = window.innerWidth;
+        if (productsCount >= 1 && windowWidth <= 1023) {
+            const cartAlertMessage = document.getElementsByClassName('cart-alert-message')[0];
+            cartAlertMessage.style.display = "block";
+        }
+    }
+
 })
