@@ -37,7 +37,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                             <i class="fa-solid fa-trash-can"></i>`;
             productsList.appendChild(productContainer);
 
-            db.ref("orders/" + name + uid + "/foodorder/" ).push(product);
+       
           
            
         })
@@ -121,8 +121,21 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 if (uid) {
     const checkoutBtn = document.getElementsByClassName('checkout')[0];
     checkoutBtn.addEventListener('click', () => {
-        window.location.replace('./checkout.html')    
+
+        const alertText = document.getElementsByClassName('notification__text')[0];
+        const alertbox = document.getElementsByClassName('alert-container-true')[0];
+        alertbox.style.display = "block";
+        alertText.innerText = "Redirect To Checkout";
+        setTimeout(function () {
+            alertbox.style.display = "none";
+              window.location.replace('./checkout.html');
+        }, 2000)
+         
     })
+
+    
+
+
 }
 else {
 
