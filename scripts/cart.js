@@ -36,6 +36,10 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                         </div>
                             <i class="fa-solid fa-trash-can"></i>`;
             productsList.appendChild(productContainer);
+
+            db.ref("orders/" + name + uid + "/foodorder/" ).push(product);
+          
+           
         })
 
         function total() {
@@ -55,8 +59,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
         }
         total()
 
-
-
+         
 
 
 
