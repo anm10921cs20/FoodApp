@@ -189,6 +189,7 @@ body
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         align-items: center;
 		padding: 0 20px;
+		margin-top: 10px;
     }
     .product-img img
     {
@@ -214,6 +215,41 @@ body
     {
         color: #ff4343;
     }
+	.product-price
+	{
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 90px;
+	}
+	.product-quantity
+	{
+		display: flex;
+		width: 100%;
+		align-items: center;
+	}
+	.quantity-input
+	{
+		width: 50px;
+		height: 20px;
+		border-radius: 15px;
+		padding: 10px;
+		border: 1px solid #1b945b;
+		text-align: center;
+		outline: none;
+		
+	}
+	.increase-btn,.decrease-btn
+	{
+		width: 40px;
+		height: 40px;
+		color: #1b945b;
+		border: none;
+		cursor: pointer;
+		background-color: transparent;
+		font-size: 26px;
+		outline: none;
+	}
 
 
 

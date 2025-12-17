@@ -57,7 +57,8 @@ const name = localStorage.getItem('name');
 
 db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
     const responce = snapshot.val()
-
+    
+    
     if (responce) {
         const products = responce.foodCart;
         const productsCount = products.length;
