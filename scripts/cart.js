@@ -84,6 +84,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                     alertbox.style.display = "none";
                 }, 4000)
                 db.ref("MahanFoodCart/" + name + uid + "/foodCart/" + index).remove();
+                   db.ref("MahanFoodOrder/" + name1 + uid1 + "/" + index).remove();
                 total();
                 if (!index) {
                     window.location.reload();
