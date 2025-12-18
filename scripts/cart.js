@@ -37,9 +37,9 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                             <i class="fa-solid fa-trash-can"></i>`;
             productsList.appendChild(productContainer);
 
-       
-          
-           
+
+
+
         })
 
         function total() {
@@ -59,7 +59,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
         }
         total()
 
-         
+
 
 
 
@@ -84,7 +84,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                     alertbox.style.display = "none";
                 }, 4000)
                 db.ref("MahanFoodCart/" + name + uid + "/foodCart/" + index).remove();
-                   db.ref("MahanFoodOrder/" + name + uid + "/" + index).remove();
+                db.ref("MahanFoodOrder/" + name + uid + "/" + index).remove();
                 total();
                 if (!index) {
                     window.location.reload();
@@ -120,21 +120,34 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
 
 if (uid) {
-    const checkoutBtn = document.getElementsByClassName('checkout')[0];
-    checkoutBtn.addEventListener('click', () => {
+    db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
+        const responce = snapshot.val()
+        if (responce) {
+            const checkoutBtn = document.getElementsByClassName('checkout')[0];
+            checkoutBtn.addEventListener('click', () => {
 
-        const alertText = document.getElementsByClassName('notification__text')[0];
-        const alertbox = document.getElementsByClassName('alert-container-true')[0];
-        alertbox.style.display = "block";
-        alertText.innerText = "Redirect To Checkout";
-        setTimeout(function () {
-            alertbox.style.display = "none";
-              window.location.replace('./checkout.html');
-        }, 2000)
-         
+                const alertText = document.getElementsByClassName('notification__text')[0];
+                const alertbox = document.getElementsByClassName('alert-container-true')[0];
+                alertbox.style.display = "block";
+                alertText.innerText = "Redirect To Checkout";
+                setTimeout(function () {
+                    alertbox.style.display = "none";
+                    window.location.replace('./checkout.html');
+                }, 2000)
+
+            })
+        }else
+        {
+            console.log('not value');
+            
+        }
+
+
     })
 
-    
+
+
+
 
 
 }

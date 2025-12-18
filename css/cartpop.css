@@ -46,6 +46,7 @@
     }
      .fa-trash-can:hover {
         color: #ff4343cc;
+        cursor: pointer;
     }
 
     .product-emptyContainer {
@@ -167,6 +168,7 @@
 
     .fa-trash-can:hover {
         color: #bd4b4b;
+        cursor: pointer;
     }
 
     .product-emptyContainer {

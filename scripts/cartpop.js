@@ -51,6 +51,7 @@ db.ref("MahanFoodCart/" + names + uids).get('value').then( (snapshot) => {
                 del.addEventListener('click', function () {
                     this.parentElement.remove()
                     db.ref("MahanFoodCart/" + names + uids + "/foodCart/" + index).remove();
+                    db.ref("MahanFoodOrder/" + name + uid + "/" + index).remove();
                     total();
                     if (!index) {
                         window.location.reload();
@@ -106,6 +107,62 @@ db.ref("MahanFoodCart/" + names + uids).get('value').then( (snapshot) => {
 
 
 })
+
+
+
+if (uid) {
+    db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
+        const responce = snapshot.val()
+        if (responce) {
+            const checkoutBtn = document.getElementsByClassName('checkout')[0];
+            checkoutBtn.addEventListener('click', () => {
+
+                const alertText = document.getElementsByClassName('notification__text')[0];
+                const alertbox = document.getElementsByClassName('alert-container-true')[0];
+                alertbox.style.display = "block";
+                alertText.innerText = "Redirect To Checkout";
+                setTimeout(function () {
+                    alertbox.style.display = "none";
+                    window.location.replace('./src/cartmobile/checkout.html');
+                }, 2000)
+
+            })
+        }else
+        {
+            console.log('not value');
+            
+        }
+
+
+    })
+
+
+
+
+
+
+}
+else {
+
+    const checkoutBtn = document.getElementsByClassName('checkout')[0];
+    checkoutBtn.addEventListener('click', () => {
+        const alertText = document.getElementsByClassName('notification__text')[0];
+        const alertbox = document.getElementsByClassName('alert-container-true')[0];
+        alertbox.style.display = "block";
+        alertText.innerText = "Login to Checkout";
+        setTimeout(function () {
+            alertbox.style.display = "none";
+            window.location.replace('index.html')
+        }, 3000)
+    })
+
+}
+
+
+
+
+
+
 
 
 
