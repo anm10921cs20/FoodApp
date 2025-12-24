@@ -281,9 +281,22 @@
 			-1px -1px 1px rgba(0, 0, 0, 0.1);
 	}
 
+	.checkout-summary-container {
+		margin-top: 20px;
+		border-radius: 4px;
+		height: 160px;
+		padding: 12px;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1),
+			-1px -1px 1px rgba(0, 0, 0, 0.1);
+	}
+
 	.checkout-address-container h4 {
 		font-size: 16px;
 		color: #ff9900;
+	}
+	.checkout-summary-container h4 {
+		font-size: 15px;
+		color: #000;
 	}
 
 	.checkout-address-container p {
@@ -327,7 +340,7 @@
 
 	.address-live-location button {
 		border: none;
-		padding: 8px 103px;
+		padding: 8px 93px;
 		border-radius: 15px;
 		color: #333;
 	}
@@ -363,14 +376,14 @@
 		padding: 0px 28px;
 		color: #777;
 	}
-	.checkout-access-footer
-	{
+
+	.checkout-access-footer {
 		display: flex;
 		justify-content: center;
 		padding: 10px;
 	}
-	.checkout-access-footer button
-	{
+
+	.checkout-access-footer button {
 		padding: 8px 100px;
 		border: none;
 		background-color: #49a87d;
@@ -388,47 +401,74 @@
 		height: 100%;
 		display: none;
 	}
-	.checkout-location-access-container
-	{
+
+	.checkout-location-access-container {
 		position: fixed;
 		top: 300px;
 		left: 20px;
 		z-index: 1111222432938227489200000111111;
 		display: none;
 	}
-	.checkout-location-access-container-active,.checkout-location-access-blur-container-active
-	{
+
+	.checkout-location-access-container-active,
+	.checkout-location-access-blur-container-active {
 		display: block;
 	}
-	.input-container
-	{
-		padding:20px;
+
+	.input-container {
+		padding: 20px;
 	}
-	.phone
-	{
+
+	.phone {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		height: 100px;
 	}
-	.phone-input input
-	{
+
+	.phone-input input {
 		width: 100%;
 		height: 40px;
 		font-size: 15px;
 		border: 1px solid rgba(0, 0, 0, 0.2);
 		padding: 0 10px;
 	}
-	.phone-input input:focus
-	{
+
+	.phone-input input:focus {
 		outline-color: #ff9900;
 	}
-	.savechanges
-	{
+
+	.savechanges {
 		border: none;
 		background-color: #ff9900;
 		color: #fff;
 		padding: 8px 20px;
+	}
+	.checkout-summary-content
+	{
+		display: flex;
+		gap: 20px;
+		align-items: start;
+		justify-content: space-between;
+	}
+	.fa-file-invoice
+	{
+		color: #1da773;
+		font-size: 20px;
+	}
+	.checkout-summary-header
+	{
+		line-height: 2px;
+	}
+	.checkout-summary-header p
+	{
+		color: #1b945b;
+		font-size: 12px;
+	}
+	.checkout-summary-content-det
+	{
+		display: flex;
+		gap: 10px;
 	}
 
 

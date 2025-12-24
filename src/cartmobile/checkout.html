@@ -106,13 +106,36 @@
                             Delivery Address <i class="fas fa-map-location-dot"></i>
                         </h4>
                         <p>
-                           Delivery Address: <span class="AddressData">Enter Edit Button</span><br>Phone Number:
+                            Delivery Address: <span class="AddressData">Enter Edit Button</span><br>Phone Number:
                             <span class="MobileData"></span><br>
                         <p class="Edit">Edit</p>
                         </p>
 
                     </div>
+                    <div class="checkout-summary-container">
+                        <div class="checkout-summary-content">
+                            <div class="checkout-summary-content-det">
+                                <div class="checkout-summary-icon">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+                            <div class="checkout-summary-header">
+                                <h4>
+                                    To Pay <span id="total">Rs.3000</span>
+                                </h4>
+                                <p>Incl. all taxes & charges</p>
+                            </div>
+                            </div>
+                            <div class="checkout-summary-chevron">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
+
+
+
             </main>
         </div>
 
@@ -137,52 +160,52 @@
                 <div class="address-live-location">
                     <button onclick="Access()"><i class="fas fa-location-pin-lock"></i> Use Current Location</button>
                 </div>
-               <div class="input-container">
-                 <div class="phone">
-                    <div class="label-form">
-                        <label for="phonenumber">Phone Number</label>
+                <div class="input-container">
+                    <div class="phone">
+                        <div class="label-form">
+                            <label for="phonenumber">Phone Number</label>
+                        </div>
+                        <div class="phone-input">
+                            <input type="number" id="phonenumber">
+                        </div>
                     </div>
-                    <div class="phone-input">
-                        <input type="number" id="phonenumber">
+                    <div class="phone">
+                        <div class="label-form">
+                            <label for="street">Street</label>
+                        </div>
+                        <div class="phone-input">
+                            <input type="text" id="street">
+                        </div>
                     </div>
-                </div>
-                <div class="phone">
-                    <div class="label-form">
-                        <label for="street">Street</label>
+                    <div class="phone">
+                        <div class="label-form">
+                            <label for="district">District</label>
+                        </div>
+                        <div class="phone-input">
+                            <input type="text" id="district">
+                        </div>
                     </div>
-                    <div class="phone-input">
-                        <input type="text" id="street">
+                    <div class="phone">
+                        <div class="label-form">
+                            <label for="state">State</label>
+                        </div>
+                        <div class="phone-input">
+                            <input type="text" id="state">
+                        </div>
                     </div>
-                </div>
-                <div class="phone">
-                    <div class="label-form">
-                        <label for="district">District</label>
+                    <div class="phone">
+                        <div class="label-form">
+                            <label for="pincode">Pincode</label>
+                        </div>
+                        <div class="phone-input">
+                            <input type="number" id="pincode">
+                        </div>
                     </div>
-                    <div class="phone-input">
-                        <input type="text" id="district">
+                    <div class="save-btn">
+                        <button class="savechanges" onclick="AddressData()">Save Changes</button>
                     </div>
-                </div>
-                <div class="phone">
-                    <div class="label-form">
-                        <label for="state">State</label>
-                    </div>
-                    <div class="phone-input">
-                        <input type="text" id="state">
-                    </div>
-                </div>
-                <div class="phone">
-                    <div class="label-form">
-                        <label for="pincode">Pincode</label>
-                    </div>
-                    <div class="phone-input">
-                        <input type="number" id="pincode">
-                    </div>
-                </div>
-                <div class="save-btn">
-                    <button class="savechanges" onclick="AddressData()">Save Changes</button>
                 </div>
             </div>
-               </div>
         </div>
 
 
