@@ -100,6 +100,14 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                 }
             })
 
+
+
+
+
+
+
+
+
             function totalCheckout() {
                 const productPrices = document.querySelectorAll('.product-plus-price');
                 productPrices.forEach((priceElement, index) => {
@@ -111,6 +119,8 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                     const priceElementStore = productsPriceStore[index];
 
                     priceElementStore.innerText = "Rs " + quantityPrice * quantityvalue;
+                    console.log(productsPriceStore);
+
 
                     const prodname = document.getElementsByClassName('productname')[index].innerText;
                     const prodimg = document.getElementsByClassName('prod-img')[index].src;
@@ -126,11 +136,14 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
 
 
+
+
                 })
-
-
-
             }
+
+
+
+
 
 
 
@@ -317,7 +330,7 @@ function AddressData() {
             }
             else if (pincode == "") {
                 input[i].style.border = "1px solid #ff4343";
-                
+
 
             }
 
@@ -468,3 +481,48 @@ function ApiCall() {
 
     })
 }
+
+
+// price list container
+
+const ChevronButton = document.getElementsByClassName('checkout-summary-container')[0];
+ChevronButton.addEventListener('click', () => {
+    const checkoutSummaryContainer = document.getElementsByClassName('checkout-summary-container')[0]
+    const ChevronButton = document.getElementsByClassName(' summary-down')[0];
+    checkoutSummaryContainer.classList.toggle('checkout-summary-container-active');
+    ChevronButton.classList.toggle('chevron-active');
+})
+
+
+// pay apps 
+
+const payContainer = document.getElementsByClassName('payment-methods-container')[0];
+payContainer.addEventListener('click', () => {
+    const payContainer = document.getElementsByClassName('payment-methods-container')[0];
+    const chevronButton = document.getElementsByClassName('payments-icon')[0];
+
+    payContainer.classList.toggle('payment-methods-container-inactive')
+    chevronButton.classList.toggle('chevrons-active')
+})
+
+
+
+
+
+
+function TotalAmt() {
+
+    db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
+        const totalvalue = snap.val();
+       totalvalue.forEach((files,index) => {
+        console.log(files);
+        
+       })
+
+
+    })
+
+
+}
+
+TotalAmt()
