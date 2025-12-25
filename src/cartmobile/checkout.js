@@ -1,5 +1,6 @@
 // loader animation
 
+
 const loader = document.querySelector('.dots-container');
 
 window.addEventListener('load', () => {
@@ -11,6 +12,8 @@ const homePage = document.getElementsByClassName('cart-btn')[0];
 
 homePage.addEventListener('click', () => {
     window.location.replace('../../index.html');
+    db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+    db.ref("MahanFoodOrder/" + name1 + uid1).remove();
 })
 
 
@@ -18,6 +21,8 @@ const headerBack = document.getElementsByClassName('fa-arrow-left')[0];
 
 headerBack.addEventListener('click', () => {
     window.location.replace('./cartmobile.html');
+    db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+    db.ref("MahanFoodOrder/" + name1 + uid1).remove();
 })
 
 
@@ -119,7 +124,6 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                     const priceElementStore = productsPriceStore[index];
 
                     priceElementStore.innerText = "Rs " + quantityPrice * quantityvalue;
-                    console.log(productsPriceStore);
 
 
                     const prodname = document.getElementsByClassName('productname')[index].innerText;
@@ -134,12 +138,13 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                         localtime: new Date().toLocaleString()
                     })
 
-
+                    window.location.reload();
 
 
 
                 })
             }
+
 
 
 
@@ -176,6 +181,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                 alertText.innerText = "Item Removed Successfully";
                 setTimeout(function () {
                     alertbox.style.display = "none";
+                    window.location.reload();
                 }, 4000)
                 db.ref("MahanFoodCart/" + name + uid + "/foodCart/" + index).remove();
                 db.ref("MahanFoodOrder/" + name1 + uid1 + "/" + index).remove();
@@ -190,8 +196,9 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                 }
                 localStorage.setItem('cartfood', JSON.stringify(localFood))
 
-                if (localFood.length === 1) {
+                if (localFood.length === 0) {
                     localStorage.removeItem('cartfood')
+                    window.location.replace('./cartmobile.html')
                 }
             })
 
@@ -206,6 +213,42 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
         db.ref("MahanFoodOrder/" + name1 + uid1 + "/" + index).get('value').then((snapshot) => {
             const responce = snapshot.val()
+            const responceLength = responce;
+
+
+
+
+            if (!responce) {
+                const productPrices = document.querySelectorAll('.product-plus-price');
+                productPrices.forEach((priceElement, index) => {
+                    const quantityInputAll = document.getElementsByClassName('quantity-input');
+                    const quantityvalue = parseInt(quantityInputAll[index].value);
+
+                    const quantityPrice = priceElement.innerText.slice(3);
+                    const productsPriceStore = document.getElementsByClassName('product-plus-store');
+                    const priceElementStore = productsPriceStore[index];
+
+                    priceElementStore.innerText = "Rs " + quantityPrice * quantityvalue;
+
+
+                    const prodname = document.getElementsByClassName('productname')[index].innerText;
+                    const prodimg = document.getElementsByClassName('prod-img')[index].src;
+
+                    db.ref("MahanFoodOrder/" + name + uid + "/" + index).set({
+                        name: prodname,
+                        price: "Rs " + quantityPrice * quantityvalue,
+                        img: prodimg,
+                        quantity: quantityvalue,
+                        timestamp: Date.now(),
+                        localtime: new Date().toLocaleString()
+                    })
+
+
+
+
+
+                })
+            }
 
             const productPrices = document.getElementsByClassName('product-plus-store');
 
@@ -233,6 +276,54 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
 
     })
+
+
+})
+const uid1 = localStorage.getItem('uid')
+const name1 = localStorage.getItem('name');
+
+db.ref("MahanFoodOrder/" + name1 + uid1).get('value').then((snapshot) => {
+    const responce = snapshot.val()
+
+
+
+
+
+    if (!responce) {
+        const productPrices = document.querySelectorAll('.product-plus-price');
+        productPrices.forEach((priceElement, index) => {
+            const quantityInputAll = document.getElementsByClassName('quantity-input');
+            const quantityvalue = parseInt(quantityInputAll[index].value);
+
+            const quantityPrice = priceElement.innerText.slice(3);
+            const productsPriceStore = document.getElementsByClassName('product-plus-store');
+            const priceElementStore = productsPriceStore[index];
+
+            priceElementStore.innerText = "Rs " + quantityPrice * quantityvalue;
+
+
+            const prodname = document.getElementsByClassName('productname')[index].innerText;
+            const prodimg = document.getElementsByClassName('prod-img')[index].src;
+
+            db.ref("MahanFoodOrder/" + name + uid + "/" + index).set({
+                name: prodname,
+                price: "Rs " + quantityPrice * quantityvalue,
+                img: prodimg,
+                quantity: quantityvalue,
+                timestamp: Date.now(),
+                localtime: new Date().toLocaleString()
+            })
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000)
+
+
+
+        })
+    }
+
+
 
 
 })
@@ -511,13 +602,53 @@ payContainer.addEventListener('click', () => {
 
 
 function TotalAmt() {
-
+    var total = 0;
+    var fileLength = 0;
     db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
         const totalvalue = snap.val();
-       totalvalue.forEach((files,index) => {
-        console.log(files);
-        
-       })
+        totalvalue.forEach((files, index) => {
+
+            var price = files.price;
+            fileLength = index;
+
+
+
+            var totalPrice = parseInt(price.slice(3));
+            total += totalPrice;
+
+        })
+        // itemprice
+        var itemPrice = 0;
+        itemPrice = total;
+        const itemPriceElement = document.getElementById('itemPrice');
+        itemPriceElement.innerText = "Rs." + itemPrice;
+
+        // delivery Fee
+        fileLength++;
+        var deliveryCharge = 10 * fileLength;
+        const deliveryChargeElement = document.getElementById('deliveryCharge');
+        deliveryChargeElement.innerText = "Rs." + deliveryCharge;
+
+        // plat form fee
+        var platFormFee = 41;
+        const platFormFeeElement = document.getElementById('platFormFee');
+        platFormFeeElement.innerText = "Rs." + platFormFee;
+
+        // gst and topay
+
+        var gstCalculation = itemPrice * 12 / 100;
+        var ToPay = Math.round(itemPrice + gstCalculation + platFormFee + deliveryCharge);
+
+        const gstCalculationElement = document.getElementById('gstCharges');
+        gstCalculationElement.innerText = "Rs." + gstCalculation;
+
+        const toPayElement1 = document.getElementById('toPay');
+        const toPayElement2 = document.getElementById('toPay1');
+
+        toPayElement1.innerText = "Rs." + ToPay;
+        toPayElement2.innerText = "Rs." + ToPay;
+
+
 
 
     })

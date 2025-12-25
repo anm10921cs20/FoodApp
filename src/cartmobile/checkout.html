@@ -74,12 +74,12 @@
             </div>
         </div>
         <div class="pc-header">
-            <div class="checkout-header-content">
+            <div class="checkout-header-data">
                 <div class="checkout-header-title-container">
                     <p class="imageforlogo">
                         <img src="../../images/logo/Food App.png" class="logoimg" alt="">
                     </p>
-                    <p class="checkout-header-title">
+                    <p class="checkout-header-titl">
                         Order Summary
                     </p>
                 </div>
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="checkout-summary-header">
                                     <h4>
-                                        To Pay <span id="total">Rs.3000</span>
+                                        To Pay <span id="toPay1">Rs.00</span>
                                     </h4>
                                     <p>Incl. all taxes & charges</p>
                                 </div>
@@ -135,11 +135,11 @@
                             <div class="checkout-summary-price">
                                 <div class="checkout-summary-pay-amt">
                                     <div class="payname">Item Price</div>
-                                    <div class="payamt">Rs.100</div>
+                                    <div class="payamt" id="itemPrice">Rs.00</div>
                                 </div>
                                 <div class="checkout-summary-pay-amt">
                                     <div class="payname">Delivery Charge</div>
-                                    <div class="payamt">Rs.100</div>
+                                    <div class="payamt" id="deliveryCharge">Rs.00</div>
                                 </div>
 
                             </div>
@@ -150,11 +150,11 @@
                             <div class="checkout-summary-price">
                                 <div class="checkout-summary-pay-amt">
                                     <div class="payname">Platform Fee</div>
-                                    <div class="payamt">Rs.100</div>
+                                    <div class="payamt" id="platFormFee">Rs.00</div>
                                 </div>
                                 <div class="checkout-summary-pay-amt">
                                     <div class="payname">Gst & Other Charges</div>
-                                    <div class="payamt">Rs.100</div>
+                                    <div class="payamt" id="gstCharges">Rs.00</div>
                                 </div>
 
                             </div>
@@ -163,7 +163,7 @@
                         <div class="topay">
                             <div class="checkout-summary-topay-amt">
                                 <div class="Topaycashname">To Pay</div>
-                                <div class="Topayamt">Rs.100</div>
+                                <div class="Topayamt" id="toPay">Rs.00</div>
                             </div>
                         </div>
 
@@ -368,7 +368,7 @@
 
 </body>
 <!-- main Scripts -->
-<script src="./checkout.js"></script>
+<script type="module" src="checkout.js"></script>
 <!-- bootStrap Scripts -->
 <script src="../../bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
 
