@@ -653,7 +653,7 @@ function TotalAmt() {
         toPayElement1.innerText = "Rs." + ToPay;
         toPayElement2.innerText = "Rs." + ToPay;
 
-        return ToPay;
+       localStorage.setItem('total',ToPay)
 
 
 
@@ -741,6 +741,7 @@ cashOnDeliveryYesBtn.addEventListener('click', () => {
             food: FoodItems,
             time: new Date().toLocaleTimeString(),
             date: new Date().toLocaleDateString(),
+            total:localStorage.getItem('total')
         }).catch((err) => {
             console.log(err);
 
