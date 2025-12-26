@@ -14,6 +14,7 @@ homePage.addEventListener('click', () => {
     window.location.replace('../../index.html');
     db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
     db.ref("MahanFoodOrder/" + name1 + uid1).remove();
+      localStorage.removeItem('cartfood')
 })
 
 
@@ -23,6 +24,7 @@ headerBack.addEventListener('click', () => {
     window.location.replace('./cartmobile.html');
     db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
     db.ref("MahanFoodOrder/" + name1 + uid1).remove();
+      localStorage.removeItem('cartfood')
 })
 
 
@@ -198,7 +200,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
 
                 if (localFood.length === 0) {
                     localStorage.removeItem('cartfood')
-                    window.location.replace('./cartmobile.html')
+                    window.location.replace('../../index.html')
                 }
             })
 
@@ -339,8 +341,8 @@ db.ref("MahanFoodOrder/" + name1 + uid1).get('value').then((snapshot) => {
 
 
 // location access
-
-function Access() {
+const acess = document.getElementsByClassName('btnaccess')[0];
+acess.addEventListener('click', () => {
     const blurContainer = document.getElementsByClassName('checkout-location-access-blur-container')[0];
     const accessContainer = document.getElementsByClassName('checkout-location-access-container')[0]
 
@@ -348,7 +350,8 @@ function Access() {
     blurContainer.classList.add('checkout-location-access-blur-container-active');
     accessContainer.classList.add('checkout-location-access-container-active');
 
-}
+})
+
 
 // location access close
 
@@ -402,7 +405,7 @@ function AddressData() {
     const state = document.getElementById('state').value;
     const pincode = document.getElementById('pincode').value;
     const phonenumber = document.getElementById('phonenumber').value;
-    localStorage.setItem('phonenumbermob', phonenumber)
+   
     const input = document.getElementsByTagName('input');
 
     if (!pincode) {
@@ -455,6 +458,7 @@ function AddressData() {
                 pincode: pincode
             }
         )
+         localStorage.setItem('phonenumbermob', phonenumber)
     }
 
 }
@@ -492,7 +496,7 @@ function ApiCall() {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
         const addressData = await getAddressFromLatLng(lat, lon);
-        console.log(addressData);
+     
 
 
         const street = document.getElementById('street');
@@ -554,7 +558,7 @@ function ApiCall() {
                 }, 2000)
             }
             const address = data.address;
-            console.log(data);
+     
 
 
             return {
@@ -657,3 +661,16 @@ function TotalAmt() {
 }
 
 TotalAmt()
+
+
+// location transform for pc
+
+const logoimg = document.getElementsByClassName('logoimg')[0];
+ logoimg.style.cursor = "pointer";
+logoimg.addEventListener('click', () => {
+    window.location.replace('../../index.html');
+    db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+    db.ref("MahanFoodOrder/" + name1 + uid1).remove();
+      localStorage.removeItem('cartfood')
+   
+})
