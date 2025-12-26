@@ -780,6 +780,17 @@
 		display: none;
 	}
 
+	.checkout-cash-on-delivery-blur {
+		position: fixed;
+		background-color: #00000056;
+		top: 0;
+		left: 0;
+		z-index: 1111222432938227489200000111;
+		width: 100%;
+		height: 100%;
+		display: none;
+	}
+
 	.checkout-location-access-container {
 		position: fixed;
 		top: 300px;
@@ -959,6 +970,63 @@
 
 	.chevrons-active {
 		transform: rotate(0deg);
+	}
+
+	/* checkout container */
+
+	.checkout-cash-on-delivery {
+		background-color: #fff;
+		border-radius: 4px;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1),
+			-1px -1px 1px rgba(0, 0, 0, 0.1);
+		height: 200px;
+		width: 80%;
+		position: fixed;
+		top: 35%;
+		left: 40px;
+		z-index: 1111222432938227489200000111111;
+		display: none;
+	}
+
+	.checkout-cash-on-delivery-header {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 15px;
+	}
+
+	.cash-on-delivery-main-tit {
+		text-align: center;
+		padding: 10px 15px;
+	}
+
+	.checkout-cash-on-delivery-footer {
+		display: flex;
+		padding: 10px;
+		gap: 50px;
+		justify-content: center;
+	}
+
+	.cash-on-delivery-footer-yes {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 5px 20px;
+		border-radius: 4px;
+		background-color: #33a873;
+		color: #fff;
+		font-weight: 500;
+	}
+
+	.cash-on-delivery-footer-no {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 5px 26px;
+		border-radius: 4px;
+		background-color: #ff4343d8;
+		color: #fff;
+		font-weight: 500;
+	}
+
+	.checkout-cash-on-delivery-inactive,
+	.checkout-cash-on-delivery-blur-inactive {
+		display: none;
 	}
 
 
@@ -1163,7 +1231,7 @@
 		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2),
 			-1px -1px 1px rgba(0, 0, 0, 0.1);
 		width: 60%;
-		margin:20px auto;
+		margin: 20px auto;
 	}
 
 	.checkout-summary-container {
@@ -1173,7 +1241,7 @@
 		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2),
 			-1px -1px 1px rgba(0, 0, 0, 0.1);
 		width: 60%;
-		margin:20px auto;
+		margin: 20px auto;
 	}
 
 	.checkout-summary-container-active {
@@ -1422,7 +1490,7 @@
 		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3),
 			-1px -1px 1px rgba(0, 0, 0, 0.1);
 		width: 60%;
-		margin:20px auto;
+		margin: 20px auto;
 	}
 
 	.payment-methods-header {

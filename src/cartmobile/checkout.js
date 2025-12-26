@@ -1,6 +1,7 @@
 // loader animation
 
 
+
 const loader = document.querySelector('.dots-container');
 
 window.addEventListener('load', () => {
@@ -14,7 +15,7 @@ homePage.addEventListener('click', () => {
     window.location.replace('../../index.html');
     db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
     db.ref("MahanFoodOrder/" + name1 + uid1).remove();
-      localStorage.removeItem('cartfood')
+    localStorage.removeItem('cartfood')
 })
 
 
@@ -24,7 +25,7 @@ headerBack.addEventListener('click', () => {
     window.location.replace('./cartmobile.html');
     db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
     db.ref("MahanFoodOrder/" + name1 + uid1).remove();
-      localStorage.removeItem('cartfood')
+    localStorage.removeItem('cartfood')
 })
 
 
@@ -405,7 +406,7 @@ function AddressData() {
     const state = document.getElementById('state').value;
     const pincode = document.getElementById('pincode').value;
     const phonenumber = document.getElementById('phonenumber').value;
-   
+
     const input = document.getElementsByTagName('input');
 
     if (!pincode) {
@@ -458,7 +459,7 @@ function AddressData() {
                 pincode: pincode
             }
         )
-         localStorage.setItem('phonenumbermob', phonenumber)
+        localStorage.setItem('phonenumbermob', phonenumber)
     }
 
 }
@@ -496,7 +497,7 @@ function ApiCall() {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
         const addressData = await getAddressFromLatLng(lat, lon);
-     
+
 
 
         const street = document.getElementById('street');
@@ -558,7 +559,7 @@ function ApiCall() {
                 }, 2000)
             }
             const address = data.address;
-     
+
 
 
             return {
@@ -591,7 +592,7 @@ ChevronButton.addEventListener('click', () => {
 
 // pay apps 
 
-const payContainer = document.getElementsByClassName('payment-methods-container')[0];
+const payContainer = document.getElementsByClassName('payments-icon')[0];
 payContainer.addEventListener('click', () => {
     const payContainer = document.getElementsByClassName('payment-methods-container')[0];
     const chevronButton = document.getElementsByClassName('payments-icon')[0];
@@ -641,7 +642,7 @@ function TotalAmt() {
         // gst and topay
 
         var gstCalculation = itemPrice * 12 / 100;
-        var ToPay = Math.round(itemPrice + gstCalculation + platFormFee + deliveryCharge);
+        const ToPay = Math.round(itemPrice + gstCalculation + platFormFee + deliveryCharge);
 
         const gstCalculationElement = document.getElementById('gstCharges');
         gstCalculationElement.innerText = "Rs." + gstCalculation;
@@ -651,6 +652,8 @@ function TotalAmt() {
 
         toPayElement1.innerText = "Rs." + ToPay;
         toPayElement2.innerText = "Rs." + ToPay;
+
+        return ToPay;
 
 
 
@@ -666,11 +669,124 @@ TotalAmt()
 // location transform for pc
 
 const logoimg = document.getElementsByClassName('logoimg')[0];
- logoimg.style.cursor = "pointer";
+logoimg.style.cursor = "pointer";
 logoimg.addEventListener('click', () => {
     window.location.replace('../../index.html');
-    db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+    db.ref("MahanFoodCart/" + name1 + uid + "/foodCart").remove();
     db.ref("MahanFoodOrder/" + name1 + uid1).remove();
-      localStorage.removeItem('cartfood')
-   
+    localStorage.removeItem('cartfood')
+
+})
+
+
+// confirmation order container 
+
+const confirmationCloseBtn = document.getElementsByClassName('cash-on-delivery-header-close-btn')[0];
+
+confirmationCloseBtn.addEventListener('click', () => {
+    const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+    const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+
+    confirmationBlurContainer.style.display = "none";
+    confirmationContainer.style.display = "none";
+})
+
+// cash on delivery
+
+const cashOnDeliveryMethod = document.getElementsByClassName('cash-on-delivery-method')[0];
+
+cashOnDeliveryMethod.addEventListener('click', () => {
+    const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+    const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+
+    confirmationBlurContainer.style.display = "block";
+    confirmationContainer.style.display = "block";
+})
+
+// cash on delivery no btn
+
+const cashOnDeliveryNoBtn = document.getElementsByClassName('cash-on-delivery-footer-no')[0];
+
+
+cashOnDeliveryNoBtn.addEventListener('click', () => {
+    const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+    const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+
+    confirmationBlurContainer.style.display = "none";
+    confirmationContainer.style.display = "none";
+})
+
+
+// yes button and data store 
+
+const cashOnDeliveryYesBtn = document.getElementsByClassName('cash-on-delivery-footer-yes')[0];
+
+cashOnDeliveryYesBtn.addEventListener('click', () => {
+
+    const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+    const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+    confirmationBlurContainer.style.display = "none";
+    confirmationContainer.style.display = "none";
+
+    //    dataget cart
+
+    db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
+        const FoodItems = snap.val()
+
+        db.ref('userorder/' + name1 + uid).push({
+            food: FoodItems,
+            time: new Date().toLocaleTimeString(),
+            date: new Date().toLocaleDateString(),
+        }).catch((err) => {
+            console.log(err);
+
+        })
+
+
+
+    }).catch((err) => {
+        console.log(err);
+
+    })
+
+    // data delete
+
+    const alertText = document.getElementsByClassName('notification__text')[0];
+    const alertbox = document.getElementsByClassName('alert-container-true')[0];
+    alertbox.style.display = "block";
+    alertText.innerText = "Order Successfully";
+    setTimeout(function () {
+        alertbox.style.display = "none";
+        window.location.replace('../../index.html');
+        db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+        db.ref("MahanFoodOrder/" + name + uid).remove();
+        localStorage.removeItem('cartfood')
+    }, 3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
