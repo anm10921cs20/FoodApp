@@ -1,5 +1,7 @@
 // loader animation
 
+const { json } = require("express");
+
 
 
 const loader = document.querySelector('.dots-container');
@@ -653,7 +655,16 @@ function TotalAmt() {
         toPayElement1.innerText = "Rs." + ToPay;
         toPayElement2.innerText = "Rs." + ToPay;
 
-       localStorage.setItem('total',ToPay)
+        const summaryPrice = {
+            itemPrice:itemPrice,
+            deliveryCharge:deliveryCharge,
+            platFormFee:platFormFee,
+            gstCalculation:gstCalculation,
+            ToPay:ToPay
+        }
+
+
+        localStorage.setItem('total', JSON.stringify(summaryPrice));
 
 
 
@@ -721,73 +732,112 @@ cashOnDeliveryNoBtn.addEventListener('click', () => {
 
 
 // yes button and data store 
-
 const cashOnDeliveryYesBtn = document.getElementsByClassName('cash-on-delivery-footer-yes')[0];
 
 cashOnDeliveryYesBtn.addEventListener('click', () => {
 
-    const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
-    const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+    const uiddata1 = localStorage.getItem('uid');
+    firestore.collection('UserAddressMobile/').doc(uiddata1).get().then((responce) => {
+        const dataresponce = responce.data();
+        const phone = localStorage.getItem('phonenumbermob');
 
-    confirmationBlurContainer.style.display = "none";
-    confirmationContainer.style.display = "none";
 
-    //    dataget cart
+        if (dataresponce && phone) {
 
-    db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
-        const FoodItems = snap.val()
 
-        db.ref('userorder/' + name1 + uid).push({
-            food: FoodItems,
-            time: new Date().toLocaleTimeString(),
-            date: new Date().toLocaleDateString(),
-            total:localStorage.getItem('total')
-        }).catch((err) => {
-            console.log(err);
-
-        })
+            const addressdet = dataresponce.street + " " + dataresponce.district + " " + dataresponce.state + " " + dataresponce.pincode;
 
 
 
-    }).catch((err) => {
-        console.log(err);
 
+            const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+            const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+            confirmationBlurContainer.style.display = "none";
+            confirmationContainer.style.display = "none";
+
+            //    dataget cart
+
+            db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
+                const FoodItems = snap.val()
+
+                db.ref('userorder/' + name1 + uid).push({
+                    food: FoodItems,
+                    time: new Date().toLocaleTimeString(),
+                    date: new Date().toLocaleDateString(),
+                    total: JSON.parse(localStorage.getItem('total')),
+                    phone: localStorage.getItem('phonenumbermob'),
+                    address: addressdet
+
+                }).catch((err) => {
+                    console.log(err);
+
+                })
+
+
+
+            }).catch((err) => {
+                console.log(err);
+
+            })
+
+            // data delete
+
+            const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Order Successfully";
+            setTimeout(function () {
+                alertbox.style.display = "none";
+                window.location.replace('../../index.html');
+                db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
+                db.ref("MahanFoodOrder/" + name + uid).remove();
+                localStorage.removeItem('cartfood')
+            }, 3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        } else {
+            const alertText = document.getElementsByClassName('notification__text')[0];
+            const alertbox = document.getElementsByClassName('alert-container-true')[0];
+            alertbox.style.display = "block";
+            alertText.innerText = "Please Add Delivery Details";
+            const confirmationContainer = document.getElementsByClassName('checkout-cash-on-delivery')[0];
+            const confirmationBlurContainer = document.getElementsByClassName('checkout-cash-on-delivery-blur')[0];
+
+            confirmationBlurContainer.style.display = "none";
+            confirmationContainer.style.display = "none";
+            setTimeout(function () {
+                alertbox.style.display = "none";
+            }, 3000)
+
+        }
     })
-
-    // data delete
-
-    const alertText = document.getElementsByClassName('notification__text')[0];
-    const alertbox = document.getElementsByClassName('alert-container-true')[0];
-    alertbox.style.display = "block";
-    alertText.innerText = "Order Successfully";
-    setTimeout(function () {
-        alertbox.style.display = "none";
-        window.location.replace('../../index.html');
-        db.ref("MahanFoodCart/" + name + uid + "/foodCart").remove();
-        db.ref("MahanFoodOrder/" + name + uid).remove();
-        localStorage.removeItem('cartfood')
-    }, 3000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 })
+
+
+
