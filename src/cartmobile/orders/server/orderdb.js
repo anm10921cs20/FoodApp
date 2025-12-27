@@ -34,11 +34,13 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
             
 
     
-            const hoursGen = timeConvert > 12 ? timeConvert / 2 : timeConvert;
+            const hoursGen = timeConvert === 0 ? 12 : timeConvert > 12 ? timeConvert - 12 : timeConvert;
+            console.log(hoursGen);
+            
             const timeCat = timeConvert > 12 ? "PM" : "AM";
-            const addZeroHours = hoursGen < 9 ? `0${hoursGen}` : hoursGen;
-            const addZeroMin = timeminute < 9 ? `0${timeminute}` : timeminute;
-            const addZeroSec = timesecond < 9 ? `0${timesecond}` : timesecond;
+            const addZeroHours = hoursGen <= 9 ? `0${hoursGen}` : hoursGen;
+            const addZeroMin = timeminute <= 9 ? `0${timeminute}` : timeminute;
+            const addZeroSec = timesecond <= 9 ? `0${timesecond}` : timesecond;
             const orderTime = `${addZeroHours}:${addZeroMin}:${addZeroSec} ${timeCat}`;
             
             
