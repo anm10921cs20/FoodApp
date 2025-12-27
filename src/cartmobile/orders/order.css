@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #198754;
+    font-family: "Inter", sans-serif;
+}
+
+
+
+
+
+@media only screen and (min-width:200px) and (max-width:399px) {
+	
+}
+
+
+
+
+
+/* lg mobiles */
+@media only screen and (min-width:400px) and (max-width:767px) {
+
+    .order-main-container
+    {
+        height: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+    }
+    .order-header-content
+    {
+        display: flex;
+        gap: 20px;
+        justify-content: start;
+        align-items: center;
+        height: 50px;
+        padding: 10px;
+    }
+    .order-header-arrow
+    {
+        margin-bottom: 6px;
+    }
+    .order-header-text h6
+    {
+        font-weight: 500;
+    }
+    .novalue-div
+    {
+        height: 40vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-redirect button
+    {
+        border: none;
+        padding: 5px 10px;
+        background-color: #ff9900;
+        color: #fff;
+    }
+
+
+}
+
+
+
+
+
+
+
+/*  tablets */
+@media only screen and (min-width:768px) and (max-width:1023px) {
+
+}
+
+
+
+
+/*  laptops */
+@media only screen and (min-width:1024px) and (max-width:1439px) {
+body
+{
+    display: none;
+}
+}
+
+
+
+/*  desktops*/
+@media only screen and (min-width:1440px) and (max-width:2159px) {
+body
+{
+    display: none;
+}
+}
+
+
+
+

@@ -86,7 +86,7 @@ db.ref("MahanFoodCart/" + name + uid).get('value').then((snapshot) => {
                                   </div>
                                   <div class="product-quantity">
                                   <button class="decrease-btn">-</button>
-                                  <input type="number" class="quantity-input" value="1">
+                                  <input type="number" class="quantity-input" value="1" readonly>
                                   <button class="increase-btn">+</button>
                                   </div>
                             </div>

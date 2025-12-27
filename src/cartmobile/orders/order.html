@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff" />
+    <title>Food Shop-Cart</title>
+    <link rel="icon" type="text/png" href="../../../images/logo/Food App.png">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/alertcontainr.css">
+    <link rel="stylesheet" href="./order.css">
+
+
+
+    <!-- fiere base -->
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+
+
+
+    <!-- bootstrap File -->
+    <link rel="stylesheet" href="../../../bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- main data nav bar  -->
+    <div class="app-controler">
+        <div class="app-controler-data">
+            <div class="cart-btn"><i class="fas fa-home control"></i>
+                <p class="cart-tit">HOME</p>
+            </div>
+            <div class="cart-btn select-color"><i class="fa-solid fa-shopping-cart control"></i>
+                <p class="cart-tit">ORDER</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- loader -->
+
+    <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </section>
+
+
+
+    <div class="order-main-container">
+        <div class="order-main-container-header">
+            <div class="order-header-content">
+                <div class="order-header-arrow">
+                    <i class="fas fa-arrow-left" id="arrow-back"></i>
+                </div>
+                <div class="order-header-text">
+                    <h6>PAST ORDERS</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order-data-main-container">
+        <div class="data-main-container">
+
+        </div>
+    </div>
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- notification ui -->
+
+
+    <div class="alert-container-true">
+        <div id="notification" popover- class="notification" role="alert" aria-live="assertive" aria-atomic="true"
+            closedby="anny">
+            <div class="notification__icon"></div>
+            <div class="notification__body">
+                <p class="notification__text"></p>
+            </div>
+            <div class="notification__action">
+                <button class="button" aria-label="dismiss this notification">
+                    <span aria-hidden="true">✕</span>
+                </button>
+            </div>
+        </div>
+        <!--
+<button popovertarget="notification">Save</button>
+-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- main Scripts -->
+<script src="./order.js"></script>
+<!-- database
+  -->
+<script src="./server/database.js"></script>
+<script src="./server/orderdb.js"></script>
+<!-- bootStrap Scripts -->
+<script src="../../../bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+
+</html>
