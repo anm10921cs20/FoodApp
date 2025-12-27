@@ -766,7 +766,9 @@ cashOnDeliveryYesBtn.addEventListener('click', () => {
                     date: new Date().toLocaleDateString(),
                     total: JSON.parse(localStorage.getItem('total')),
                     phone: localStorage.getItem('phonenumbermob'),
-                    address: addressdet
+                    address: addressdet,
+                    username:localStorage.getItem('name'),
+                    useruid:localStorage.getItem('uid')
 
                 }).catch((err) => {
                     console.log(err);
