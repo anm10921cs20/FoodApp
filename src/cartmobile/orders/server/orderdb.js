@@ -75,12 +75,11 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 </div>
             </div>
             <div class="order-details">
-                <div class="total-item"></div>
-                <div class="total"></div>
+                <div class="total-item">Items ${orderItem.food.length}</div>
+                <div class="total">Rs.${orderItem.total.ToPay}</div>
             </div>
             <div class="order-icon">
                 <div class="delivery-status">deliverd <i class="fa-solid fa-circle-check"></i></i></div>
-                <div class="icons"><i class="fas fa-chevron-right"></i></div>
             </div> 
         </div>
     </div>  `;
