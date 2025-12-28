@@ -1,12 +1,15 @@
 
 const phone = document.getElementsByClassName('numbers')[0];
-const name = document.getElementsByClassName('name')[0];
+const name0 = document.getElementsByClassName('name')[0];
 const name1 = document.getElementsByClassName('name')[1];
 const nameData1 = localStorage.getItem('name');
 const phoneData1 = localStorage.getItem('phonenumbermob');
 phone.innerText = phoneData1 ? phoneData1 : "Please Edit Number"
 
+const nameday = localStorage.getItem('name');
 
+name0.innerText = nameday;
+name1.innerText = nameday;
 
 
 
