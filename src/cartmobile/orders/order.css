@@ -256,14 +256,15 @@
         border: 1px dashed #0000003f;
         width: 2px;
     }
-    .delivery-status
-    {
-        color: #198754;
-        font-size: 14px;
-    }
+    
     .fa-close
     {
         font-size: 17px;
+    }
+    .isorder-status
+    {
+        text-align: center;
+        
     }
 
     

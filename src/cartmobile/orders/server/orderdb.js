@@ -15,7 +15,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
 
     const ordersItem = Object.entries(ordersData)
 
-    ordersItem.forEach((orders) => {
+    ordersItem.forEach((orders, index) => {
         // database data get
         const orderId = orders[0].slice(6).length;
         const orderItem = orders[1];
@@ -28,7 +28,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
             uniqorderid += number[uniqnum];
         }
 
-        if (ordersData) {
+        if (ordersItem) {
 
             const time = orderItem.time;
             const timeConvert = parseInt(time.slice(0, 2))
@@ -87,7 +87,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 <div class="total">Rs.${orderItem.total.ToPay}</div>
             </div>
             <div class="order-icon">
-                <div class="delivery-status">deliverd <i class="fa-solid fa-circle-check"></i></i></div>
+            
             </div> 
 
         </div>
@@ -126,6 +126,22 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
             const mainContainer = document.getElementsByClassName('data-main-container')[0];
             mainContainer.appendChild(orderItems);
 
+            const orderIcon = document.getElementsByClassName('order-icon')[index];
+           if(orderItem.isOrderStatus === false)
+           {
+            const dataflase = document.createElement('div');
+            dataflase.innerHTML = `   <div class="delivery-status">Process <i class="fa-solid fa-stopwatch"></i></div>`
+            orderIcon.appendChild(dataflase)
+            dataflase.style.color = "#db2f2fff"
+           }
+           else
+           {
+              const dataflase = document.createElement('div');
+            dataflase.innerHTML = `   <div class="delivery-status">Delivered  <i class="fa-solid fa-circle-check"></i></i></div>`
+            orderIcon.appendChild(dataflase)
+            dataflase.style.color = "#198754"
+           }
+            
 
 
 
@@ -143,7 +159,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                         <div class="productname">${items.name}</div>
                         <div class="product-price-container">
                             <div class="product-price">
-                            Rs.${parseInt(items.price.slice(3))/items.quantity}
+                            Rs.${parseInt(items.price.slice(3)) / items.quantity}
                             </div>
                             <div class="product-count-price">
                             ${items.price}
@@ -158,7 +174,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 ` ;
 
                 const mainContainer = document.getElementById(`order${uniqorderid}`);
-                
+
 
                 mainContainer.appendChild(offcanvsContainers);
 
@@ -252,33 +268,43 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
 
 
 
+            if (orderItem.isOrderStatus == false) {
+                const divIsOrderStatus = document.createElement('div');
+                divIsOrderStatus.className = "isorder-status";
+                divIsOrderStatus.innerHTML = `
+             <div class="order-status-text">Order Process
+            <i class="fa-solid fa-stopwatch"></i>
+             </div>
+             `;
+                divIsOrderStatus.style.color = "#e24141ff"
+                mainContainer1.appendChild(divIsOrderStatus)
+            }
+            else {
+                const divIsOrderStatus = document.createElement('div');
+                divIsOrderStatus.className = "isorder-status";
+                divIsOrderStatus.innerHTML = `
+             <div class="order-status-text">Order Delivered
+             <i class="fa-solid fa-circle-check"></i></i>
+             </div>
+             `;
+                divIsOrderStatus.style.color = "#30a76fff"
+                mainContainer1.appendChild(divIsOrderStatus)
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
-        else {
-            // no vlaue element
-            const div = document.createElement('div');
-            div.classList = "novalue-div";
-            div.innerHTML = `
-          <div class="no-value-text">
-          <h3>No Orders Available</h3>
-          </div>
-          <div class="btn-redirect">
-          <button class="replace-redirect">Orders Some Food</button>
-          </div>
-          `;
-            const mainContainer = document.getElementsByClassName('data-main-container')[0];
-            mainContainer.appendChild(div)
-
-
-            const noValueBtn = document.getElementsByClassName('replace-redirect')[0];
-
-            noValueBtn.addEventListener('click', () => {
-                window.location.href = "../../../src/search/search.html";
-
-            })
-
-        }
-
 
 
 
@@ -293,9 +319,28 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
     })
 
 }).catch((err) => {
-    console.log(err);
+    // no vlaue element
+    const div = document.createElement('div');
+    div.classList = "novalue-div";
+    div.innerHTML = `
+          <div class="no-value-text">
+          <h3>No Orders Available</h3>
+          </div>
+          <div class="btn-redirect">
+          <button class="replace-redirect">Orders Some Food</button>
+          </div>
+          `;
+    const mainContainer = document.getElementsByClassName('data-main-container')[0];
+    mainContainer.appendChild(div)
+
+
+    const noValueBtn = document.getElementsByClassName('replace-redirect')[0];
+
+    noValueBtn.addEventListener('click', () => {
+        window.location.href = "../../../src/search/search.html";
+
+    })
 
 })
-
 
 

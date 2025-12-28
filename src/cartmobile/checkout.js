@@ -655,11 +655,11 @@ function TotalAmt() {
         toPayElement2.innerText = "Rs." + ToPay;
 
         const summaryPrice = {
-            itemPrice:itemPrice,
-            deliveryCharge:deliveryCharge,
-            platFormFee:platFormFee,
-            gstCalculation:gstCalculation,
-            ToPay:ToPay
+            itemPrice: itemPrice,
+            deliveryCharge: deliveryCharge,
+            platFormFee: platFormFee,
+            gstCalculation: gstCalculation,
+            ToPay: ToPay
         }
 
 
@@ -756,6 +756,8 @@ cashOnDeliveryYesBtn.addEventListener('click', () => {
             confirmationContainer.style.display = "none";
 
             //    dataget cart
+          
+
 
             db.ref("MahanFoodOrder/" + name + uid).get('value').then((snap) => {
                 const FoodItems = snap.val()
@@ -767,8 +769,9 @@ cashOnDeliveryYesBtn.addEventListener('click', () => {
                     total: JSON.parse(localStorage.getItem('total')),
                     phone: localStorage.getItem('phonenumbermob'),
                     address: addressdet,
-                    username:localStorage.getItem('name'),
-                    useruid:localStorage.getItem('uid')
+                    username: localStorage.getItem('name'),
+                    useruid: localStorage.getItem('uid'),
+                    isOrderStatus: false
 
                 }).catch((err) => {
                     console.log(err);
