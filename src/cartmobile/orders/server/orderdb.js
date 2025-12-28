@@ -240,7 +240,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 ` ;
 
             const mainContainer1 = document.getElementById(`order${uniqorderid}`);
-            mainContainer1.style.width = "350px";
+            mainContainer1.style.width = "100%";
             mainContainer1.style.height = "100vh";
             mainContainer1.style.overflow = "scroll";
 
