@@ -311,7 +311,7 @@
     .data-main-container
     {
         margin-top: 10px;
-        height: 50vh;
+        height: 80vh;
         overflow: scroll;
     }
     .data-main-container::-webkit-scrollbar
