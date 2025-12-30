@@ -311,7 +311,11 @@
     .data-main-container
     {
         margin-top: 10px;
-        height: auto;
+        overflow: scroll;
+    }
+    .data-main-container::-webkit-scrollbar
+    {
+        display: none;
     }
     .order-items
     {
