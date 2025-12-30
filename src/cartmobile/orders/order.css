@@ -311,6 +311,7 @@
     .data-main-container
     {
         margin-top: 10px;
+        height: auto;
     }
     .order-items
     {
