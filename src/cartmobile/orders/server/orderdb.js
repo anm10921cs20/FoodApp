@@ -274,7 +274,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 divIsOrderStatus.innerHTML = `
              <div class="order-status-text">Order Process
             <i class="fa-solid fa-stopwatch"></i>
-             </div>
+             </div><div class="height"></div>
              `;
                 divIsOrderStatus.style.color = "#e24141ff"
                 mainContainer1.appendChild(divIsOrderStatus)
@@ -285,7 +285,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 divIsOrderStatus.innerHTML = `
              <div class="order-status-text">Order Delivered ${orderItem.deliveryTime}
              <i class="fa-solid fa-circle-check"></i></i>
-             </div>
+             </div><div class="height"></div>
              `;
                 divIsOrderStatus.style.color = "#30a76fff"
                 mainContainer1.appendChild(divIsOrderStatus)

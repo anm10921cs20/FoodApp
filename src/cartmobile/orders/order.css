@@ -517,7 +517,12 @@
     .isorder-status
     {
         text-align: center;
-        
+        color: #198754;
+       
+    }
+    .height
+    {
+        height: 100px; 
     }
 
     
