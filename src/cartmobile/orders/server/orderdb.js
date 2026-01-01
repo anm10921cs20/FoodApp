@@ -127,21 +127,19 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
             mainContainer.appendChild(orderItems);
 
             const orderIcon = document.getElementsByClassName('order-icon')[index];
-           if(orderItem.isOrderStatus === false)
-           {
-            const dataflase = document.createElement('div');
-            dataflase.innerHTML = `   <div class="delivery-status">Process <i class="fa-solid fa-stopwatch"></i></div>`
-            orderIcon.appendChild(dataflase)
-            dataflase.style.color = "#db2f2fff"
-           }
-           else
-           {
-              const dataflase = document.createElement('div');
-            dataflase.innerHTML = `   <div class="delivery-status">Delivered  <i class="fa-solid fa-circle-check"></i></i></div>`
-            orderIcon.appendChild(dataflase)
-            dataflase.style.color = "#198754"
-           }
-            
+            if (orderItem.isOrderStatus === false) {
+                const dataflase = document.createElement('div');
+                dataflase.innerHTML = `   <div class="delivery-status">Process <i class="fa-solid fa-stopwatch"></i></div>`
+                orderIcon.appendChild(dataflase)
+                dataflase.style.color = "#db2f2fff"
+            }
+            else {
+                const dataflase = document.createElement('div');
+                dataflase.innerHTML = `   <div class="delivery-status">Delivered  <i class="fa-solid fa-circle-check"></i></i></div>`
+                orderIcon.appendChild(dataflase)
+                dataflase.style.color = "#198754"
+            }
+
 
 
 
@@ -280,10 +278,33 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 mainContainer1.appendChild(divIsOrderStatus)
             }
             else {
+              
+           
+
+                
                 const divIsOrderStatus = document.createElement('div');
                 divIsOrderStatus.className = "isorder-status";
+                     function zeroAdd(data) {
+                    return data < 9 ? `0${data}` : data;
+                }
+                  const orderTime1 = orderItem.deliveryTime;
+               
+                  
+
+
+
+                const convertNormalTimeElement = parseInt(orderTime1.slice(0, 2));
+               
+                
+                const hours = zeroAdd(convertNormalTimeElement === 0 ? 12 : convertNormalTimeElement > 12 ? convertNormalTimeElement - 12 : convertNormalTimeElement);
+                const minutes = zeroAdd(parseInt(orderTime1.slice(3, 5)));
+                
+                
+
+                const second = zeroAdd(parseInt(orderTime1.slice(6, 8)))
+                const median = convertNormalTimeElement < 12 ? "AM" : "PM";
                 divIsOrderStatus.innerHTML = `
-             <div class="order-status-text">Order Delivered ${orderItem.deliveryTime}
+             <div class="order-status-text">Order Delivered ${hours}:${minutes}:${second} ${median}
              <i class="fa-solid fa-circle-check"></i></i>
              </div><div class="height"></div>
              `;
