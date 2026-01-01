@@ -283,7 +283,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 const divIsOrderStatus = document.createElement('div');
                 divIsOrderStatus.className = "isorder-status";
                 divIsOrderStatus.innerHTML = `
-             <div class="order-status-text">Order Delivered
+             <div class="order-status-text">Order Delivered ${orderItem.deliveryTime}
              <i class="fa-solid fa-circle-check"></i></i>
              </div>
              `;
