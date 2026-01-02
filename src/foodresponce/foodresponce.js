@@ -255,13 +255,12 @@ function addtocart(event) {
             foodArray.push({ ...foodItems });
             localStorage.setItem('cartfood', JSON.stringify(foodArray))
             const name = localStorage.getItem('name');
-            const alertText = document.getElementsByClassName('notification__text')[1];
-              const alertbox = document.getElementsByClassName('alert-container-true')[0];
-            alertbox.style.display = "block";
-            alertText.innerText = "Succesfully Added To Cart"
-              setTimeout(function(){
-                  alertbox.style.display = "none";
-            },4000)
+               let type = "success"
+            let icon = "fa-solid fa-circle-check";
+            let title = "Success";
+            let text = "Added Succeessfully"
+
+            createToast(type, icon, title, text)
             
             db.ref("MahanFoodCart/" + name + uid).set(
                 {
@@ -271,22 +270,23 @@ function addtocart(event) {
         }
         else
         {
-            const alertText = document.getElementsByClassName('notification__text')[1];
-              const alertbox = document.getElementsByClassName('alert-container-true')[0];
-            alertbox.style.display = "block";
-            alertText.innerText = "Already Added To Cart"
+            let type = "error"
+            let icon = "fa-solid fa-circle-exclamation";
+            let title = "Error";
+            let text = "Already Added"
 
-            setTimeout(function(){
-                  alertbox.style.display = "none";
-            },4000)
-
+            createToast(type, icon, title, text)
         }
 
 
     }else
     {
-        const alertbox = document.getElementsByClassName('alert-container')[0];
-            alertbox.style.display = "block";
+         let type = "error"
+        let icon = "fa-solid fa-circle-exclamation";
+        let title = "Login First";
+        let text = "Not Use Cart Order"
+
+        createToast(type, icon, title, text)
         setTimeout(function(){
            
              window.location.href = "../../index.html";
@@ -301,6 +301,28 @@ function addtocart(event) {
 
 }
 
+
+
+
+
+
+function createToast(type, icon, title, text) {
+    const notification = document.getElementsByClassName('notificatio')[0];
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="Toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+                <i class="fas fa-close" onclick="(this.parentElement).remove()"></i>
+            </div>
+    `;
+    notification.appendChild(div)
+    div.timeOut = setTimeout(() => div.remove(), 5000)
+
+}
 
 
 
