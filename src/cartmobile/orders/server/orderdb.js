@@ -285,7 +285,7 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
                 const divIsOrderStatus = document.createElement('div');
                 divIsOrderStatus.className = "isorder-status";
                      function zeroAdd(data) {
-                    return data < 9 ? `0${data}` : data;
+                    return data <= 9 ? `0${data}` : data;
                 }
                   const orderTime1 = orderItem.deliveryTime;
                
