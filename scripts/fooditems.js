@@ -818,3 +818,7 @@ sandWichBtn.addEventListener('click', () => {
 
 
 
+const forwardArrow = document.getElementById('forward-arrow');
+forwardArrow.addEventListener('click', () => {
+    window.history.back();
+})
