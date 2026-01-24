@@ -1100,6 +1100,33 @@ function addClick(event) {
 
 
 
+// height
+
+if(innerWidth >= 1024)
+{
+    const arrow = document.createElement('div');
+    arrow.classList.add('arrow-data');
+    arrow.innerHTML = `
+    <div class="arrow-left-data"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="arrow-right-data"><i class="fa-solid fa-chevron-right"></i></div>
+    `;
+    const articleDataElement = document.querySelector('.article-data-fooditems');
+    articleDataElement.appendChild(arrow)
+}
+
+if(innerWidth <= 1023)
+{
+    
+}
+
+
+
+
+
+
+
+
+
 
 
 
