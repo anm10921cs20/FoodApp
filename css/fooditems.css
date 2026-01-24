@@ -427,17 +427,16 @@
     }
     .products
     {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
         justify-content: center;
-        gap: 50px;
-        height: 920px;
+        height: 600px;
     }
     .product img
     {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
         border-radius: 10px;
     }
     .content
