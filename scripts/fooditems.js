@@ -1,3 +1,6 @@
+if(innerWidth > 100 && innerWidth < 1024)
+{
+    
 // box content btn
 
 const biryaniBtn = document.getElementsByClassName('box')[0];
@@ -815,6 +818,10 @@ sandWichBtn.addEventListener('click', () => {
     dessert.style.display = "none";
     sandWich.style.display = "block";
 })
+
+
+
+}
 
 
 
