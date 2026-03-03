@@ -273,7 +273,7 @@ body {
     position: absolute;
     bottom: 24px;
     right: 12%;
-    z-index: 1988
+    z-index: 100;
   }
   .dishes {
     border: 1px solid rgba(0, 0, 0, 0.2);

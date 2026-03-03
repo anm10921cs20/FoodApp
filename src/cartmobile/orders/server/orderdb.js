@@ -13,7 +13,11 @@ db.ref('userorder/' + name + uid).get('value').then((snapshot) => {
     const ordersData = snapshot.val();
 
 
-    const ordersItem = Object.entries(ordersData)
+    const ordersItem = Object.entries(ordersData).reverse();
+    
+    
+   
+    
 
     ordersItem.forEach((orders, index) => {
         // database data get

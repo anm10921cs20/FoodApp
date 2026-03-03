@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="./css/alertcontainr.css">
     <link rel="stylesheet" href="./css/cartpop.css">
 
+    <!-- footer -->
+
+    <link rel="stylesheet" href="./css/footer.css">
 
     <!-- fiere base -->
 
@@ -37,24 +40,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <script type="text/javascript">
-        (function (d, t) {
-            var g = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.src = "https://cdn.pushalert.co/integrate_645c640366fc7ed72902567592702519.js";
-            s.parentNode.insertBefore(g, s);
-        }(document, "script"));
-    </script>
-    <!-- PushAlert Onsite Messaging -->
-    <script type="text/javascript">
-        (function (d, t) {
-            var g = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.src = "https://cdn.inwebr.com/inwebr_53290eb6a3caadae76447f291c54b017.js";
-            s.parentNode.insertBefore(g, s);
-        }(document, "script"));
-    </script>
-    <!-- End PushAlert Onsite Messaging -->
+    
+     <!-- PushAlert -->
+<script type="text/javascript">
+    (function(d, t) {
+        var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+        g.src = "https://cdn.pushalert.co/integrate_67f317d5afda56f4d5a617b48343144e.js";
+        s.parentNode.insertBefore(g, s);
+    }(document, "script"));
+</script>
+<!-- End PushAlert -->
 </head>
 <!-- PushAlert -->
 
@@ -81,8 +77,8 @@
                         <div class="nav-btn-close"><i class="fa-solid fa-close" id="barsClose"></i></div>
                         <ul class="nav-menu">
                             <li><a href="">Home</a></li>
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Foods</a></li>
+                            <li><a href="./about.html">About Us</a></li>
+                            <li><a href="./fooditems.html">Foods</a></li>
                             <li class="mobile-data"><a href="./src/cartmobile/orders/order.html">Orders</a></li>
 
 
@@ -144,8 +140,9 @@
                     <img src="./images/logo/Mahan Prince.png" width="111px" height="120px" alt="">
                 </div>
                 <div class="orders-img">
-                    <a href="./fooditems.html"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/6/25/b4e9b621-6790-4195-8f03-33b97d14e2be_Upto607.png"
-                        width="396px" height="156px" alt="" class="orders-img-cnt"></a>
+                    <a href="./fooditems.html"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/6/25/b4e9b621-6790-4195-8f03-33b97d14e2be_Upto607.png"
+                            width="396px" height="156px" alt="" class="orders-img-cnt"></a>
                 </div>
                 <div class="orders-img1">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/6/24/cecc766c-1030-4488-947f-e655d612ab2e_lunch6.png"
@@ -303,7 +300,7 @@
         <div class="instantshop-container">
             <div class="tit-container">
                 <h2 class="instantshop-container-title">Shop Groceries on Instamart</h2><br>
-                <i class="fas fa-arrow-right right-link"></i>
+                <a href=""> <i class="fas fa-arrow-right right-link"></i></a>
             </div>
 
             <div class="instantshop-list"><br><br>
@@ -359,7 +356,7 @@
 
             <div class="tit-container">
                 <h2 class="instantshop-container-title">Discover best restaurant on Dineout</h2><br>
-                <i class="fas fa-arrow-right right-link"></i>
+                <a href=""> <i class="fas fa-arrow-right right-link"></i></a>
             </div>
             <div class="dineout-content"><br>
                 <div class="dineout-content-files">
@@ -540,26 +537,48 @@
             </div>
         </div>
     </main><br>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-img">
-                <img src="./images/logo/Food App.png" width="30px" height="30px" alt="">
+    <footer class="footer-content">
+        <div class="footer-subs">
+            <div class="footer-data">
+                <div class="footer-data-tit">
+                    Mahan Foods
+                </div>
+                <p>The Famous Food Restaurant To Resolve The New Celebrations India'S Most Delicious Food To Make The
+                    Food Concepts</p>
+                <p><i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i> <i
+                        class="fa-brands fa-twitter"></i></p>
             </div>
-            <div class="footer-tit">
-                Mahan Foods
+            <div class="quick-links">
+                <h1>Quick Links</h1>
+                <ul>
+                    <li>My Home</li>
+                    <li>Foods</li>
+                    <li>Abouts</li>
+                    <li>Orders</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="customer-service">
+                <h1>Customer Service</h1>
+                <ul>
+                    <li>Restaurant</li>
+                    <li>Insta Mart</li>
+                    <li>Table Booking</li>
+                    <li>Shopping Intro</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+            <div class="contact-us">
+                <h1>Contact Us</h1>
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i> Mahanfood12@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +91 9837457323</li>
+                    <li><i class="fas fa-location"></i> 123 Rajiv Gandi Street, Cuddalore, India - 607401</li>
+                </ul>
             </div>
         </div>
         <div class="footer-copu">
             &copy; <span id="year"></span> Mahan Foods Limited
-        </div>
-        <br>
-        <div class="footer-company">
-            <h2 class="company-tit">Company</h2>
-            <li class="company-list">Home</li>
-            <li class="company-list">About Us</li>
-            <li class="company-list">Foods</li>
-
-
         </div>
     </footer>
 

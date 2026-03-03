@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" />
+    <title>Food Shop - AboutUs</title>
+    <link rel="icon" type="text/png" href="./images/logo/Food App.png">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- local main files -->
+    <link rel="stylesheet" href="./css/fooditems.css">
+    <link rel="stylesheet" href="./css/about.css">
+
+
+    <!-- fiere base -->
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+    <!-- pop up cart -->
+
+    <!-- bootstrap File -->
+    <link rel="stylesheet" href="../bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+<!-- PushAlert -->
+
+<!-- End PushAlert -->
+
+<body>
+    <!-- loader -->
+    <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </section>
+
+
+    <header>
+        <!-- main header container -->
+
+        <div class="mobile-data">
+            <div class="app-controler">
+                <div class="app-controler-data">
+                    <div class="cart-btn "><i class="fas fa-home control"></i>
+                        <p class="cart-tit">HOME</p>
+                    </div>
+                    <div class="cart-btn select-color"><i class="fa-solid fa-align-right control"></i>
+                        <p class="cart-tit">DATA</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </header>
+
+
+
+    <!-- main container -->
+
+    <div class="main-header">
+        <div class="main-content-header">
+            <i class="fas fa-bars"></i>
+            <a href="./index.html"><img src="./images/about/mahanfoodabout.png" alt=""></a>
+        </div>
+        <div class="nav-bar-container">
+            <div class="nav-bar">
+                <a href="./index.html">Home</a>
+                <a href="./fooditems.html">Food Variety</a>
+                <a href="./about.html" class="active">About Us</a>
+                <a href="./contact.html">Contact Us</a>
+                <a href="">Sheff Details</a>
+            </div>
+            <div class="social-media">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </div>
+    </div>
+    <div class="about-us">
+        About Us - Mahan Foods
+    </div>
+    <div class="content-of-abouts">
+        <p>
+            Welcome to Mahan Foods, your ultimate destination for delicious and authentic food! We are passionate about
+            bringing you the best culinary experiences, crafted with love and care. At Mahan Foods, we believe that food
+            is not just sustenance; it's an art form that brings people together and creates unforgettable memories.
+            <br>
+        </p>
+    </div>
+    <div class="background-image">
+        <div class="blur-cont">
+            <p>
+                Feed your goals like you feed your body — every day, without excuses
+            </p>
+        </div>
+
+    </div>
+    <div class="content-of-abouts">
+        <p>
+
+            Our mission is to provide our customers with a diverse range of mouthwatering dishes that cater to every
+            palate. Whether you're craving traditional comfort food or looking to explore new flavors, Mahan Foods has
+            something for everyone. We source the freshest ingredients and use time-honored recipes to ensure that every
+            bite is bursting with flavor.
+            <br>
+            We take pride in our commitment to quality and customer satisfaction. Our team of skilled chefs and
+            dedicated staff work tirelessly to create a dining experience that exceeds your expectations. From our cozy
+            ambiance to our attentive service, we strive to make every visit to Mahan Foods a memorable one.
+            <br>
+            Thank you for choosing Mahan Foods as your go-to destination for exceptional cuisine. We look forward to
+            serving you and sharing our love for food with you!
+        </p>
+    </div>
+    <div class="mission-container">
+
+        <div class="mission">
+            <div class="user-content">
+                <img src="https://images.unsplash.com/photo-1678286742832-26543bb49959?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+            </div>
+            <h2>Our Mission</h2>
+            <p>
+                <i class="fa-solid fa-quote-left"></i>
+                At Mahan Foods, our mission is to provide our customers with a diverse range of mouthwatering dishes
+                that cater to every palate. We are committed to sourcing the freshest ingredients and using
+                time-honored recipes to ensure that every bite is bursting with flavor. Our goal is to create a dining
+                experience that exceeds your expectations, with a cozy ambiance and attentive service. We strive to
+                make every visit to Mahan Foods a memorable one, where you can indulge in exceptional cuisine and share
+                our love for food with you.
+                <i class="fa-solid fa-quote-right"></i>
+            </p>
+        </div>
+        <div class="mission">
+             <div class="user-content">
+                <img src="https://images.unsplash.com/photo-1678286742832-26543bb49959?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+            </div>
+            <h2>Our Vission</h2>
+            <p>
+                <i class="fa-solid fa-quote-left"></i>
+                At Mahan Foods, our mission is to provide our customers with a diverse range of mouthwatering dishes
+                that cater to every palate. We are committed to sourcing the freshest ingredients and using
+                time-honored recipes to ensure that every bite is bursting with flavor. Our goal is to create a dining
+                experience that exceeds your expectations, with a cozy ambiance and attentive service. We strive to
+                make every visit to Mahan Foods a memorable one, where you can indulge in exceptional cuisine and share
+                our love for food with you.
+                <i class="fa-solid fa-quote-right"></i>
+            </p>
+        </div>
+        <div class="mission">
+             <div class="user-content">
+                <img src="https://images.unsplash.com/photo-1678286742832-26543bb49959?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+            </div>
+            <h2>Our Works</h2>
+            <p>
+                <i class="fa-solid fa-quote-left"></i>
+                At Mahan Foods, our mission is to provide our customers with a diverse range of mouthwatering dishes
+                that cater to every palate. We are committed to sourcing the freshest ingredients and using
+                time-honored recipes to ensure that every bite is bursting with flavor. Our goal is to create a dining
+                experience that exceeds your expectations, with a cozy ambiance and attentive service. We strive to
+                make every visit to Mahan Foods a memorable one, where you can indulge in exceptional cuisine and share
+                our love for food with you.
+                <i class="fa-solid fa-quote-right"></i>
+            </p>
+        </div>
+    </div><br>
+    <div class="footer">
+        &copy; Copyright <span id="yearconcept"></span> <span class="nameowner">Mahan Food</span> All rights reserved.
+    </div>
+
+
+
+
+    <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- main Scripts -->
+<script src="../../scripts/cartmobile.js"></script>
+
+<!-- primary files -->
+<script src="./scripts/about.js"></script>
+
+<!-- bootStrap Scripts -->
+<script src="./bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+<!-- login js -->
+
+
+
+
+</html>

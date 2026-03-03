@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #198754;
+    font-family: "Inter", sans-serif;
+}
+
+
+
+
+
+@media only screen and (min-width:200px) and (max-width:399px) {
+	 .footer-content
+    {
+        background-color: #1a1a1ae1;
+        height: 750px;
+        color: var(--bs-light);
+        margin-top: 40px;
+        padding: 20px;
+    }
+    .footer-data-tit
+    {
+        font-size: 25px;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
+    }
+    .footer-data p
+    {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
+    .quick-links h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .quick-links ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .quick-links ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .customer-service h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .customer-service ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .customer-service ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .contact-us h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .contact-us ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .contact-us ul li
+    {
+        margin: 5px 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .footer-copu
+    {
+        border-top: 1px solid rgba(256, 256, 256, 120);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+
+/* lg mobiles */
+@media only screen and (min-width:400px) and (max-width:767px) {
+
+    .footer-content
+    {
+        background-color: #1a1a1ae1;
+        height: 750px;
+        color: var(--bs-light);
+        margin-top: 40px;
+        padding: 20px;
+    }
+    .footer-data-tit
+    {
+        font-size: 25px;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
+    }
+    .footer-data p
+    {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
+    .quick-links h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .quick-links ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .quick-links ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .customer-service h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .customer-service ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .customer-service ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .contact-us h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .contact-us ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .contact-us ul li
+    {
+        margin: 5px 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .footer-copu
+    {
+        border-top: 1px solid rgba(256, 256, 256, 120);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+
+}
+
+
+
+
+
+
+
+/*  tablets */
+@media only screen and (min-width:768px) and (max-width:1023px) {
+ .footer-content
+    {
+        background-color: #1a1a1ae1;
+        height: 750px;
+        color: var(--bs-light);
+        margin-top: 40px;
+        padding: 20px;
+    }
+    .footer-data-tit
+    {
+        font-size: 25px;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
+    }
+    .footer-data p
+    {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
+    .quick-links h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .quick-links ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .quick-links ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .customer-service h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .customer-service ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .customer-service ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .contact-us h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .contact-us ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .contact-us ul li
+    {
+        margin: 5px 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .footer-copu
+    {
+        border-top: 1px solid rgba(256, 256, 256, 120);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+/* laptops */
+@media only screen and (min-width:1024px) and (max-width:1439px) {
+	 .footer-content
+    {
+        background-color: #1a1a1ae1;
+        height: 280px;
+        color: var(--bs-light);
+        margin-top: 40px;
+        padding: 20px;
+    }
+    .footer-subs
+    {
+        display: flex;
+        justify-content: space-between;
+        height: 200px;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+    }
+    .footer-data,.quick-links,.customer-service,.contact-us
+    {
+        width: 25%;
+    }
+    .footer-data-tit
+    {
+        font-size: 25px;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
+    }
+    .footer-data p
+    {
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+    .quick-links h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .quick-links ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .quick-links ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .customer-service h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .customer-service ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .customer-service ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .contact-us h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .contact-us ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .contact-us ul li
+    {
+        margin: 5px 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .footer-copu
+    {
+        border-top: 1px solid rgba(256, 256, 256, 120);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+
+
+/* desktop */
+@media only screen and (min-width:1440px) and (max-width:2159px) {
+	.footer-content
+    {
+        background-color: #1a1a1ae1;
+        height: 280px;
+        color: var(--bs-light);
+        margin-top: 40px;
+        padding: 20px;
+    }
+    .footer-subs
+    {
+        display: flex;
+        justify-content: space-between;
+        height: 200px;
+        align-items: center;
+        gap: 40px;
+        width: 70%;
+        margin: auto;
+    }
+    .footer-data,.quick-links,.customer-service,.contact-us
+    {
+        width: 25%;
+    }
+    .footer-data-tit
+    {
+        font-size: 25px;
+        font-weight: 800;
+        text-shadow: 1px 1px 1px #000;
+    }
+    .footer-data p
+    {
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+    .quick-links h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .quick-links ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .quick-links ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .customer-service h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .customer-service ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .customer-service ul li
+    {
+        margin: 3px 0;
+         letter-spacing: 2px;
+         font-size: 13px;
+    }
+      .contact-us h1
+    {
+        font-size: 17px;
+        font-weight: 600;
+         letter-spacing: 1px;
+    }
+    .contact-us ul
+    {
+        padding: 0;
+        list-style: none;
+    }
+    .contact-us ul li
+    {
+        margin: 5px 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .footer-copu
+    {
+        border-top: 1px solid rgba(256, 256, 256, 120);
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+    ::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+}
