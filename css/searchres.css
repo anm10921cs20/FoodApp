@@ -247,6 +247,8 @@ body {
   }
   .item-tit {
     font-weight: 700;
+      width: 20ch;
+      overflow: hidden;
   }
   .item-price {
     font-weight: 600;
@@ -434,6 +436,8 @@ body {
   }
   .item-tit {
     font-weight: 700;
+    width: 20ch;
+    overflow: hidden;
   }
   .item-price {
     font-weight: 600;
@@ -626,6 +630,8 @@ body {
   }
   .item-tit {
     font-weight: 700;
+      width: 20ch;
+      overflow: hidden;
   }
   .item-price {
     font-weight: 600;
@@ -828,6 +834,8 @@ body {
   }
   .item-tit {
     font-weight: 700;
+      width: 20ch;
+      overflow: hidden;
   }
   .item-price {
     font-weight: 600;
@@ -1030,6 +1038,8 @@ body {
   }
   .item-tit {
     font-weight: 700;
+      width: 20ch;
+      overflow: hidden;
   }
   .item-price {
     font-weight: 600;
